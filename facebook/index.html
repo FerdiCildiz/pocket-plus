@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex"><title>Pocket+</title>
+<link rel="canonical" href="https://pocketplus.app/">
+<meta http-equiv="refresh" content="3;url=/">
+<style>html{background:#0f0f1d}</style>
+<script>
+  (() => {
+    let off = false;
+    try { off = localStorage.getItem('notrack') === '1'; } catch (e) {}
+    if (!off) {
+      const s = document.createElement('script');
+      s.type = 'module';
+      s.src = 'https://static.cloudflareinsights.com/beacon.min.js';
+      s.dataset.cfBeacon = '{"token": "16f12da5593d494e828fd44a928bdd1a"}';
+      document.head.appendChild(s);
+    }
+    setTimeout(() => location.replace('/'), off ? 0 : 800);
+  })();
+</script></head>
+<body><p style="font:16px system-ui;color:#fff;text-align:center;margin-top:30vh"><a href="/" style="color:#fff"><span translate="no">Pocket+</span></a></p></body></html>
