@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.6 — 2026-11-01
+
+- Pro now comes as a one-time Lifetime license or a yearly plan, bought through Polar. Licenses you already have keep working as they are
+- Settings › Pro › Remove from this Mac frees a license so you can activate it on another Mac
+- Locked features now show a small crown instead of the PRO label
+
 ## 1.5.1 — 2026-10-23
 
 - Fixed left and right going the wrong way after switching between the front and back of the camera (seen on Osmo Pocket 4): the direction is now learned separately for each side
