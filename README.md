@@ -5,12 +5,12 @@
 <h1 align="center">Pocket+</h1>
 
 <p align="center">
-  A free macOS app that turns your <b>DJI Osmo Pocket 2, 3, 4 or 4P</b> into a controllable desk camera:<br>
+  A macOS app (free to use, with an optional Pro upgrade) that turns your <b>DJI Osmo Pocket 2, 3, 4 or 4P</b> into a controllable desk camera:<br>
   record, take photos, steer the gimbal, zoom and track faces — all from your Mac.
 </p>
 
 <p align="center">
-  <a href="../../releases/latest"><b>⬇︎ Download the latest version</b></a> &nbsp;·&nbsp; <a href="https://pocketplus.app/"><b>Website</b></a> &nbsp;·&nbsp; <a href="https://ferdicildiz.gumroad.com/l/pocketcontrol"><b>Get Pro</b></a>
+  <a href="../../releases/latest"><b>⬇︎ Download the latest version</b></a> &nbsp;·&nbsp; <a href="https://pocketplus.app/"><b>Website</b></a> &nbsp;·&nbsp; <a href="https://pocketplus.app/#pricing"><b>Get Pro</b></a>
 </p>
 
 <p align="center">
@@ -41,9 +41,12 @@ Pocket+ isn't affiliated with or endorsed by DJI.
 | Gimbal joystick, center, front/back | ✅ | ✅ |
 | **Scenes** — save camera angles and zoom, jump back with ⌥1–9 |  | ✅ |
 | Zoom buttons and keyboard shortcuts | ✅ | ✅ |
-| Face tracking | ✅ | ✅ |
+| Face tracking, including **Track everyone** for groups | ✅ | ✅ |
 | **Auto framing** (headroom-aware, one click) |  | ✅ |
 | **Vertical video (9:16)** — true vertical with the Pocket upright, or a sharp 1080×1920 crop from 4K |  | ✅ |
+| **Adjust** — Temperature, Tint, Saturation, Vibrance, plus an Auto button and Hold to compare | ✅ | ✅ |
+| **Adjust: Light** — Exposure, Contrast, Highlights, Shadows |  | ✅ |
+| Histogram (brightness or RGB) | ✅ | ✅ |
 | Grid and horizon guides | ✅ | ✅ |
 | **Vertical video guide (9:16)** |  | ✅ |
 | **Color looks (LUT)** — built-in looks, your own `.cube` and PNG LUTs |  | ✅ |
@@ -51,8 +54,9 @@ Pocket+ isn't affiliated with or endorsed by DJI.
 | **Return to last position** when the camera reconnects |  | ✅ |
 | **Zoom and aim on the preview** — scroll to zoom, drag or swipe to move the gimbal |  | ✅ |
 | DJI Mic auto-switch, audio meter, countdown, battery and disk info | ✅ | ✅ |
+| 8 languages: English, Türkçe, Deutsch, Français, Español, Português, 日本語, 简体中文 | ✅ | ✅ |
 
-**[Get Pro on Gumroad](https://ferdicildiz.gumroad.com/l/pocketcontrol)** — a one-time purchase. Paste your license key in **Settings › Pro** to unlock it. One license activates Pro on one Mac.
+**[Get Pro](https://pocketplus.app/#pricing)** — a one-time Lifetime license or a yearly plan. Enter your license code in **Settings › Pro** to unlock it. One license activates Pro on one Mac, and **Settings › Pro › Remove from this Mac** frees it for another.
 
 ## Requirements
 
@@ -61,7 +65,7 @@ Pocket+ isn't affiliated with or endorsed by DJI.
 
 ## Install
 
-1. Download [`PocketPlus.zip`](https://github.com/FerdiCildiz/pocket-plus/releases/latest/download/PocketPlus.zip) and open it (Safari unzips it for you).
+1. Download [`PocketPlus.zip`](https://github.com/FerdiCildiz/pocket-plus/releases/latest/download/PocketPlus.zip) and open it (Safari unzips it for you). The app updates itself from then on.
 2. Drag **Pocket+** into **Applications**.
 3. Open the app. Pocket+ is signed and notarized by Apple, so it opens like any other Mac app. If macOS asks whether you want to open an app downloaded from the internet, click **Open**.
 4. Allow **Camera**, **Microphone** and **Bluetooth** when asked.

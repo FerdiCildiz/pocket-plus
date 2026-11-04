@@ -1,5 +1,23 @@
 # Changelog
 
+## 1.7 — 2026-11-02
+
+- Adjust: a new panel next to Wide Angle with Exposure, Contrast, Highlights and Shadows (Pro) and Temperature, Tint, Saturation and Vibrance. It applies to the preview, recordings and photos, and Hold to compare shows the original while you press
+- Auto adjust: one click sets the sliders for the scene, and leaves good pictures alone
+- Histogram: open it from the top left under the microphone; click it to switch between brightness and red, green and blue
+- 8 languages: English, Türkçe, Deutsch, Français, Español, Português, 日本語 and 简体中文, with a Language setting in Settings › Window
+- A new opening screen, and the window now opens centered the first time and remembers where you leave it
+- Move to Applications: if Pocket+ runs from Downloads, it offers to move itself to Applications so one-click updates work
+- A short startup effect when the first picture arrives (turn it off in Settings › Window)
+- Scenes: update a scene to the current view with one click; the scene you are on stays yellow and the others dim
+- Returning to the last position now glides instead of snapping
+- Coming back to the window after working in another app no longer looks like a fresh start, and Settings › Window › Pause when hidden lets you turn the pause off
+- Clicking another button while a panel is open now works with a single click
+- Auto frame sits next to Record and face tracking moved under the joystick
+- Track everyone (Settings › Gimbal, off by default): face tracking follows everyone in the frame; double-click a face to follow just one person
+- Build 23 (2026-11-02): photos now have the same colors as the preview instead of looking washed out
+- Build 24 (2026-11-03): a new app icon
+
 ## 1.6 — 2026-11-01
 
 - Pro now comes as a one-time Lifetime license or a yearly plan, bought through Polar. Licenses you already have keep working as they are
