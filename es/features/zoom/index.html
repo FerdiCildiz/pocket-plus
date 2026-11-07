@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#000000">
+<title>Usa el DJI Osmo Pocket en reuniones de Zoom en un Mac · Pocket+</title>
+<meta name="description" content="Usa tu Osmo Pocket como cámara en Zoom mientras Pocket+ apunta el gimbal, hace zoom y sigue tu cara desde el mismo Mac.">
+<link rel="canonical" href="https://pocketplus.app/es/features/zoom/">
+<link rel="me" href="https://mastodon.social/@pocketplus">
+<link rel="alternate" hreflang="en" href="https://pocketplus.app/features/zoom/">
+<link rel="alternate" hreflang="tr" href="https://pocketplus.app/tr/features/zoom/">
+<link rel="alternate" hreflang="de" href="https://pocketplus.app/de/features/zoom/">
+<link rel="alternate" hreflang="fr" href="https://pocketplus.app/fr/features/zoom/">
+<link rel="alternate" hreflang="es" href="https://pocketplus.app/es/features/zoom/">
+<link rel="alternate" hreflang="pt" href="https://pocketplus.app/pt/features/zoom/">
+<link rel="alternate" hreflang="ja" href="https://pocketplus.app/ja/features/zoom/">
+<link rel="alternate" hreflang="zh-Hans" href="https://pocketplus.app/zh/features/zoom/">
+<link rel="alternate" hreflang="x-default" href="https://pocketplus.app/features/zoom/">
+<link rel="icon" href="/assets/favicon.png" type="image/png">
+<link rel="apple-touch-icon" href="/assets/icon.png">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Usa el DJI Osmo Pocket en reuniones de Zoom en un Mac · Pocket+">
+<meta property="og:description" content="Usa tu Osmo Pocket como cámara en Zoom mientras Pocket+ apunta el gimbal, hace zoom y sigue tu cara desde el mismo Mac.">
+<meta property="og:url" content="https://pocketplus.app/es/features/zoom/">
+<meta property="og:image" content="https://pocketplus.app/assets/og.jpg?v=04b71509">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Pocket+: control your DJI Osmo Pocket from your Mac">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Usa el DJI Osmo Pocket en reuniones de Zoom en un Mac · Pocket+">
+<meta name="twitter:description" content="Usa tu Osmo Pocket como cámara en Zoom mientras Pocket+ apunta el gimbal, hace zoom y sigue tu cara desde el mismo Mac.">
+<meta name="twitter:image" content="https://pocketplus.app/assets/og.jpg?v=04b71509">
+<meta name="twitter:image:alt" content="Pocket+: control your DJI Osmo Pocket from your Mac">
+<meta name="msvalidate.01" content="C37CE93C5CEE85D6A2781B1A0F80D7F6">
+<script>
+  // Cloudflare Web Analytics (çerezsiz). Kendi ziyaretin için her tarayıcıda bir kez ?notrack=1 aç (?track=1 geri alır).
+  (() => {
+    let off = false;
+    try {
+      const q = new URLSearchParams(location.search);
+      if (q.has('notrack')) localStorage.setItem('notrack', '1');
+      if (q.has('track')) localStorage.removeItem('notrack');
+      off = localStorage.getItem('notrack') === '1';
+    } catch (e) {}
+    if (off) return;
+    const s = document.createElement('script');
+    s.type = 'module';
+    s.src = 'https://static.cloudflareinsights.com/beacon.min.js';
+    s.dataset.cfBeacon = '{"token": "16f12da5593d494e828fd44a928bdd1a"}';
+    document.head.appendChild(s);
+  })();
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Stack+Sans+Headline:wght@300;400;500&family=Stack+Sans+Text:wght@200;300;400;500&display=swap">
+<link rel="stylesheet" href="/hero.css?v=50183d3e">
+<link rel="stylesheet" href="/sections.css?v=bae0aaf6">
+<link rel="stylesheet" href="/features.css?v=32341c8f">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Pocket+", "item": "https://pocketplus.app/es/"}, {"@type": "ListItem", "position": 2, "name": "Funciones de Pocket+", "item": "https://pocketplus.app/es/features/"}, {"@type": "ListItem", "position": 3, "name": "Zoom", "item": "https://pocketplus.app/es/features/zoom/"}]}</script>
+</head>
+<body class="page-ft">
+<header class="nav">
+    <div class="nav-bg" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+    <a class="brand rv" href="/es/">
+      <span class="fb-icon"><img src="/assets/logo-icon.svg" width="64" height="64" alt=""></span>
+      <span><span translate="no">Pocket+</span></span>
+    </a>
+    <nav class="links rv" aria-label="Principal">
+      <a href="/es/features/" aria-current="page">Funciones</a>
+      <a href="/es/use-cases/">Casos de uso</a>
+      <a href="/blog/">Blog</a>
+      <a href="/es/faq/">Preguntas frecuentes</a>
+      <a href="/es/#pricing">Precios</a>
+    </nav>
+    <div class="nav-cta rv">
+      <a class="btn btn-glass btn-sm" href="https://github.com/FerdiCildiz/pocket-plus/releases/latest/download/PocketPlus.zip">Descargar</a>
+      <a class="btn btn-gold btn-sm hide-m" href="/es/#pricing">Pasar a Pro</a>
+      <button class="burger" id="burger" type="button" aria-label="Menú" aria-expanded="false" aria-controls="mmenu"><img class="ic" style="--s:20px" src="/assets/ui/line.3.horizontal.png" alt=""></button>
+    </div>
+  </header>
+  <div class="mmenu" id="mmenu" hidden>
+    <a href="/es/features/">Funciones</a><a href="/es/use-cases/">Casos de uso</a><a href="/blog/">Blog</a><a href="/es/faq/">Preguntas frecuentes</a><a href="/es/#pricing">Precios</a>
+    <a class="btn btn-gold btn-lg" href="/es/#pricing">Pasar a Pro</a>
+  </div>
+<main class="ft-page ft-purple"><div class="hero-bg" aria-hidden="true"></div><section class="fx wrap"><header class="fx-head"><p class="h">Funciones potentes. Control sin esfuerzo.</p><p class="sub">Todo lo que necesitas de tu <span translate="no">DJI Osmo Pocket</span>. Directamente en tu Mac.</p></header><div class="fx-grid"><nav class="fx-nav" aria-label="Features"><p class="fx-group">Gimbal y encuadre</p><a class="glass" href="/es/features/gimbal-control/"><span class="i" aria-hidden="true" style="--m:url(/assets/fx/ui-move.svg)"></span>Control del gimbal<span class="go" aria-hidden="true" style="--m:url(/assets/fx/chevron-right.svg)"></span></a><a class="glass" href="/es/features/face-tracking/"><span class="i" aria-hidden="true" style="--m:url(/assets/fx/user-focus.svg)"></span>Seguimiento facial<span class="go" aria-hidden="true" style="--m:url(/assets/fx/chevron-right.svg)"></span></a><a class="glass" href="/es/features/scenes/"><span class="i" aria-hidden="true" style="--m:url(/assets/fx/ui-scenes.svg)"></span>Escenas<span class="go" aria-hidden="true" style="--m:url(/assets/fx/chevron-right.svg)"></span></a><a class="glass" href="/es/features/return-last-position/"><span class="i" aria-hidden="true" style="--m:url(/assets/fx/ui-backward.svg)"></span>Última posición<span class="go" aria-hidden="true" style="--m:url(/assets/fx/chevron-right.svg)"></span></a><p class="fx-group">Imagen y grabación</p><a class="glass" href="/es/features/auto-framing/"><span class="i" aria-hidden="true" style="--m:url(/assets/fx/frame-corners.svg)"></span>Encuadre automático<span class="go" aria-hidden="true" style="--m:url(/assets/fx/chevron-right.svg)"></span></a><a class="glass" href="/es/features/lut/"><span class="i" aria-hidden="true" style="--m:url(/assets/fx/ui-lut.svg)"></span>LUTs y color<span class="go" aria-hidden="true" style="--m:url(/assets/fx/chevron-right.svg)"></span></a><a class="glass" href="/es/features/lens-correction/"><span class="i" aria-hidden="true" style="--m:url(/assets/fx/ui-pano.svg)"></span>Corrección de gran angular<span class="go" aria-hidden="true" style="--m:url(/assets/fx/chevron-right.svg)"></span></a><a class="glass" href="/es/features/auto-mic-switch/"><span class="i" aria-hidden="true" style="--m:url(/assets/fx/microphone.svg)"></span>Micrófono automático<span class="go" aria-hidden="true" style="--m:url(/assets/fx/chevron-right.svg)"></span></a><p class="fx-group">Directos y videollamadas</p><a class="glass" href="/es/features/obs/"><span class="i" aria-hidden="true" style="--m:url(/assets/fx/ui-obs.svg)"></span>OBS<span class="go" aria-hidden="true" style="--m:url(/assets/fx/chevron-right.svg)"></span></a><a class="glass" href="/es/features/google-meet/"><span class="i" aria-hidden="true" style="--m:url(/assets/fx/video-camera.svg)"></span>Google Meet<span class="go" aria-hidden="true" style="--m:url(/assets/fx/chevron-right.svg)"></span></a><a class="glass" href="/es/features/zoom/" aria-current="page"><span class="i" aria-hidden="true" style="--m:url(/assets/fx/ui-person-square.svg)"></span>Zoom<span class="go" aria-hidden="true" style="--m:url(/assets/fx/chevron-right.svg)"></span></a><a class="glass" href="/es/features/teams/"><span class="i" aria-hidden="true" style="--m:url(/assets/fx/users.svg)"></span>Microsoft Teams<span class="go" aria-hidden="true" style="--m:url(/assets/fx/chevron-right.svg)"></span></a><a class="glass" href="/es/features/whatsapp/"><span class="i" aria-hidden="true" style="--m:url(/assets/fx/ui-phone-bubble.svg)"></span>WhatsApp<span class="go" aria-hidden="true" style="--m:url(/assets/fx/chevron-right.svg)"></span></a><p class="fx-group">Vista previa y guías</p><a class="glass" href="/es/features/switch-orientation/"><span class="i" aria-hidden="true" style="--m:url(/assets/fx/ui-rotate.svg)"></span>Horizontal y vertical<span class="go" aria-hidden="true" style="--m:url(/assets/fx/chevron-right.svg)"></span></a><a class="glass" href="/es/features/framing-guides/"><span class="i" aria-hidden="true" style="--m:url(/assets/fx/ui-hash.svg)"></span>Guías de encuadre<span class="go" aria-hidden="true" style="--m:url(/assets/fx/chevron-right.svg)"></span></a></nav><article class="fx-body"><h1>Zoom<span class="ftag">FREE</span></h1><p>Preséntate en Zoom con una cámara de verdad y sin perder el control. Elige el <span translate="no">Pocket</span> como cámara en la app de Zoom y usa <span translate="no">Pocket+</span> para apuntar el gimbal, acercar la imagen o dejar que el seguimiento facial te siga mientras hablas.</p>
+
+<h2>Configúralo</h2>
+<ol>
+  <li>Conecta el <span translate="no">Pocket</span> por USB-C y elige <b>Webcam</b> en la cámara.</li>
+  <li>En Zoom, abre <b>Configuración › Vídeo</b> y elige el <span translate="no">Pocket</span> (por ejemplo, OsmoPocket3). En <b>Audio</b>, elige su micrófono si quieres el sonido de la cámara.</li>
+  <li>Abre <span translate="no">Pocket+</span> junto a la reunión. <span translate="no">Pocket+</span> mantiene en marcha su vista previa mientras Zoom usa la cámara.</li>
+</ol>
+<h2>Qué llega a Zoom</h2>
+<p>Zoom recibe la imagen y el sonido propios de la cámara. Le llega todo lo que mueve físicamente la cámara: los movimientos del joystick, el <a href="/es/features/face-tracking/">seguimiento facial</a>, el <a href="/es/features/auto-framing/">encuadre automático</a>, las <a href="/es/features/scenes/">escenas</a> y el zoom de la cámara. Lo que <span translate="no">Pocket+</span> hace por software se queda en <span translate="no">Pocket+</span>: los LUTs, la corrección de lente, las guías y la imagen vertical recortada. Además, los colores pueden verse un poco más apagados que en la vista previa de <span translate="no">Pocket+</span>.</p>
+<h2>Conviene saber</h2>
+<ul>
+  <li><span translate="no">Pocket+</span> no es una cámara virtual. Elige el propio <span translate="no">Pocket</span> en Zoom, no <span translate="no">Pocket+</span>.</li>
+  <li>La cámara envía un solo formato a la vez. Si Zoom pide 1080p, <span translate="no">Pocket+</span> también recibe 1080p.</li>
+  <li>Los atajos como <kbd>⌘T</kbd> o <kbd>⌥1</kbd> funcionan mientras <span translate="no">Pocket+</span> es la app activa. Mantén su ventana visible junto a Zoom; por defecto se queda siempre encima.</li>
+</ul>
+<p>Usar el <span translate="no">Pocket</span> en Zoom no requiere Pro. Cada función de <span translate="no">Pocket+</span> conserva su propia condición de Free o Pro.</p>
+<div class="fx-next"><a href="/es/features/google-meet/">← Google Meet</a><a href="/es/features/teams/">Microsoft Teams →</a></div></article></div></section></main>
+<section class="sec sec-price" id="pricing">
+  <div class="sec-head center">
+    <h2>Empieza gratis. Pásate a Pro cuando quieras.</h2>
+    <p>Disfruta gratis de las funciones esenciales. Si necesitas grabación en 4K, escenas y controles avanzados, elige Pro con pago único o suscripción anual.</p>
+  </div>
+  <div class="plans">
+    <article class="plan plan-free">
+      <header><h3><span translate="no">Pocket+</span> Gratis</h3><b>$0</b></header>
+      <ul class="ticks">
+        <li>Vista previa en directo, fotos y vídeos hasta 1080p</li>
+        <li>Control del gimbal, centrado y giro frontal/trasero</li>
+        <li>Zoom y atajos de teclado</li>
+        <li>Seguimiento facial</li>
+        <li>Cuadrícula y línea del horizonte</li>
+        <li>DJI Mic e indicadores de audio, batería y almacenamiento</li>
+      </ul>
+      <a class="btn btn-glass btn-lg btn-block" href="https://github.com/FerdiCildiz/pocket-plus/releases/latest/download/PocketPlus.zip">Descargar gratis</a>
+    </article>
+    <article class="plan plan-pro">
+      <header><h3><span translate="no">Pocket+</span> Pro</h3><div class="price"><b>$39.99</b><small>Precio especial de lanzamiento</small></div></header>
+      <ul class="ticks">
+        <li>Todas las funciones gratuitas</li>
+        <li>Grabación de vídeo hasta 4K</li>
+        <li>Estilos de color y LUTs .cube/PNG personalizadas</li>
+        <li>Encuadre automático</li>
+        <li>Hasta 9 escenas con atajos de teclado</li>
+        <li>Control mediante arrastre y zoom con la rueda del ratón</li>
+        <li>Guía para vídeo vertical 9:16</li>
+        <li>Corrección de gran angular</li>
+      </ul>
+      <div class="buy">
+        <a class="btn btn-gold btn-lg btn-block" href="https://buy.polar.sh/polar_cl_exSJRc2Q9kyqAzbR8Jr162wx4JMVpTfZq0gqe2kfyPu" target="_blank" rel="noopener">Comprar Pro de por vida <i>·</i> $39.99</a>
+        <a class="btn btn-glass btn-teal btn-lg btn-block" href="https://buy.polar.sh/polar_cl_yCHcBSKuanaZnRTX9UhI2eb80silnrscE8Upm2MAntK" target="_blank" rel="noopener">Elegir el plan anual <i>·</i> $14.99</a>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- ================= Download CTA ================= -->
+<section class="sec sec-cta" id="download">
+  <div class="cta-card">
+    <div class="cta-copy">
+      <h2>Tu próxima grabación empieza aquí.</h2>
+      <p>Controla tu <span translate="no">DJI Osmo Pocket</span> desde el Mac. Descarga <span translate="no">Pocket+</span> gratis y empieza a grabar en unos minutos.</p>
+      <div class="cta-btns">
+        <a class="btn btn-glass btn-lg" href="https://github.com/FerdiCildiz/pocket-plus/releases/latest/download/PocketPlus.zip">Descargar gratis para Mac</a>
+        <a class="btn btn-gold btn-lg" href="/es/#pricing">Pasar a Pro</a>
+      </div>
+      <div class="cta-links">
+        <a href="https://github.com/FerdiCildiz/pocket-plus" target="_blank" rel="noopener">Danos una estrella en GitHub ↗</a>
+        <a href="https://www.reddit.com/r/osmopocket/s/lvCdD2MSma" target="_blank" rel="noopener">Apóyanos en Reddit ↗</a>
+      </div>
+    </div>
+    <img class="cta-cam" src="/assets/img/pocket-cta.png" width="253" height="460" alt="">
+    <img class="pl p1" src="/assets/img/plus1.svg" alt=""><img class="pl p2" src="/assets/img/plus2.svg" alt=""><img class="pl p3" src="/assets/img/plus3.svg" alt=""><img class="pl p4" src="/assets/img/plus4.svg" alt=""><img class="pl p5" src="/assets/img/plus5.svg" alt="">
+  </div>
+</section>
+
+<!-- ================= Footer ================= -->
+<footer class="foot">
+  <div class="foot-in">
+    <div class="foot-top">
+      <a class="foot-brand" href="/es/"><span class="fb-icon"><img src="/assets/logo-icon.svg" width="60" height="60" alt=""></span><span><span translate="no">Pocket+</span></span></a>
+      <nav class="foot-links" aria-label="Footer">
+        <a href="/es/features/">Funciones</a><a href="/es/use-cases/">Casos de uso</a><a href="/blog/">Blog</a><a href="/es/faq/">Preguntas frecuentes</a><a href="/es/#pricing">Precios</a><a href="/privacy/">Privacidad</a><a href="/terms/">Terms</a><a href="https://www.linkedin.com/in/ferdicildiz" target="_blank" rel="noopener">LinkedIn</a>
+      </nav>
+    </div>
+    <div class="foot-mid">
+      <details class="lang"><summary aria-label="Idioma"><span>Español</span><img src="/assets/icons/chevron.down.png" alt=""></summary><div class="menu"><a href="/features/zoom/" lang="en" hreflang="en">English</a><a href="/tr/features/zoom/" lang="tr" hreflang="tr">Türkçe</a><a href="/de/features/zoom/" lang="de" hreflang="de">Deutsch</a><a href="/fr/features/zoom/" lang="fr" hreflang="fr">Français</a><a href="/es/features/zoom/" lang="es" hreflang="es" aria-current="page">Español</a><a href="/pt/features/zoom/" lang="pt-BR" hreflang="pt-BR">Português</a><a href="/ja/features/zoom/" lang="ja" hreflang="ja">日本語</a><a href="/zh/features/zoom/" lang="zh-Hans" hreflang="zh-Hans">简体中文</a></div></details>
+      <a class="ig" href="https://instagram.com/pocketplus.app" target="_blank" rel="noopener">Síguenos en Instagram <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="#fff" stroke-width="1.5"><rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r=".9" fill="#fff" stroke="none"/></svg></a>
+    </div>
+    <div class="foot-bot">
+      <span>©Copyright 2026 <span translate="no">Pocket+</span></span>
+      <p><span translate="no">Pocket+</span> es un proyecto independiente y no está afiliado a DJI, ni respaldado ni patrocinado por DJI. DJI, Osmo y <span translate="no">Osmo Pocket</span> son marcas comerciales de SZ DJI Technology Co., Ltd.</p>
+    </div>
+  </div>
+</footer>
+
+<script src="/hero.js"></script>
+<script src="/sections.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,187 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#000000">
+<title>La DJI Osmo Pocket dans OBS sur Mac, pilotée en direct · Pocket+</title>
+<meta name="description" content="Diffusez ou enregistrez votre Osmo Pocket dans OBS pendant que Pocket+ pilote la nacelle, le zoom, le suivi du visage et les scènes depuis le même Mac.">
+<link rel="canonical" href="https://pocketplus.app/fr/features/obs/">
+<link rel="me" href="https://mastodon.social/@pocketplus">
+<link rel="alternate" hreflang="en" href="https://pocketplus.app/features/obs/">
+<link rel="alternate" hreflang="tr" href="https://pocketplus.app/tr/features/obs/">
+<link rel="alternate" hreflang="de" href="https://pocketplus.app/de/features/obs/">
+<link rel="alternate" hreflang="fr" href="https://pocketplus.app/fr/features/obs/">
+<link rel="alternate" hreflang="es" href="https://pocketplus.app/es/features/obs/">
+<link rel="alternate" hreflang="pt" href="https://pocketplus.app/pt/features/obs/">
+<link rel="alternate" hreflang="ja" href="https://pocketplus.app/ja/features/obs/">
+<link rel="alternate" hreflang="zh-Hans" href="https://pocketplus.app/zh/features/obs/">
+<link rel="alternate" hreflang="x-default" href="https://pocketplus.app/features/obs/">
+<link rel="icon" href="/assets/favicon.png" type="image/png">
+<link rel="apple-touch-icon" href="/assets/icon.png">
+<meta property="og:type" content="website">
+<meta property="og:title" content="La DJI Osmo Pocket dans OBS sur Mac, pilotée en direct · Pocket+">
+<meta property="og:description" content="Diffusez ou enregistrez votre Osmo Pocket dans OBS pendant que Pocket+ pilote la nacelle, le zoom, le suivi du visage et les scènes depuis le même Mac.">
+<meta property="og:url" content="https://pocketplus.app/fr/features/obs/">
+<meta property="og:image" content="https://pocketplus.app/assets/og.jpg?v=04b71509">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Pocket+: control your DJI Osmo Pocket from your Mac">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="La DJI Osmo Pocket dans OBS sur Mac, pilotée en direct · Pocket+">
+<meta name="twitter:description" content="Diffusez ou enregistrez votre Osmo Pocket dans OBS pendant que Pocket+ pilote la nacelle, le zoom, le suivi du visage et les scènes depuis le même Mac.">
+<meta name="twitter:image" content="https://pocketplus.app/assets/og.jpg?v=04b71509">
+<meta name="twitter:image:alt" content="Pocket+: control your DJI Osmo Pocket from your Mac">
+<meta name="msvalidate.01" content="C37CE93C5CEE85D6A2781B1A0F80D7F6">
+<script>
+  // Cloudflare Web Analytics (çerezsiz). Kendi ziyaretin için her tarayıcıda bir kez ?notrack=1 aç (?track=1 geri alır).
+  (() => {
+    let off = false;
+    try {
+      const q = new URLSearchParams(location.search);
+      if (q.has('notrack')) localStorage.setItem('notrack', '1');
+      if (q.has('track')) localStorage.removeItem('notrack');
+      off = localStorage.getItem('notrack') === '1';
+    } catch (e) {}
+    if (off) return;
+    const s = document.createElement('script');
+    s.type = 'module';
+    s.src = 'https://static.cloudflareinsights.com/beacon.min.js';
+    s.dataset.cfBeacon = '{"token": "16f12da5593d494e828fd44a928bdd1a"}';
+    document.head.appendChild(s);
+  })();
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Stack+Sans+Headline:wght@300;400;500&family=Stack+Sans+Text:wght@200;300;400;500&display=swap">
+<link rel="stylesheet" href="/hero.css?v=50183d3e">
+<link rel="stylesheet" href="/sections.css?v=bae0aaf6">
+<link rel="stylesheet" href="/features.css?v=32341c8f">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Pocket+", "item": "https://pocketplus.app/fr/"}, {"@type": "ListItem", "position": 2, "name": "Fonctionnalités", "item": "https://pocketplus.app/fr/features/"}, {"@type": "ListItem", "position": 3, "name": "OBS", "item": "https://pocketplus.app/fr/features/obs/"}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "VideoObject", "name": "OBS · Pocket+", "description": "Diffusez ou enregistrez votre Osmo Pocket dans OBS pendant que Pocket+ pilote la nacelle, le zoom, le suivi du visage et les scènes depuis le même Mac.", "thumbnailUrl": "https://pocketplus.app/assets/features/pages/obs.jpg", "contentUrl": "https://pocketplus.app/assets/features/pages/obs.mp4", "inLanguage": "fr", "uploadDate": "2026-10-21T00:00:00+03:00"}</script>
+</head>
+<body class="page-ft">
+<header class="nav">
+    <div class="nav-bg" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+    <a class="brand rv" href="/fr/">
+      <span class="fb-icon"><img src="/assets/logo-icon.svg" width="64" height="64" alt=""></span>
+      <span><span translate="no">Pocket+</span></span>
+    </a>
+    <nav class="links rv" aria-label="Principal">
+      <a href="/fr/features/" aria-current="page">Fonctionnalités</a>
+      <a href="/fr/use-cases/">Cas d’usage</a>
+      <a href="/blog/">Blog</a>
+      <a href="/fr/faq/">FAQ</a>
+      <a href="/fr/#pricing">Tarifs</a>
+    </nav>
+    <div class="nav-cta rv">
+      <a class="btn btn-glass btn-sm" href="https://github.com/FerdiCildiz/pocket-plus/releases/latest/download/PocketPlus.zip">Télécharger</a>
+      <a class="btn btn-gold btn-sm hide-m" href="/fr/#pricing">Passer à Pro</a>
+      <button class="burger" id="burger" type="button" aria-label="Menu" aria-expanded="false" aria-controls="mmenu"><img class="ic" style="--s:20px" src="/assets/ui/line.3.horizontal.png" alt=""></button>
+    </div>
+  </header>
+  <div class="mmenu" id="mmenu" hidden>
+    <a href="/fr/features/">Fonctionnalités</a><a href="/fr/use-cases/">Cas d’usage</a><a href="/blog/">Blog</a><a href="/fr/faq/">FAQ</a><a href="/fr/#pricing">Tarifs</a>
+    <a class="btn btn-gold btn-lg" href="/fr/#pricing">Passer à Pro</a>
+  </div>
+<main class="ft-page ft-purple"><div class="hero-bg" aria-hidden="true"></div><section class="fx wrap"><header class="fx-head"><p class="h">Des fonctionnalités puissantes. Un contrôle sans effort.</p><p class="sub">Tout ce qu’il vous faut de votre <span translate="no">DJI Osmo Pocket</span>. Directement sur votre Mac.</p></header><div class="fx-grid"><nav class="fx-nav" aria-label="Features"><p class="fx-group">Nacelle et cadrage</p><a class="glass" href="/fr/features/gimbal-control/"><span class="i" aria-hidden="true" style="--m:url(/assets/fx/ui-move.svg)"></span>Contrôle de la nacelle<span class="go" aria-hidden="true" style="--m:url(/assets/fx/chevron-right.svg)"></span></a><a class="glass" href="/fr/features/face-tracking/"><span class="i" aria-hidden="true" style="--m:url(/assets/fx/user-focus.svg)"></span>Suivi du visage<span class="go" aria-hidden="true" style="--m:url(/assets/fx/chevron-right.svg)"></span></a><a class="glass" href="/fr/features/scenes/"><span class="i" aria-hidden="true" style="--m:url(/assets/fx/ui-scenes.svg)"></span>Scènes<span class="go" aria-hidden="true" style="--m:url(/assets/fx/chevron-right.svg)"></span></a><a class="glass" href="/fr/features/return-last-position/"><span class="i" aria-hidden="true" style="--m:url(/assets/fx/ui-backward.svg)"></span>Dernière position<span class="go" aria-hidden="true" style="--m:url(/assets/fx/chevron-right.svg)"></span></a><p class="fx-group">Image et enregistrement</p><a class="glass" href="/fr/features/auto-framing/"><span class="i" aria-hidden="true" style="--m:url(/assets/fx/frame-corners.svg)"></span>Cadrage automatique<span class="go" aria-hidden="true" style="--m:url(/assets/fx/chevron-right.svg)"></span></a><a class="glass" href="/fr/features/lut/"><span class="i" aria-hidden="true" style="--m:url(/assets/fx/ui-lut.svg)"></span>LUT et couleurs<span class="go" aria-hidden="true" style="--m:url(/assets/fx/chevron-right.svg)"></span></a><a class="glass" href="/fr/features/lens-correction/"><span class="i" aria-hidden="true" style="--m:url(/assets/fx/ui-pano.svg)"></span>Correction grand-angle<span class="go" aria-hidden="true" style="--m:url(/assets/fx/chevron-right.svg)"></span></a><a class="glass" href="/fr/features/auto-mic-switch/"><span class="i" aria-hidden="true" style="--m:url(/assets/fx/microphone.svg)"></span>Micro automatique<span class="go" aria-hidden="true" style="--m:url(/assets/fx/chevron-right.svg)"></span></a><p class="fx-group">Streaming et appels</p><a class="glass" href="/fr/features/obs/" aria-current="page"><span class="i" aria-hidden="true" style="--m:url(/assets/fx/ui-obs.svg)"></span>OBS<span class="go" aria-hidden="true" style="--m:url(/assets/fx/chevron-right.svg)"></span></a><a class="glass" href="/fr/features/google-meet/"><span class="i" aria-hidden="true" style="--m:url(/assets/fx/video-camera.svg)"></span>Google Meet<span class="go" aria-hidden="true" style="--m:url(/assets/fx/chevron-right.svg)"></span></a><a class="glass" href="/fr/features/zoom/"><span class="i" aria-hidden="true" style="--m:url(/assets/fx/ui-person-square.svg)"></span>Zoom<span class="go" aria-hidden="true" style="--m:url(/assets/fx/chevron-right.svg)"></span></a><a class="glass" href="/fr/features/teams/"><span class="i" aria-hidden="true" style="--m:url(/assets/fx/users.svg)"></span>Microsoft Teams<span class="go" aria-hidden="true" style="--m:url(/assets/fx/chevron-right.svg)"></span></a><a class="glass" href="/fr/features/whatsapp/"><span class="i" aria-hidden="true" style="--m:url(/assets/fx/ui-phone-bubble.svg)"></span>WhatsApp<span class="go" aria-hidden="true" style="--m:url(/assets/fx/chevron-right.svg)"></span></a><p class="fx-group">Aperçu et repères</p><a class="glass" href="/fr/features/switch-orientation/"><span class="i" aria-hidden="true" style="--m:url(/assets/fx/ui-rotate.svg)"></span>Horizontal ou vertical<span class="go" aria-hidden="true" style="--m:url(/assets/fx/chevron-right.svg)"></span></a><a class="glass" href="/fr/features/framing-guides/"><span class="i" aria-hidden="true" style="--m:url(/assets/fx/ui-hash.svg)"></span>Repères de cadrage<span class="go" aria-hidden="true" style="--m:url(/assets/fx/chevron-right.svg)"></span></a></nav><article class="fx-body"><h1>OBS<span class="ftag">FREE</span></h1><p>OBS profite d’une excellente caméra, et vous gardez les commandes. Ajoutez la <span translate="no">Pocket</span> comme source vidéo dans OBS, puis utilisez <span translate="no">Pocket+</span> à côté pour orienter la nacelle, zoomer, suivre votre visage ou passer d’un angle de caméra à l’autre pendant que vous diffusez ou enregistrez.</p>
+<figure class="stage" style="background-image:url(/assets/features/pages/obs.jpg)"><video src="/assets/features/pages/obs.mp4" poster="/assets/features/pages/obs.jpg" muted loop playsinline autoplay preload="metadata" aria-label="OBS · Pocket+"></video></figure>
+<h2>Configuration</h2>
+<ol>
+  <li>Connectez la <span translate="no">Pocket</span> en USB-C et choisissez <b>Webcam</b> sur la caméra.</li>
+  <li>Dans OBS, ajoutez un <b>Périphérique de capture vidéo</b> et choisissez la <span translate="no">Pocket</span> (par exemple OsmoPocket3). Pour le son, ajoutez le périphérique audio de la <span translate="no">Pocket</span>.</li>
+  <li>Ouvrez <span translate="no">Pocket+</span>. Les deux apps utilisent la caméra en même temps, et <span translate="no">Pocket+</span> garde son propre aperçu actif.</li>
+</ol>
+<h2>Ce qui apparaît dans OBS</h2>
+<p>OBS reçoit l’image et le son de la caméra elle-même. Tout ce qui déplace physiquement la caméra lui parvient&nbsp;: les mouvements au joystick, le <a href="/fr/features/face-tracking/">suivi du visage</a>, le <a href="/fr/features/auto-framing/">cadrage automatique</a>, les <a href="/fr/features/scenes/">scènes</a> et le zoom de la caméra. Ce que <span translate="no">Pocket+</span> fait par logiciel reste dans <span translate="no">Pocket+</span>&nbsp;: les LUT, la correction grand-angle, les repères et l’image verticale recadrée. Les couleurs peuvent aussi paraître un peu plus pâles que dans l’aperçu de <span translate="no">Pocket+</span>.</p>
+<h2>Bon à savoir</h2>
+<ul>
+  <li><span translate="no">Pocket+</span> n’est pas une caméra virtuelle. Choisissez la <span translate="no">Pocket</span> elle-même dans OBS, pas <span translate="no">Pocket+</span>.</li>
+  <li>La caméra envoie un seul format à la fois. Si OBS demande du 1080p, <span translate="no">Pocket+</span> reçoit aussi du 1080p.</li>
+  <li>Les raccourcis comme <kbd>⌘T</kbd> ou <kbd>⌥1</kbd> fonctionnent quand <span translate="no">Pocket+</span> est l’app active. Gardez sa fenêtre visible à côté d’OBS&nbsp;: elle reste au premier plan par défaut.</li>
+</ul>
+<p>Utiliser la <span translate="no">Pocket</span> dans OBS ne nécessite pas Pro. Chaque fonctionnalité de <span translate="no">Pocket+</span> conserve son propre statut, gratuit ou Pro.</p>
+<div class="fx-next"><a href="/fr/features/auto-mic-switch/">← Micro automatique</a><a href="/fr/features/google-meet/">Google Meet →</a></div></article></div></section></main>
+<section class="sec sec-price" id="pricing">
+  <div class="sec-head center">
+    <h2>Commencez gratuitement. Passez à Pro quand vous voulez.</h2>
+    <p>Profitez gratuitement des fonctions essentielles. Pour la 4K, les scènes et les commandes avancées, choisissez Pro en abonnement annuel ou en achat définitif.</p>
+  </div>
+  <div class="plans">
+    <article class="plan plan-free">
+      <header><h3><span translate="no">Pocket+</span> Gratuit</h3><b>$0</b></header>
+      <ul class="ticks">
+        <li>Aperçu en direct, photos et vidéo jusqu’en 1080p</li>
+        <li>Orientation, recentrage et retournement de la nacelle</li>
+        <li>Zoom et raccourcis clavier</li>
+        <li>Suivi du visage</li>
+        <li>Grille et ligne d’horizon</li>
+        <li>DJI Mic et indicateurs audio, batterie et stockage</li>
+      </ul>
+      <a class="btn btn-glass btn-lg btn-block" href="https://github.com/FerdiCildiz/pocket-plus/releases/latest/download/PocketPlus.zip">Télécharger gratuitement</a>
+    </article>
+    <article class="plan plan-pro">
+      <header><h3><span translate="no">Pocket+</span> Pro</h3><div class="price"><b>$39.99</b><small>Prix de lancement</small></div></header>
+      <ul class="ticks">
+        <li>Toutes les fonctions gratuites</li>
+        <li>Enregistrement vidéo jusqu’en 4K</li>
+        <li>Rendus couleur et LUT .cube/PNG personnalisées</li>
+        <li>Cadrage automatique</li>
+        <li>Jusqu’à 9 scènes avec raccourcis</li>
+        <li>Orientation par glisser-déposer et zoom à la molette</li>
+        <li>Repère de format vertical 9:16</li>
+        <li>Correction grand-angle</li>
+      </ul>
+      <div class="buy">
+        <a class="btn btn-gold btn-lg btn-block" href="https://buy.polar.sh/polar_cl_exSJRc2Q9kyqAzbR8Jr162wx4JMVpTfZq0gqe2kfyPu" target="_blank" rel="noopener">Acheter Pro à vie <i>·</i> $39.99</a>
+        <a class="btn btn-glass btn-teal btn-lg btn-block" href="https://buy.polar.sh/polar_cl_yCHcBSKuanaZnRTX9UhI2eb80silnrscE8Upm2MAntK" target="_blank" rel="noopener">Choisir l’abonnement annuel <i>·</i> $14.99</a>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- ================= Download CTA ================= -->
+<section class="sec sec-cta" id="download">
+  <div class="cta-card">
+    <div class="cta-copy">
+      <h2>Prêt pour votre prochain tournage ?</h2>
+      <p>Pilotez votre <span translate="no">DJI Osmo Pocket</span> depuis votre Mac. <span translate="no">Pocket+</span> est gratuit et prêt à l’emploi en quelques minutes.</p>
+      <div class="cta-btns">
+        <a class="btn btn-glass btn-lg" href="https://github.com/FerdiCildiz/pocket-plus/releases/latest/download/PocketPlus.zip">Télécharger gratuitement sur Mac</a>
+        <a class="btn btn-gold btn-lg" href="/fr/#pricing">Passer à Pro</a>
+      </div>
+      <div class="cta-links">
+        <a href="https://github.com/FerdiCildiz/pocket-plus" target="_blank" rel="noopener">Ajouter une étoile sur GitHub ↗</a>
+        <a href="https://www.reddit.com/r/osmopocket/s/lvCdD2MSma" target="_blank" rel="noopener">Soutenir sur Reddit ↗</a>
+      </div>
+    </div>
+    <img class="cta-cam" src="/assets/img/pocket-cta.png" width="253" height="460" alt="">
+    <img class="pl p1" src="/assets/img/plus1.svg" alt=""><img class="pl p2" src="/assets/img/plus2.svg" alt=""><img class="pl p3" src="/assets/img/plus3.svg" alt=""><img class="pl p4" src="/assets/img/plus4.svg" alt=""><img class="pl p5" src="/assets/img/plus5.svg" alt="">
+  </div>
+</section>
+
+<!-- ================= Footer ================= -->
+<footer class="foot">
+  <div class="foot-in">
+    <div class="foot-top">
+      <a class="foot-brand" href="/fr/"><span class="fb-icon"><img src="/assets/logo-icon.svg" width="60" height="60" alt=""></span><span><span translate="no">Pocket+</span></span></a>
+      <nav class="foot-links" aria-label="Footer">
+        <a href="/fr/features/">Fonctionnalités</a><a href="/fr/use-cases/">Cas d’usage</a><a href="/blog/">Blog</a><a href="/fr/faq/">FAQ</a><a href="/fr/#pricing">Tarifs</a><a href="/privacy/">Confidentialité</a><a href="/terms/">Terms</a><a href="https://www.linkedin.com/in/ferdicildiz" target="_blank" rel="noopener">LinkedIn</a>
+      </nav>
+    </div>
+    <div class="foot-mid">
+      <details class="lang"><summary aria-label="Langue"><span>Français</span><img src="/assets/icons/chevron.down.png" alt=""></summary><div class="menu"><a href="/features/obs/" lang="en" hreflang="en">English</a><a href="/tr/features/obs/" lang="tr" hreflang="tr">Türkçe</a><a href="/de/features/obs/" lang="de" hreflang="de">Deutsch</a><a href="/fr/features/obs/" lang="fr" hreflang="fr" aria-current="page">Français</a><a href="/es/features/obs/" lang="es" hreflang="es">Español</a><a href="/pt/features/obs/" lang="pt-BR" hreflang="pt-BR">Português</a><a href="/ja/features/obs/" lang="ja" hreflang="ja">日本語</a><a href="/zh/features/obs/" lang="zh-Hans" hreflang="zh-Hans">简体中文</a></div></details>
+      <a class="ig" href="https://instagram.com/pocketplus.app" target="_blank" rel="noopener">Suivre sur Instagram <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="#fff" stroke-width="1.5"><rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r=".9" fill="#fff" stroke="none"/></svg></a>
+    </div>
+    <div class="foot-bot">
+      <span>©Copyright 2026 <span translate="no">Pocket+</span></span>
+      <p><span translate="no">Pocket+</span> est un projet indépendant, non affilié à DJI, ni approuvé ou sponsorisé par DJI. DJI, Osmo et <span translate="no">Osmo Pocket</span> sont des marques commerciales de SZ DJI Technology Co., Ltd.</p>
+    </div>
+  </div>
+</footer>
+
+<script src="/hero.js"></script>
+<script src="/sections.js"></script>
+
+</body>
+</html>
