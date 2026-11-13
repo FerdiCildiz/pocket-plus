@@ -1,0 +1,298 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#000000">
+<title>How to use the DJI Osmo Pocket 3 as a webcam on a Mac · Pocket+</title>
+<meta name="description" content="Use the Osmo Pocket 3 as a Mac webcam over USB-C: the right mode, the resolutions that work, mic tips and fixes for a black screen.">
+<link rel="canonical" href="https://pocketplus.app/blog/osmo-pocket-3-webcam-mac/">
+<link rel="me" href="https://mastodon.social/@pocketplus">
+<link rel="icon" href="/assets/favicon.png" type="image/png">
+<link rel="apple-touch-icon" href="/assets/icon.png">
+<meta property="og:type" content="article">
+<meta property="og:title" content="How to use the DJI Osmo Pocket 3 as a webcam on a Mac · Pocket+">
+<meta property="og:description" content="Use the Osmo Pocket 3 as a Mac webcam over USB-C: the right mode, the resolutions that work, mic tips and fixes for a black screen.">
+<meta property="og:url" content="https://pocketplus.app/blog/osmo-pocket-3-webcam-mac/">
+<meta property="og:image" content="https://pocketplus.app/assets/og.jpg?v=04b71509">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Pocket+: control your DJI Osmo Pocket from your Mac">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="How to use the DJI Osmo Pocket 3 as a webcam on a Mac · Pocket+">
+<meta name="twitter:description" content="Use the Osmo Pocket 3 as a Mac webcam over USB-C: the right mode, the resolutions that work, mic tips and fixes for a black screen.">
+<meta name="twitter:image" content="https://pocketplus.app/assets/og.jpg?v=04b71509">
+<meta name="twitter:image:alt" content="Pocket+: control your DJI Osmo Pocket from your Mac">
+<meta name="msvalidate.01" content="C37CE93C5CEE85D6A2781B1A0F80D7F6">
+<script>
+  // Cloudflare Web Analytics (çerezsiz). Kendi ziyaretin için her tarayıcıda bir kez ?notrack=1 aç (?track=1 geri alır).
+  (() => {
+    let off = false;
+    try {
+      const q = new URLSearchParams(location.search);
+      if (q.has('notrack')) localStorage.setItem('notrack', '1');
+      if (q.has('track')) localStorage.removeItem('notrack');
+      off = localStorage.getItem('notrack') === '1';
+    } catch (e) {}
+    if (off) return;
+    const s = document.createElement('script');
+    s.type = 'module';
+    s.src = 'https://static.cloudflareinsights.com/beacon.min.js';
+    s.dataset.cfBeacon = '{"token": "16f12da5593d494e828fd44a928bdd1a"}';
+    document.head.appendChild(s);
+    // Umami Cloud (AB bölgesi, çerezsiz): olaylar için data-umami-event (sections.js satın al/indir bağlantılarına ekler)
+    const u = document.createElement('script');
+    u.defer = true;
+    u.src = 'https://cloud.umami.is/script.js';
+    u.dataset.websiteId = '388f8fe3-fb9c-4250-8e76-82636bcd8735';
+    document.head.appendChild(u);
+  })();
+</script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('consent', 'default', {ad_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied', analytics_storage: 'denied', wait_for_update: 500});
+  (() => {
+    const T = {"en": ["We'd like to use Google Analytics to understand how the site is used. It sets cookies. The app itself never tracks you.", "Accept", "Decline", "Privacy"], "tr": ["Siteyi nasıl kullandığınızı anlamak için Google Analytics kullanmak istiyoruz. Çerez bırakır. Uygulamanın kendisi sizi hiç izlemez.", "Kabul et", "Reddet", "Gizlilik"], "de": ["Wir möchten Google Analytics nutzen, um zu verstehen, wie die Website genutzt wird. Dabei werden Cookies gesetzt. Die App selbst trackt Sie nie.", "Akzeptieren", "Ablehnen", "Datenschutz"], "fr": ["Nous aimerions utiliser Google Analytics pour comprendre l'usage du site. Il dépose des cookies. L'app elle-même ne vous suit jamais.", "Accepter", "Refuser", "Confidentialité"], "es": ["Nos gustaría usar Google Analytics para entender cómo se usa el sitio. Instala cookies. La app en sí nunca te rastrea.", "Aceptar", "Rechazar", "Privacidad"], "pt": ["Gostaríamos de usar o Google Analytics para entender como o site é usado. Ele define cookies. O app em si nunca rastreia você.", "Aceitar", "Recusar", "Privacidade"], "ja": ["サイトの利用状況を把握するためGoogleアナリティクスを使いたいと考えています。Cookieを使用します。アプリ自体があなたを追跡することはありません。", "同意する", "拒否する", "プライバシー"], "zh": ["我们希望使用 Google Analytics 来了解网站的使用情况。它会设置 Cookie。应用本身绝不会追踪你。", "接受", "拒绝", "隐私"]};
+    const lang = (document.documentElement.lang || 'en').toLowerCase().split('-')[0];
+    const t = T[lang] || T.en;
+    let off = false, saved = null;
+    try { off = localStorage.getItem('notrack') === '1'; saved = localStorage.getItem('consent'); } catch (e) {}
+    if (off) return;
+    const load = () => {
+      gtag('consent', 'update', {analytics_storage: 'granted'});
+      window.dataLayer.push({'gtm.start': Date.now(), event: 'gtm.js'});
+      const s = document.createElement('script');
+      s.async = true;
+      s.src = 'https://www.googletagmanager.com/gtm.js?id=GTM-KKDFBTWK';
+      document.head.appendChild(s);
+    };
+    if (saved === 'granted') { load(); return; }
+    if (saved === 'denied') return;
+    const show = () => {
+      const b = document.createElement('div');
+      b.setAttribute('role', 'dialog');
+      b.setAttribute('aria-label', 'Cookies');
+      b.style.cssText = 'position:fixed;left:16px;right:16px;bottom:16px;z-index:2147483000;max-width:560px;margin:0 auto;padding:16px 18px;border-radius:16px;background:rgba(20,16,32,.92);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);border:1px solid rgba(255,255,255,.14);color:#fff;font:14px/1.45 system-ui,sans-serif;box-shadow:0 12px 40px rgba(0,0,0,.4)';
+      const p = document.createElement('p');
+      p.style.cssText = 'margin:0 0 12px';
+      p.textContent = t[0] + ' ';
+      const a = document.createElement('a');
+      a.href = (T[lang] && lang !== 'en' ? '/' + lang : '') + '/privacy/';
+      a.textContent = t[3];
+      a.style.cssText = 'color:#fff;text-decoration:underline';
+      p.appendChild(a);
+      const row = document.createElement('div');
+      row.style.cssText = 'display:flex;gap:10px';
+      const mk = (label, grant) => {
+        const x = document.createElement('button');
+        x.type = 'button';
+        x.textContent = label;
+        x.style.cssText = 'flex:1;padding:10px 14px;border-radius:10px;border:1px solid rgba(255,255,255,.25);background:rgba(255,255,255,.1);color:#fff;font:600 14px system-ui,sans-serif;cursor:pointer';
+        x.onclick = () => {
+          try { localStorage.setItem('consent', grant ? 'granted' : 'denied'); } catch (e) {}
+          b.remove();
+          if (grant) load();
+        };
+        return x;
+      };
+      row.append(mk(t[2], false), mk(t[1], true));
+      b.append(p, row);
+      document.body.appendChild(b);
+    };
+    if (document.body) show(); else document.addEventListener('DOMContentLoaded', show);
+  })();
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Stack+Sans+Headline:wght@300;400;500&family=Stack+Sans+Text:wght@200;300;400;500&display=swap">
+<link rel="stylesheet" href="/hero.css?v=49ed6591">
+<link rel="stylesheet" href="/sections.css?v=fefd22e0">
+<link rel="stylesheet" href="/features.css?v=32341c8f">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "How to use the DJI Osmo Pocket 3 as a webcam on a Mac", "inLanguage": "en", "description": "Use the Osmo Pocket 3 as a Mac webcam over USB-C: the right mode, the resolutions that work, mic tips and fixes for a black screen.", "datePublished": "2026-10-21", "dateModified": "2026-11-08", "author": {"@type": "Person", "name": "Ferdi Cildiz"}, "mainEntityOfPage": "https://pocketplus.app/blog/osmo-pocket-3-webcam-mac/", "image": "https://pocketplus.app/assets/cover.jpg"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Pocket+", "item": "https://pocketplus.app/"}, {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://pocketplus.app/blog/"}, {"@type": "ListItem", "position": 3, "name": "How to use the DJI Osmo Pocket 3 as a webcam on a Mac", "item": "https://pocketplus.app/blog/osmo-pocket-3-webcam-mac/"}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "inLanguage": "en", "url": "https://pocketplus.app/blog/osmo-pocket-3-webcam-mac/", "mainEntity": [{"@type": "Question", "name": "Can I use the DJI Osmo Pocket 3 as a webcam on a Mac?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Plug it into the Mac with a USB-C cable that carries data and choose Webcam on the camera's screen. macOS treats the Pocket as a standard USB webcam (UVC), so FaceTime, Zoom, Google Meet, Teams and OBS can use it."}}, {"@type": "Question", "name": "Do I need a driver or extra software?", "acceptedAnswer": {"@type": "Answer", "text": "No. The basic picture and sound work without installing anything. You only need an app if you also want to steer the gimbal or zoom from the Mac, because macOS has no buttons for them."}}, {"@type": "Question", "name": "Which resolution and frame rate work over USB?", "acceptedAnswer": {"@type": "Answer", "text": "4K and 1080p at 24, 25 or 30 fps work. 4K at 48, 50 or 60 fps is listed but gives no picture, because it needs more bandwidth than USB provides. If you get a black frame, drop to 30 fps or below."}}]}</script>
+</head>
+<body class="page-ft">
+<header class="nav">
+    <div class="nav-bg" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+    <a class="brand rv" href="/">
+      <span class="fb-icon"><img src="/assets/logo-icon.svg" width="64" height="64" alt=""></span>
+      <span><span translate="no">Pocket+</span></span>
+    </a>
+    <nav class="links rv" aria-label="Main">
+      <a href="/features/" aria-current="page">Features</a>
+      <a href="/use-cases/">Use Cases</a>
+      <a href="/blog/">Blog</a>
+      <a href="/faq/">FAQ</a>
+      <a href="/#pricing">Pricing</a>
+    </nav>
+    <div class="nav-cta rv">
+      <a class="btn btn-glass btn-sm" href="https://github.com/FerdiCildiz/pocket-plus/releases/latest/download/PocketPlus.zip">Download</a>
+      <a class="btn btn-gold btn-sm hide-m" href="/#pricing">Get Pro</a>
+      <button class="burger" id="burger" type="button" aria-label="Menu" aria-expanded="false" aria-controls="mmenu"><img class="ic" style="--s:20px" src="/assets/ui/line.3.horizontal.png" alt=""></button>
+    </div>
+  </header>
+  <div class="mmenu" id="mmenu" hidden>
+    <a href="/features/">Features</a><a href="/use-cases/">Use Cases</a><a href="/blog/">Blog</a><a href="/faq/">FAQ</a><a href="/#pricing">Pricing</a>
+    <a class="btn btn-gold btn-lg" href="/#pricing">Get Pro Version</a>
+  </div>
+<main class="ft-page ft-purple"><div class="hero-bg" aria-hidden="true"></div><section class="fx fx-post wrap"><article class="post"><p class="meta"><a href="/blog/">Blog</a> · <time datetime="2026-10-21">October 21, 2026</time></p><h1>How to use the <span translate="no">DJI Osmo Pocket</span>&nbsp;3<br> as a webcam on a&nbsp;Mac</h1><figure class="cover"><img src="/assets/cover.jpg" width="1920" height="1280" alt="How to use the DJI Osmo Pocket 3 as a webcam on a Mac"></figure><div class="get"><a class="btn btn-gold btn-lg" href="https://github.com/FerdiCildiz/pocket-plus/releases/latest/download/PocketPlus.zip"><span class="i" aria-hidden="true" style="--m:url(/assets/fx/apple-logo.svg)"></span>Download <span translate="no">Pocket+</span></a><span>Free for <span translate="no">DJI Osmo Pocket 2</span>, 3, 4 and 4P · macOS 14 or later</span></div><p class="lede">The <span translate="no">Pocket 3</span> makes a far better webcam than the one built into your Mac: a 1-inch sensor, a real gimbal and a mic that beats most laptops. It also works without any driver. There are just a few things nobody tells you, like which resolutions actually deliver a picture and why it sometimes shows up but stays black.</p>
+
+
+<h2>What you need</h2>
+<ul>
+  <li>A <span translate="no">DJI Osmo Pocket 3</span> with recent firmware.</li>
+  <li>A USB-C cable that carries data. Some charging-only cables won't work; the one in the box does.</li>
+  <li>A Mac. macOS treats the <span translate="no">Pocket</span> as a standard USB webcam (UVC), so there's nothing to install for the basic picture and sound.</li>
+  <li>Something to hold the camera still: a small tripod or the handle on a desk stand.</li>
+</ul>
+
+<h2>Set it up in four steps</h2>
+<ol>
+  <li><b>Turn the <span translate="no">Pocket</span> on</b> and plug it into your Mac with the USB-C cable.</li>
+  <li><b>Choose Webcam on the camera's screen.</b> When you connect it, the <span translate="no">Pocket</span> asks which USB mode to use. This is the step that matters: if you skip it or pick the storage mode, the Mac never sees a camera at all.</li>
+  <li><b>Open the app you want to use</b>: FaceTime, Zoom, Google Meet in your browser, Teams, OBS or QuickTime.</li>
+  <li><b>Pick the <span translate="no">Pocket</span> in that app's camera and microphone menus.</b> It shows up as <b>OsmoPocket3</b>, next to your Mac's built-in camera. For the microphone, choose the <span translate="no">Pocket</span>'s audio device too if you want the camera's mic.</li>
+</ol>
+
+
+<h2>Which resolutions work</h2>
+<p>The <span translate="no">Pocket</span> offers a long list of formats over USB, but not all of them deliver a picture. Here is what we measured on a <span translate="no">Pocket 3</span> while building <span translate="no">Pocket+</span>:</p>
+<table>
+  <thead><tr><th>Mode</th><th>Works over USB?</th></tr></thead>
+  <tbody>
+    <tr><td>4K at 24, 25 or 30 fps</td><td>Yes</td></tr>
+    <tr><td>1080p at 24, 25 or 30 fps</td><td>Yes</td></tr>
+    <tr><td>4K at 48, 50 or 60 fps</td><td>Listed, but no picture: they need more bandwidth than the USB connection gives</td></tr>
+    <tr><td>1080p at 60 fps</td><td>Not offered</td></tr>
+  </tbody>
+</table>
+<p>So if an app lets you choose and you get a black frame, drop to 30 fps or below. For calls, 1080p at 30 fps is plenty. For recording, 4K at 30 fps looks noticeably sharper.</p>
+<p>One more thing: some apps start the camera in its default format, which can be a vertical 1080×1920 picture. If your image suddenly looks tall and narrow, change the resolution in the app's video settings.</p>
+
+<h2>Sound: camera mic and DJI Mic</h2>
+<p>The <span translate="no">Pocket</span> also shows up as a microphone. Its built-in mics are stereo and sound clearly better than a MacBook's.</p>
+<p>If you pair a <b>DJI Mic transmitter directly to the <span translate="no">Pocket</span></b>, the Mac doesn't get a new microphone. Instead, the camera sends the DJI Mic's audio through its own USB audio device. In our tests the signal became mono (left and right identical), and it still picked up the room where the transmitter was, even when the camera was elsewhere. In other words: keep the <span translate="no">Pocket</span> selected as the mic in your app, and the DJI Mic simply takes over.</p>
+<p>If you plug the DJI Mic's <b>receiver into the Mac</b> instead, it appears as a separate microphone that you pick yourself.</p>
+
+<h2>What you can't do from the Mac</h2>
+<p>A few camera settings are simply not available over USB:</p>
+<ul>
+  <li><b>Exposure, brightness and white balance</b> can't be changed from the Mac. The camera exposes no controls for them. Set them on the camera, or correct the color afterwards.</li>
+  <li><b>D-Log and HLG</b> can't be switched over USB. The webcam picture uses the normal color profile anyway.</li>
+  <li><b>Recording to the camera's card</b> can't be started from the Mac. The <span translate="no">Pocket</span> only reports its status over Bluetooth; it doesn't accept commands.</li>
+</ul>
+<p>What the camera <i>does</i> accept over USB is <b>pan, tilt and zoom</b>. These are standard webcam controls, so the Mac could steer the gimbal, but macOS itself has no buttons for them. That's the main reason <span translate="no">Pocket+</span> exists.</p>
+
+<h2>When there's no picture</h2>
+<h3>The camera isn't in the list at all</h3>
+<p>The <span translate="no">Pocket</span> is almost certainly not in Webcam mode. Unplug it, plug it back in and choose <b>Webcam</b> when the camera asks. To check whether the Mac sees it, open Terminal and run <code>system_profiler SPCameraDataType</code>. If the <span translate="no">Pocket</span> isn't listed there, the Mac doesn't see it as a camera.</p>
+<h3>It's listed, but the picture stays black</h3>
+<p>The <span translate="no">Pocket</span>'s webcam mode sometimes gets stuck: the Mac sees the camera, but no frames arrive. Unplug the cable, wait a couple of seconds, plug it in again and choose Webcam. Also try a resolution at 30 fps or below.</p>
+<h3>Tracking in an app keeps stopping</h3>
+<p>Check whether ActiveTrack, the camera's own subject tracking, is on. It's switched on the camera and can't be turned off from the Mac, and two things steering one gimbal fight each other. Turn it off on the camera if an app does the tracking.</p>
+
+
+<h2>Quick answers</h2>
+<h3>Can I use the <span translate="no">DJI Osmo Pocket 3</span> as a webcam on a Mac?</h3>
+<p>Yes. Plug it into the Mac with a USB-C cable that carries data and choose Webcam on the camera's screen. macOS treats the <span translate="no">Pocket</span> as a standard USB webcam (UVC), so FaceTime, Zoom, Google Meet, Teams and OBS can use it.</p>
+<h3>Do I need a driver or extra software?</h3>
+<p>No. The basic picture and sound work without installing anything. You only need an app if you also want to steer the gimbal or zoom from the Mac, because macOS has no buttons for them.</p>
+<h3>Which resolution and frame rate work over USB?</h3>
+<p>4K and 1080p at 24, 25 or 30 fps work. 4K at 48, 50 or 60 fps is listed but gives no picture, because it needs more bandwidth than USB provides. If you get a black frame, drop to 30 fps or below.</p>
+
+<h2>Getting more out of it</h2>
+<p>Out of the box, the <span translate="no">Pocket</span> works as a good fixed webcam. To control it from the Mac, you need an app that talks to the gimbal. That's what we built <span translate="no">Pocket+</span> for:</p>
+<ul>
+  <li>Drag the picture to aim the gimbal, and scroll to zoom.</li>
+  <li>Save camera angles as scenes and switch between them with shortcuts.</li>
+  <li>Use face tracking and auto framing.</li>
+  <li>Record straight to the Mac, with LUTs.</li>
+</ul>
+<p>The basics are free. <span translate="no">Pocket+</span> is a camera app, not a virtual webcam: for calls, keep using the <span translate="no">Pocket</span> directly in Zoom or Meet as described above.</p>
+
+<div class="cta"><p><b><span translate="no">Pocket+</span></b> is a free Mac app for the <span translate="no">DJI Osmo Pocket 2</span>, 3, 4 and 4P: aim the gimbal, track your face, switch scenes and record to your Mac.</p><a class="btn btn-gold btn-lg" href="https://github.com/FerdiCildiz/pocket-plus/releases/latest/download/PocketPlus.zip"><span class="i" aria-hidden="true" style="--m:url(/assets/fx/apple-logo.svg)"></span>Download <span translate="no">Pocket+</span></a></div></article></section></main>
+<section class="sec sec-price" id="pricing">
+  <div class="sec-head center">
+    <h2>Start free. Go further with Pro.</h2>
+    <p>Everything you need to get started, completely free. Unlock more creative possibilities with a one-time upgrade or a yearly plan. No surprises.</p>
+  </div>
+  <div class="plans">
+    <article class="plan plan-free">
+      <header><h3><span translate="no">Pocket+</span> Free</h3><b>$0</b></header>
+      <ul class="ticks">
+        <li>Live preview, photos &amp; 1080p recording</li>
+        <li>Gimbal control, center &amp; flip</li>
+        <li>Zoom controls &amp; shortcuts</li>
+        <li>Smart face tracking</li>
+        <li>Grid &amp; horizon guides</li>
+        <li>DJI Mic, audio, battery &amp; storage monitoring</li>
+      </ul>
+      <a class="btn btn-glass btn-lg btn-block" href="https://github.com/FerdiCildiz/pocket-plus/releases/latest/download/PocketPlus.zip">Download Free Version</a>
+    </article>
+    <article class="plan plan-pro">
+      <header><h3><span translate="no">Pocket+</span> Pro</h3><div class="price"><b>$39.99</b><small>Special launch price</small></div></header>
+      <ul class="ticks">
+        <li>Everything in Free</li>
+        <li>Recording above 1080p, up to 4K</li>
+        <li>Color looks: built-in, .cube and PNG LUTs</li>
+        <li>Auto framing</li>
+        <li>Scenes. Switch with keyboard shortcuts.</li>
+        <li>Drag, and scroll on the preview to aim and zoom</li>
+        <li>9:16 vertical video guide</li>
+        <li>Wide-angle lens correction</li>
+      </ul>
+      <div class="buy">
+        <a class="btn btn-gold btn-lg btn-block" href="https://buy.polar.sh/polar_cl_exSJRc2Q9kyqAzbR8Jr162wx4JMVpTfZq0gqe2kfyPu" target="_blank" rel="noopener">Get Lifetime Pro <i>·</i> $39.99</a>
+        <a class="btn btn-glass btn-teal btn-lg btn-block" href="https://buy.polar.sh/polar_cl_yCHcBSKuanaZnRTX9UhI2eb80silnrscE8Upm2MAntK" target="_blank" rel="noopener">Get Yearly <i>·</i> $14.99</a>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- ================= Download CTA ================= -->
+<section class="sec sec-cta" id="download">
+  <div class="cta-card">
+    <div class="cta-copy">
+      <h2>Download <span translate="no">Pocket+</span> Now!</h2>
+      <p>Take full control of your <span translate="no">DJI Osmo Pocket</span> from your Mac. Download for free and start creating in minutes.</p>
+      <div class="cta-btns">
+        <a class="btn btn-glass btn-lg" href="https://github.com/FerdiCildiz/pocket-plus/releases/latest/download/PocketPlus.zip">Download for Mac</a>
+        <a class="btn btn-gold btn-lg" href="/#pricing">Get Pro Version</a>
+      </div>
+      <div class="cta-links">
+        <a href="https://github.com/FerdiCildiz/pocket-plus" target="_blank" rel="noopener">Star on GitHub ↗</a>
+        <a href="https://www.reddit.com/r/osmopocket/s/lvCdD2MSma" target="_blank" rel="noopener">Upvote on Reddit /osmopocket ↗</a>
+      </div>
+    </div>
+    <img class="cta-cam" src="/assets/img/pocket-cta.png" width="253" height="460" alt="">
+    <img class="pl p1" src="/assets/img/plus1.svg" alt=""><img class="pl p2" src="/assets/img/plus2.svg" alt=""><img class="pl p3" src="/assets/img/plus3.svg" alt=""><img class="pl p4" src="/assets/img/plus4.svg" alt=""><img class="pl p5" src="/assets/img/plus5.svg" alt="">
+  </div>
+</section>
+
+<!-- ================= Footer ================= -->
+<footer class="foot">
+  <div class="foot-in">
+    <div class="foot-top">
+      <a class="foot-brand" href="/"><span class="fb-icon"><img src="/assets/logo-icon.svg" width="60" height="60" alt=""></span><span><span translate="no">Pocket+</span></span></a>
+      <nav class="foot-links" aria-label="Footer">
+        <a href="/features/">Features</a><a href="/use-cases/">Use Cases</a><a href="/blog/">Blog</a><a href="/faq/">FAQ</a><a href="/#pricing">Pricing</a><a href="/privacy/">Privacy</a><a href="/terms/">Terms</a><a href="https://www.linkedin.com/in/ferdicildiz" target="_blank" rel="noopener">LinkedIn</a>
+      </nav>
+    </div>
+    <div class="foot-mid">
+      <details class="lang"><summary aria-label="Language"><span>English</span><img src="/assets/icons/chevron.down.png" alt=""></summary><div class="menu"><a href="/blog/osmo-pocket-3-webcam-mac/" lang="en" hreflang="en" aria-current="page">English</a><a href="/tr/" lang="tr" hreflang="tr">Türkçe</a><a href="/de/" lang="de" hreflang="de">Deutsch</a><a href="/fr/" lang="fr" hreflang="fr">Français</a><a href="/es/" lang="es" hreflang="es">Español</a><a href="/pt/" lang="pt-BR" hreflang="pt-BR">Português</a><a href="/ja/" lang="ja" hreflang="ja">日本語</a><a href="/zh/" lang="zh-Hans" hreflang="zh-Hans">简体中文</a></div></details>
+      <a class="ig" href="https://instagram.com/pocketplus.app" target="_blank" rel="noopener">Follow on Instagram <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="#fff" stroke-width="1.5"><rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r=".9" fill="#fff" stroke="none"/></svg></a>
+    </div>
+    <div class="foot-bot">
+      <span>©Copyright 2026 <span translate="no">Pocket+</span></span>
+      <p><span translate="no">Pocket+</span> is an independent project and is not affiliated with, endorsed by or sponsored by DJI. DJI, Osmo and <span translate="no">Osmo Pocket</span> are trademarks of SZ DJI Technology Co., Ltd.</p>
+    </div>
+  </div>
+</footer>
+
+<script src="/hero.js"></script>
+<script src="/sections.js"></script>
+
+<a class="ph-fixed" href="https://www.producthunt.com/products/pocket-7?embed=true&amp;utm_source=badge-featured&amp;utm_medium=badge&amp;utm_campaign=badge-pocket-11" target="_blank" rel="noopener noreferrer"><img alt="Pocket+ - DJI Osmo Pocket made more capable for content creators. | Product Hunt" width="250" height="54" src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=1314620&amp;theme=light&amp;t=1794521260085"></a><style>.ph-fixed{position:fixed;right:20px;bottom:20px;z-index:50;line-height:0;filter:drop-shadow(0 4px 14px rgba(0,0,0,.35))}.ph-fixed img{display:block;width:250px;height:54px}@media(max-width:640px){.ph-fixed{right:10px;bottom:10px}.ph-fixed img{width:175px;height:auto}}</style></body>
+</html>

@@ -1,0 +1,231 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#000000">
+<title>FAQ Pocket+ : DJI Osmo Pocket sur Mac</title>
+<meta name="description" content="Réponses sur l’usage d’une DJI Osmo Pocket avec un Mac : caméras compatibles, installation, nacelle, suivi du visage, enregistrement, audio, Pro, OBS et Meet.">
+<link rel="canonical" href="https://pocketplus.app/fr/faq/">
+<link rel="me" href="https://mastodon.social/@pocketplus">
+<link rel="alternate" hreflang="en" href="https://pocketplus.app/faq/">
+<link rel="alternate" hreflang="tr" href="https://pocketplus.app/tr/faq/">
+<link rel="alternate" hreflang="de" href="https://pocketplus.app/de/faq/">
+<link rel="alternate" hreflang="fr" href="https://pocketplus.app/fr/faq/">
+<link rel="alternate" hreflang="es" href="https://pocketplus.app/es/faq/">
+<link rel="alternate" hreflang="pt" href="https://pocketplus.app/pt/faq/">
+<link rel="alternate" hreflang="ja" href="https://pocketplus.app/ja/faq/">
+<link rel="alternate" hreflang="zh-Hans" href="https://pocketplus.app/zh/faq/">
+<link rel="alternate" hreflang="x-default" href="https://pocketplus.app/faq/">
+<link rel="icon" href="/assets/favicon.png" type="image/png">
+<link rel="apple-touch-icon" href="/assets/icon.png">
+<meta property="og:type" content="website">
+<meta property="og:title" content="FAQ Pocket+ : DJI Osmo Pocket sur Mac">
+<meta property="og:description" content="Réponses sur l’usage d’une DJI Osmo Pocket avec un Mac : caméras compatibles, installation, nacelle, suivi du visage, enregistrement, audio, Pro, OBS et Meet.">
+<meta property="og:url" content="https://pocketplus.app/fr/faq/">
+<meta property="og:image" content="https://pocketplus.app/assets/og.jpg?v=04b71509">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Pocket+: control your DJI Osmo Pocket from your Mac">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="FAQ Pocket+ : DJI Osmo Pocket sur Mac">
+<meta name="twitter:description" content="Réponses sur l’usage d’une DJI Osmo Pocket avec un Mac : caméras compatibles, installation, nacelle, suivi du visage, enregistrement, audio, Pro, OBS et Meet.">
+<meta name="twitter:image" content="https://pocketplus.app/assets/og.jpg?v=04b71509">
+<meta name="twitter:image:alt" content="Pocket+: control your DJI Osmo Pocket from your Mac">
+<meta name="msvalidate.01" content="C37CE93C5CEE85D6A2781B1A0F80D7F6">
+<script>
+  // Cloudflare Web Analytics (çerezsiz). Kendi ziyaretin için her tarayıcıda bir kez ?notrack=1 aç (?track=1 geri alır).
+  (() => {
+    let off = false;
+    try {
+      const q = new URLSearchParams(location.search);
+      if (q.has('notrack')) localStorage.setItem('notrack', '1');
+      if (q.has('track')) localStorage.removeItem('notrack');
+      off = localStorage.getItem('notrack') === '1';
+    } catch (e) {}
+    if (off) return;
+    const s = document.createElement('script');
+    s.type = 'module';
+    s.src = 'https://static.cloudflareinsights.com/beacon.min.js';
+    s.dataset.cfBeacon = '{"token": "16f12da5593d494e828fd44a928bdd1a"}';
+    document.head.appendChild(s);
+    // Umami Cloud (AB bölgesi, çerezsiz): olaylar için data-umami-event (sections.js satın al/indir bağlantılarına ekler)
+    const u = document.createElement('script');
+    u.defer = true;
+    u.src = 'https://cloud.umami.is/script.js';
+    u.dataset.websiteId = '388f8fe3-fb9c-4250-8e76-82636bcd8735';
+    document.head.appendChild(u);
+  })();
+</script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('consent', 'default', {ad_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied', analytics_storage: 'denied', wait_for_update: 500});
+  (() => {
+    const T = {"en": ["We'd like to use Google Analytics to understand how the site is used. It sets cookies. The app itself never tracks you.", "Accept", "Decline", "Privacy"], "tr": ["Siteyi nasıl kullandığınızı anlamak için Google Analytics kullanmak istiyoruz. Çerez bırakır. Uygulamanın kendisi sizi hiç izlemez.", "Kabul et", "Reddet", "Gizlilik"], "de": ["Wir möchten Google Analytics nutzen, um zu verstehen, wie die Website genutzt wird. Dabei werden Cookies gesetzt. Die App selbst trackt Sie nie.", "Akzeptieren", "Ablehnen", "Datenschutz"], "fr": ["Nous aimerions utiliser Google Analytics pour comprendre l'usage du site. Il dépose des cookies. L'app elle-même ne vous suit jamais.", "Accepter", "Refuser", "Confidentialité"], "es": ["Nos gustaría usar Google Analytics para entender cómo se usa el sitio. Instala cookies. La app en sí nunca te rastrea.", "Aceptar", "Rechazar", "Privacidad"], "pt": ["Gostaríamos de usar o Google Analytics para entender como o site é usado. Ele define cookies. O app em si nunca rastreia você.", "Aceitar", "Recusar", "Privacidade"], "ja": ["サイトの利用状況を把握するためGoogleアナリティクスを使いたいと考えています。Cookieを使用します。アプリ自体があなたを追跡することはありません。", "同意する", "拒否する", "プライバシー"], "zh": ["我们希望使用 Google Analytics 来了解网站的使用情况。它会设置 Cookie。应用本身绝不会追踪你。", "接受", "拒绝", "隐私"]};
+    const lang = (document.documentElement.lang || 'en').toLowerCase().split('-')[0];
+    const t = T[lang] || T.en;
+    let off = false, saved = null;
+    try { off = localStorage.getItem('notrack') === '1'; saved = localStorage.getItem('consent'); } catch (e) {}
+    if (off) return;
+    const load = () => {
+      gtag('consent', 'update', {analytics_storage: 'granted'});
+      window.dataLayer.push({'gtm.start': Date.now(), event: 'gtm.js'});
+      const s = document.createElement('script');
+      s.async = true;
+      s.src = 'https://www.googletagmanager.com/gtm.js?id=GTM-KKDFBTWK';
+      document.head.appendChild(s);
+    };
+    if (saved === 'granted') { load(); return; }
+    if (saved === 'denied') return;
+    const show = () => {
+      const b = document.createElement('div');
+      b.setAttribute('role', 'dialog');
+      b.setAttribute('aria-label', 'Cookies');
+      b.style.cssText = 'position:fixed;left:16px;right:16px;bottom:16px;z-index:2147483000;max-width:560px;margin:0 auto;padding:16px 18px;border-radius:16px;background:rgba(20,16,32,.92);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);border:1px solid rgba(255,255,255,.14);color:#fff;font:14px/1.45 system-ui,sans-serif;box-shadow:0 12px 40px rgba(0,0,0,.4)';
+      const p = document.createElement('p');
+      p.style.cssText = 'margin:0 0 12px';
+      p.textContent = t[0] + ' ';
+      const a = document.createElement('a');
+      a.href = (T[lang] && lang !== 'en' ? '/' + lang : '') + '/privacy/';
+      a.textContent = t[3];
+      a.style.cssText = 'color:#fff;text-decoration:underline';
+      p.appendChild(a);
+      const row = document.createElement('div');
+      row.style.cssText = 'display:flex;gap:10px';
+      const mk = (label, grant) => {
+        const x = document.createElement('button');
+        x.type = 'button';
+        x.textContent = label;
+        x.style.cssText = 'flex:1;padding:10px 14px;border-radius:10px;border:1px solid rgba(255,255,255,.25);background:rgba(255,255,255,.1);color:#fff;font:600 14px system-ui,sans-serif;cursor:pointer';
+        x.onclick = () => {
+          try { localStorage.setItem('consent', grant ? 'granted' : 'denied'); } catch (e) {}
+          b.remove();
+          if (grant) load();
+        };
+        return x;
+      };
+      row.append(mk(t[2], false), mk(t[1], true));
+      b.append(p, row);
+      document.body.appendChild(b);
+    };
+    if (document.body) show(); else document.addEventListener('DOMContentLoaded', show);
+  })();
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Stack+Sans+Headline:wght@300;400;500&family=Stack+Sans+Text:wght@200;300;400;500&display=swap">
+<link rel="stylesheet" href="/hero.css?v=49ed6591">
+<link rel="stylesheet" href="/sections.css?v=fefd22e0">
+<link rel="stylesheet" href="/features.css?v=32341c8f">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Pocket+", "item": "https://pocketplus.app/fr/"}, {"@type": "ListItem", "position": 2, "name": "FAQ", "item": "https://pocketplus.app/fr/faq/"}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "inLanguage": "fr", "url": "https://pocketplus.app/fr/faq/", "mainEntity": [{"@type": "Question", "name": "Quels modèles de caméra sont compatibles avec Pocket+ ?", "acceptedAnswer": {"@type": "Answer", "text": "Pocket+ prend en charge les DJI Osmo Pocket 2, 3, 4 et 4P en mode Webcam via USB-C. Il fonctionne sur un Mac Apple Silicon avec macOS 15 Sequoia ou une version ultérieure. Les Mac Intel n'ont pas été testés. Le développement et les tests sont surtout réalisés avec la Pocket 3."}}, {"@type": "Question", "name": "Puis-je utiliser l’Osmo Pocket 3 comme webcam sur mon Mac ?", "acceptedAnswer": {"@type": "Answer", "text": "Oui. Branchez-la en USB-C, sélectionnez le mode Webcam et ouvrez Pocket+. Vous pourrez voir l’image en direct, contrôler la nacelle et le zoom, activer le suivi du visage et enregistrer sur votre Mac."}}, {"@type": "Question", "name": "Pocket+ est-il l’application DJI Mimo pour Mac ?", "acceptedAnswer": {"@type": "Answer", "text": "Non. DJI Mimo est l’application mobile de DJI ; il n’en existe pas de version Mac. Pocket+ est une application Mac indépendante : aperçu en direct, contrôle de la nacelle et du zoom en USB-C, et enregistrement directement sur votre Mac. Gardez Mimo sur votre téléphone pour les mises à jour du firmware."}}, {"@type": "Question", "name": "Pocket+ est-il affilié à DJI ?", "acceptedAnswer": {"@type": "Answer", "text": "Non. Pocket+ est un projet indépendant. Il n’est ni affilié à DJI, ni approuvé, ni sponsorisé par DJI."}}, {"@type": "Question", "name": "Pourquoi uniquement la 4K et la 1080p en 24, 25 et 30 i/s ?", "acceptedAnswer": {"@type": "Answer", "text": "Ce sont les modes que la caméra propose en USB en mode Webcam. La 4K60 et la 1080p60 ne sont pas disponibles dans ce mode."}}, {"@type": "Question", "name": "Puis-je l’utiliser sans fil ?", "acceptedAnswer": {"@type": "Answer", "text": "Pas encore. Pocket+ fonctionne avec un câble USB-C."}}, {"@type": "Question", "name": "Pocket+ est-il notarisé par Apple ?", "acceptedAnswer": {"@type": "Answer", "text": "Oui. Pocket+ est signé avec un identifiant Apple Developer ID et notarisé par Apple. macOS peut donc l’ouvrir sans avertissement de sécurité supplémentaire. L’application se connecte à Internet uniquement pour vérifier les mises à jour et les licences."}}, {"@type": "Question", "name": "Pourquoi Pocket+ demande-t-il l’accès à la caméra, au micro et au Bluetooth ?", "acceptedAnswer": {"@type": "Answer", "text": "La caméra et le micro servent à l’image et au son. Le Bluetooth permet de lire la batterie, l’état de l’USB et le bouton d’enregistrement de la caméra. Rien ne quitte votre Mac."}}, {"@type": "Question", "name": "Comment fonctionnent les mises à jour ?", "acceptedAnswer": {"@type": "Answer", "text": "Pocket+ recherche une nouvelle version une fois par jour. Quand il y en a une, cliquez sur Installer et relancer. Vous pouvez désactiver cette recherche dans Réglages › Mises à jour."}}, {"@type": "Question", "name": "Que faire si aucune image ne s’affiche ?", "acceptedAnswer": {"@type": "Answer", "text": "Assurez-vous que la caméra est connectée en mode Webcam. Cliquez sur le bouton de reconnexion en haut à droite de Pocket+. Si l’image n’apparaît toujours pas, débranchez puis rebranchez le câble USB-C."}}, {"@type": "Question", "name": "Pourquoi le suivi du visage se désactive-t-il ?", "acceptedAnswer": {"@type": "Answer", "text": "Vérifiez si la fonction ActiveTrack de la caméra est activée. Désactivez-la sur la caméra pour que le suivi du visage de Pocket+ reste actif."}}, {"@type": "Question", "name": "Le suivi du visage de Pocket+ est-il identique à l’ActiveTrack de la caméra ?", "acceptedAnswer": {"@type": "Answer", "text": "Non. Pocket+ détecte les visages sur votre Mac et oriente lui-même la nacelle. Il est désactivé à chaque ouverture de l’application ; activez-le avec le bouton sous le joystick ou avec ⌘T . Il est gratuit."}}, {"@type": "Question", "name": "Qu’est-ce que le cadrage automatique ?", "acceptedAnswer": {"@type": "Answer", "text": "En un clic, Pocket+ cadre une personne ou un groupe : il centre l’image et règle le zoom une seule fois, puis s’arrête. Le cadrage automatique est une fonction Pro."}}, {"@type": "Question", "name": "Puis-je enregistrer des positions de la nacelle ?", "acceptedAnswer": {"@type": "Answer", "text": "Oui. Les scènes enregistrent jusqu’à 9 positions de la nacelle, que vous rappelez d’un clic ou avec ⌥1 à ⌥9 . Pro permet aussi de retrouver la dernière position à l’ouverture de l’application. Ces deux fonctions sont réservées à Pro."}}, {"@type": "Question", "name": "Comment piloter la nacelle ?", "acceptedAnswer": {"@type": "Answer", "text": "Avec le joystick à l’écran, les flèches du clavier et les raccourcis. Pro ajoute l’orientation par glisser sur l’image et le zoom à la molette ou au trackpad."}}, {"@type": "Question", "name": "Où sont enregistrés mes fichiers ?", "acceptedAnswer": {"@type": "Answer", "text": "Dans votre dossier Films. Vous pouvez choisir un autre dossier dans Réglages › Dossier de sortie. Les formats H.264 et HEVC sont au choix."}}, {"@type": "Question", "name": "Puis-je enregistrer en 4K ?", "acceptedAnswer": {"@type": "Answer", "text": "La 4K est une fonction Pro. La version gratuite enregistre jusqu’en 1080p. Vous pouvez choisir H.264 ou HEVC dans les réglages."}}, {"@type": "Question", "name": "Puis-je utiliser un DJI Mic ou un autre micro ?", "acceptedAnswer": {"@type": "Answer", "text": "Oui. Un DJI Mic associé à la caméra apparaît sous le nom « DJI Mic ». Un récepteur DJI Mic branché sur le Mac est sélectionné automatiquement. Vous pouvez aussi choisir manuellement n’importe quel autre micro du Mac."}}, {"@type": "Question", "name": "Les LUT s’appliquent-elles à mes enregistrements ?", "acceptedAnswer": {"@type": "Answer", "text": "Cela dépend de votre choix. Si « Appliquer la LUT aux enregistrements » est activé, la LUT est intégrée à la vidéo ; sinon, elle ne s’applique qu’à l’aperçu dans Pocket+. Les LUT sont une fonction Pro."}}, {"@type": "Question", "name": "Pocket+ est-il gratuit ?", "acceptedAnswer": {"@type": "Answer", "text": "Oui. L’enregistrement jusqu’en 1080p, les photos, la nacelle, le zoom et le suivi du visage sont gratuits. Pro ajoute notamment la 4K, les LUT, les scènes et le cadrage automatique. Il est disponible pour un achat définitif de 39,99 $ ou un abonnement de 14,99 $ par an, sans création de compte."}}, {"@type": "Question", "name": "Comment activer Pro ?", "acceptedAnswer": {"@type": "Answer", "text": "Après l’achat, vous recevez une clé de licence par e-mail. Saisissez-la dans Réglages › Pro. Chaque licence active Pro sur un seul Mac. Pour l’utiliser sur un autre Mac, retirez-la d’abord de l’ancien dans Réglages › Pro."}}, {"@type": "Question", "name": "Puis-je utiliser Pocket+ avec OBS ou Google Meet ?", "acceptedAnswer": {"@type": "Answer", "text": "Oui. Pendant qu’OBS, Google Meet ou WhatsApp utilise la caméra pour la vidéo, vous pouvez continuer à régler la nacelle et le zoom depuis Pocket+. Pocket+ ne crée pas de caméra virtuelle : les LUT et la correction grand-angle ne sont donc pas transmises à ces applications."}}]}</script>
+</head>
+<body class="page-ft">
+<header class="nav">
+    <div class="nav-bg" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+    <a class="brand rv" href="/fr/">
+      <span class="fb-icon"><img src="/assets/logo-icon.svg" width="64" height="64" alt=""></span>
+      <span><span translate="no">Pocket+</span></span>
+    </a>
+    <nav class="links rv" aria-label="Principal">
+      <a href="/fr/features/" aria-current="page">Fonctionnalités</a>
+      <a href="/fr/use-cases/">Cas d’usage</a>
+      <a href="/blog/">Blog</a>
+      <a href="/fr/faq/">FAQ</a>
+      <a href="/fr/#pricing">Tarifs</a>
+    </nav>
+    <div class="nav-cta rv">
+      <a class="btn btn-glass btn-sm" href="https://github.com/FerdiCildiz/pocket-plus/releases/latest/download/PocketPlus.zip">Télécharger</a>
+      <a class="btn btn-gold btn-sm hide-m" href="/fr/#pricing">Passer à Pro</a>
+      <button class="burger" id="burger" type="button" aria-label="Menu" aria-expanded="false" aria-controls="mmenu"><img class="ic" style="--s:20px" src="/assets/ui/line.3.horizontal.png" alt=""></button>
+    </div>
+  </header>
+  <div class="mmenu" id="mmenu" hidden>
+    <a href="/fr/features/">Fonctionnalités</a><a href="/fr/use-cases/">Cas d’usage</a><a href="/blog/">Blog</a><a href="/fr/faq/">FAQ</a><a href="/fr/#pricing">Tarifs</a>
+    <a class="btn btn-gold btn-lg" href="/fr/#pricing">Passer à Pro</a>
+  </div>
+<main class="ft-page ft-purple"><div class="hero-bg" aria-hidden="true"></div><section class="fx fx-index wrap"><header class="fx-head"><h1 class="h">Questions fréquentes</h1><p class="sub">Compatibilité, installation, enregistrement, licence : les réponses à vos questions.</p></header><div class="fx-set"><p class="fx-group">Caméras et compatibilité</p><div class="faq"><details class="glass" id="q1"><summary><span>Quels modèles de caméra sont compatibles avec <span translate="no">Pocket+</span> ?</span><img class="chev" src="/assets/icons/chevron.down.png" alt=""></summary><p><span translate="no">Pocket+</span> prend en charge les <span translate="no">DJI Osmo Pocket 2</span>, 3, 4 et 4P en mode Webcam via USB-C. Il fonctionne sur un Mac Apple Silicon avec macOS 15 Sequoia ou une version ultérieure. Les Mac Intel n'ont pas été testés. Le développement et les tests sont surtout réalisés avec la <span translate="no">Pocket 3</span>.</p></details><details class="glass" id="q2"><summary><span>Puis-je utiliser l’<span translate="no">Osmo Pocket 3</span> comme webcam sur mon Mac ?</span><img class="chev" src="/assets/icons/chevron.down.png" alt=""></summary><p>Oui. Branchez-la en USB-C, sélectionnez le mode Webcam et ouvrez <span translate="no">Pocket+</span>. Vous pourrez voir l’image en direct, contrôler la nacelle et le zoom, activer le suivi du visage et enregistrer sur votre Mac.</p></details><details class="glass" id="q3"><summary><span><span translate="no">Pocket+</span> est-il l’application DJI Mimo pour Mac ?</span><img class="chev" src="/assets/icons/chevron.down.png" alt=""></summary><p>Non. DJI Mimo est l’application mobile de DJI ; il n’en existe pas de version Mac. <span translate="no">Pocket+</span> est une application Mac indépendante : aperçu en direct, contrôle de la nacelle et du zoom en USB-C, et enregistrement directement sur votre Mac. Gardez Mimo sur votre téléphone pour les mises à jour du firmware.</p></details><details class="glass" id="q4"><summary><span><span translate="no">Pocket+</span> est-il affilié à DJI ?</span><img class="chev" src="/assets/icons/chevron.down.png" alt=""></summary><p>Non. <span translate="no">Pocket+</span> est un projet indépendant. Il n’est ni affilié à DJI, ni approuvé, ni sponsorisé par DJI.</p></details><details class="glass" id="q5"><summary><span>Pourquoi uniquement la 4K et la 1080p en 24, 25 et 30 i/s ?</span><img class="chev" src="/assets/icons/chevron.down.png" alt=""></summary><p>Ce sont les modes que la caméra propose en USB en mode Webcam. La 4K60 et la 1080p60 ne sont pas disponibles dans ce mode.</p></details><details class="glass" id="q6"><summary><span>Puis-je l’utiliser sans fil ?</span><img class="chev" src="/assets/icons/chevron.down.png" alt=""></summary><p>Pas encore. <span translate="no">Pocket+</span> fonctionne avec un câble USB-C.</p></details></div></div><div class="fx-set"><p class="fx-group">Installation et autorisations</p><div class="faq"><details class="glass" id="q7"><summary><span><span translate="no">Pocket+</span> est-il notarisé par Apple ?</span><img class="chev" src="/assets/icons/chevron.down.png" alt=""></summary><p>Oui. <span translate="no">Pocket+</span> est signé avec un identifiant Apple Developer ID et notarisé par Apple. macOS peut donc l’ouvrir sans avertissement de sécurité supplémentaire. L’application se connecte à Internet uniquement pour vérifier les mises à jour et les licences.</p></details><details class="glass" id="q8"><summary><span>Pourquoi <span translate="no">Pocket+</span> demande-t-il l’accès à la caméra, au micro et au Bluetooth ?</span><img class="chev" src="/assets/icons/chevron.down.png" alt=""></summary><p>La caméra et le micro servent à l’image et au son. Le Bluetooth permet de lire la batterie, l’état de l’USB et le bouton d’enregistrement de la caméra. Rien ne quitte votre Mac.</p></details><details class="glass" id="q9"><summary><span>Comment fonctionnent les mises à jour ?</span><img class="chev" src="/assets/icons/chevron.down.png" alt=""></summary><p><span translate="no">Pocket+</span> recherche une nouvelle version une fois par jour. Quand il y en a une, cliquez sur Installer et relancer. Vous pouvez désactiver cette recherche dans Réglages › Mises à jour.</p></details><details class="glass" id="q10"><summary><span>Que faire si aucune image ne s’affiche ?</span><img class="chev" src="/assets/icons/chevron.down.png" alt=""></summary><p>Assurez-vous que la caméra est connectée en mode Webcam. Cliquez sur le bouton de reconnexion en haut à droite de <span translate="no">Pocket+</span>. Si l’image n’apparaît toujours pas, débranchez puis rebranchez le câble USB-C.</p></details></div></div><div class="fx-set"><p class="fx-group">Nacelle et suivi du visage</p><div class="faq"><details class="glass" id="q11"><summary><span>Pourquoi le suivi du visage se désactive-t-il ?</span><img class="chev" src="/assets/icons/chevron.down.png" alt=""></summary><p>Vérifiez si la fonction ActiveTrack de la caméra est activée. Désactivez-la sur la caméra pour que le suivi du visage de <span translate="no">Pocket+</span> reste actif.</p></details><details class="glass" id="q12"><summary><span>Le suivi du visage de <span translate="no">Pocket+</span> est-il identique à l’ActiveTrack de la caméra ?</span><img class="chev" src="/assets/icons/chevron.down.png" alt=""></summary><p>Non. <span translate="no">Pocket+</span> détecte les visages sur votre Mac et oriente lui-même la nacelle. Il est désactivé à chaque ouverture de l’application ; activez-le avec le bouton sous le joystick ou avec <kbd>⌘T</kbd>. Il est gratuit.</p></details><details class="glass" id="q13"><summary><span>Qu’est-ce que le cadrage automatique ?</span><img class="chev" src="/assets/icons/chevron.down.png" alt=""></summary><p>En un clic, <span translate="no">Pocket+</span> cadre une personne ou un groupe : il centre l’image et règle le zoom une seule fois, puis s’arrête. Le cadrage automatique est une fonction Pro.</p></details><details class="glass" id="q14"><summary><span>Puis-je enregistrer des positions de la nacelle ?</span><img class="chev" src="/assets/icons/chevron.down.png" alt=""></summary><p>Oui. Les scènes enregistrent jusqu’à 9 positions de la nacelle, que vous rappelez d’un clic ou avec <kbd>⌥1</kbd> à <kbd>⌥9</kbd>. Pro permet aussi de retrouver la dernière position à l’ouverture de l’application. Ces deux fonctions sont réservées à Pro.</p></details><details class="glass" id="q15"><summary><span>Comment piloter la nacelle ?</span><img class="chev" src="/assets/icons/chevron.down.png" alt=""></summary><p>Avec le joystick à l’écran, les flèches du clavier et les raccourcis. Pro ajoute l’orientation par glisser sur l’image et le zoom à la molette ou au trackpad.</p></details></div></div><div class="fx-set"><p class="fx-group">Vidéo et audio</p><div class="faq"><details class="glass" id="q16"><summary><span>Où sont enregistrés mes fichiers ?</span><img class="chev" src="/assets/icons/chevron.down.png" alt=""></summary><p>Dans votre dossier Films. Vous pouvez choisir un autre dossier dans Réglages › Dossier de sortie. Les formats H.264 et HEVC sont au choix.</p></details><details class="glass" id="q17"><summary><span>Puis-je enregistrer en 4K ?</span><img class="chev" src="/assets/icons/chevron.down.png" alt=""></summary><p>La 4K est une fonction Pro. La version gratuite enregistre jusqu’en 1080p. Vous pouvez choisir H.264 ou HEVC dans les réglages.</p></details><details class="glass" id="q18"><summary><span>Puis-je utiliser un DJI Mic ou un autre micro ?</span><img class="chev" src="/assets/icons/chevron.down.png" alt=""></summary><p>Oui. Un DJI Mic associé à la caméra apparaît sous le nom « DJI Mic ». Un récepteur DJI Mic branché sur le Mac est sélectionné automatiquement. Vous pouvez aussi choisir manuellement n’importe quel autre micro du Mac.</p></details><details class="glass" id="q19"><summary><span>Les LUT s’appliquent-elles à mes enregistrements ?</span><img class="chev" src="/assets/icons/chevron.down.png" alt=""></summary><p>Cela dépend de votre choix. Si « Appliquer la LUT aux enregistrements » est activé, la LUT est intégrée à la vidéo ; sinon, elle ne s’applique qu’à l’aperçu dans <span translate="no">Pocket+</span>. Les LUT sont une fonction Pro.</p></details></div></div><div class="fx-set"><p class="fx-group">Pro et licence</p><div class="faq"><details class="glass" id="q20"><summary><span><span translate="no">Pocket+</span> est-il gratuit ?</span><img class="chev" src="/assets/icons/chevron.down.png" alt=""></summary><p>Oui. L’enregistrement jusqu’en 1080p, les photos, la nacelle, le zoom et le suivi du visage sont gratuits. Pro ajoute notamment la 4K, les LUT, les scènes et le cadrage automatique. Il est disponible pour un achat définitif de 39,99 $ ou un abonnement de 14,99 $ par an, sans création de compte.</p></details><details class="glass" id="q21"><summary><span>Comment activer Pro ?</span><img class="chev" src="/assets/icons/chevron.down.png" alt=""></summary><p>Après l’achat, vous recevez une clé de licence par e-mail. Saisissez-la dans Réglages › Pro. Chaque licence active Pro sur un seul Mac. Pour l’utiliser sur un autre Mac, retirez-la d’abord de l’ancien dans Réglages › Pro.</p></details></div></div><div class="fx-set"><p class="fx-group">Autres applications</p><div class="faq"><details class="glass" id="q22"><summary><span>Puis-je utiliser <span translate="no">Pocket+</span> avec OBS ou Google Meet ?</span><img class="chev" src="/assets/icons/chevron.down.png" alt=""></summary><p>Oui. Pendant qu’OBS, Google Meet ou WhatsApp utilise la caméra pour la vidéo, vous pouvez continuer à régler la nacelle et le zoom depuis <span translate="no">Pocket+</span>. <span translate="no">Pocket+</span> ne crée pas de caméra virtuelle : les LUT et la correction grand-angle ne sont donc pas transmises à ces applications.</p></details></div></div></section></main>
+<section class="sec sec-price" id="pricing">
+  <div class="sec-head center">
+    <h2>Commencez gratuitement. Passez à Pro quand vous voulez.</h2>
+    <p>Profitez gratuitement des fonctions essentielles. Pour la 4K, les scènes et les commandes avancées, choisissez Pro en abonnement annuel ou en achat définitif.</p>
+  </div>
+  <div class="plans">
+    <article class="plan plan-free">
+      <header><h3><span translate="no">Pocket+</span> Gratuit</h3><b>$0</b></header>
+      <ul class="ticks">
+        <li>Aperçu en direct, photos et vidéo jusqu’en 1080p</li>
+        <li>Orientation, recentrage et retournement de la nacelle</li>
+        <li>Zoom et raccourcis clavier</li>
+        <li>Suivi du visage</li>
+        <li>Grille et ligne d’horizon</li>
+        <li>DJI Mic et indicateurs audio, batterie et stockage</li>
+      </ul>
+      <a class="btn btn-glass btn-lg btn-block" href="https://github.com/FerdiCildiz/pocket-plus/releases/latest/download/PocketPlus.zip">Télécharger gratuitement</a>
+    </article>
+    <article class="plan plan-pro">
+      <header><h3><span translate="no">Pocket+</span> Pro</h3><div class="price"><b>$39.99</b><small>Prix de lancement</small></div></header>
+      <ul class="ticks">
+        <li>Toutes les fonctions gratuites</li>
+        <li>Enregistrement vidéo jusqu’en 4K</li>
+        <li>Rendus couleur et LUT .cube/PNG personnalisées</li>
+        <li>Cadrage automatique</li>
+        <li>Jusqu’à 9 scènes avec raccourcis</li>
+        <li>Orientation par glisser-déposer et zoom à la molette</li>
+        <li>Repère de format vertical 9:16</li>
+        <li>Correction grand-angle</li>
+      </ul>
+      <div class="buy">
+        <a class="btn btn-gold btn-lg btn-block" href="https://buy.polar.sh/polar_cl_exSJRc2Q9kyqAzbR8Jr162wx4JMVpTfZq0gqe2kfyPu" target="_blank" rel="noopener">Acheter Pro à vie <i>·</i> $39.99</a>
+        <a class="btn btn-glass btn-teal btn-lg btn-block" href="https://buy.polar.sh/polar_cl_yCHcBSKuanaZnRTX9UhI2eb80silnrscE8Upm2MAntK" target="_blank" rel="noopener">Choisir l’abonnement annuel <i>·</i> $14.99</a>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- ================= Download CTA ================= -->
+<section class="sec sec-cta" id="download">
+  <div class="cta-card">
+    <div class="cta-copy">
+      <h2>Prêt pour votre prochain tournage ?</h2>
+      <p>Pilotez votre <span translate="no">DJI Osmo Pocket</span> depuis votre Mac. <span translate="no">Pocket+</span> est gratuit et prêt à l’emploi en quelques minutes.</p>
+      <div class="cta-btns">
+        <a class="btn btn-glass btn-lg" href="https://github.com/FerdiCildiz/pocket-plus/releases/latest/download/PocketPlus.zip">Télécharger gratuitement sur Mac</a>
+        <a class="btn btn-gold btn-lg" href="/fr/#pricing">Passer à Pro</a>
+      </div>
+      <div class="cta-links">
+        <a href="https://github.com/FerdiCildiz/pocket-plus" target="_blank" rel="noopener">Ajouter une étoile sur GitHub ↗</a>
+        <a href="https://www.reddit.com/r/osmopocket/s/lvCdD2MSma" target="_blank" rel="noopener">Soutenir sur Reddit ↗</a>
+      </div>
+    </div>
+    <img class="cta-cam" src="/assets/img/pocket-cta.png" width="253" height="460" alt="">
+    <img class="pl p1" src="/assets/img/plus1.svg" alt=""><img class="pl p2" src="/assets/img/plus2.svg" alt=""><img class="pl p3" src="/assets/img/plus3.svg" alt=""><img class="pl p4" src="/assets/img/plus4.svg" alt=""><img class="pl p5" src="/assets/img/plus5.svg" alt="">
+  </div>
+</section>
+
+<!-- ================= Footer ================= -->
+<footer class="foot">
+  <div class="foot-in">
+    <div class="foot-top">
+      <a class="foot-brand" href="/fr/"><span class="fb-icon"><img src="/assets/logo-icon.svg" width="60" height="60" alt=""></span><span><span translate="no">Pocket+</span></span></a>
+      <nav class="foot-links" aria-label="Footer">
+        <a href="/fr/features/">Fonctionnalités</a><a href="/fr/use-cases/">Cas d’usage</a><a href="/blog/">Blog</a><a href="/fr/faq/">FAQ</a><a href="/fr/#pricing">Tarifs</a><a href="/privacy/">Confidentialité</a><a href="/terms/">Terms</a><a href="https://www.linkedin.com/in/ferdicildiz" target="_blank" rel="noopener">LinkedIn</a>
+      </nav>
+    </div>
+    <div class="foot-mid">
+      <details class="lang"><summary aria-label="Langue"><span>Français</span><img src="/assets/icons/chevron.down.png" alt=""></summary><div class="menu"><a href="/faq/" lang="en" hreflang="en">English</a><a href="/tr/faq/" lang="tr" hreflang="tr">Türkçe</a><a href="/de/faq/" lang="de" hreflang="de">Deutsch</a><a href="/fr/faq/" lang="fr" hreflang="fr" aria-current="page">Français</a><a href="/es/faq/" lang="es" hreflang="es">Español</a><a href="/pt/faq/" lang="pt-BR" hreflang="pt-BR">Português</a><a href="/ja/faq/" lang="ja" hreflang="ja">日本語</a><a href="/zh/faq/" lang="zh-Hans" hreflang="zh-Hans">简体中文</a></div></details>
+      <a class="ig" href="https://instagram.com/pocketplus.app" target="_blank" rel="noopener">Suivre sur Instagram <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="#fff" stroke-width="1.5"><rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r=".9" fill="#fff" stroke="none"/></svg></a>
+    </div>
+    <div class="foot-bot">
+      <span>©Copyright 2026 <span translate="no">Pocket+</span></span>
+      <p><span translate="no">Pocket+</span> est un projet indépendant, non affilié à DJI, ni approuvé ou sponsorisé par DJI. DJI, Osmo et <span translate="no">Osmo Pocket</span> sont des marques commerciales de SZ DJI Technology Co., Ltd.</p>
+    </div>
+  </div>
+</footer>
+
+<script src="/hero.js"></script>
+<script src="/sections.js"></script>
+
+<a class="ph-fixed" href="https://www.producthunt.com/products/pocket-7?embed=true&amp;utm_source=badge-featured&amp;utm_medium=badge&amp;utm_campaign=badge-pocket-11" target="_blank" rel="noopener noreferrer"><img alt="Pocket+ - DJI Osmo Pocket made more capable for content creators. | Product Hunt" width="250" height="54" src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=1314620&amp;theme=light&amp;t=1794521260085"></a><style>.ph-fixed{position:fixed;right:20px;bottom:20px;z-index:50;line-height:0;filter:drop-shadow(0 4px 14px rgba(0,0,0,.35))}.ph-fixed img{display:block;width:250px;height:54px}@media(max-width:640px){.ph-fixed{right:10px;bottom:10px}.ph-fixed img{width:175px;height:auto}}</style></body>
+</html>

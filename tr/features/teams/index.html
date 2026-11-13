@@ -1,0 +1,247 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#000000">
+<title>Mac&#x27;te DJI Osmo Pocket&#x27;ı Microsoft Teams&#x27;te kullan · Pocket+</title>
+<meta name="description" content="Pocket+ aynı Mac&#x27;ten gimbalı yönlendirip zoom yaparken ve yüzünü takip ederken Osmo Pocket&#x27;ını Microsoft Teams toplantılarında kamera olarak kullan.">
+<link rel="canonical" href="https://pocketplus.app/tr/features/teams/">
+<link rel="me" href="https://mastodon.social/@pocketplus">
+<link rel="alternate" hreflang="en" href="https://pocketplus.app/features/teams/">
+<link rel="alternate" hreflang="tr" href="https://pocketplus.app/tr/features/teams/">
+<link rel="alternate" hreflang="de" href="https://pocketplus.app/de/features/teams/">
+<link rel="alternate" hreflang="fr" href="https://pocketplus.app/fr/features/teams/">
+<link rel="alternate" hreflang="es" href="https://pocketplus.app/es/features/teams/">
+<link rel="alternate" hreflang="pt" href="https://pocketplus.app/pt/features/teams/">
+<link rel="alternate" hreflang="ja" href="https://pocketplus.app/ja/features/teams/">
+<link rel="alternate" hreflang="zh-Hans" href="https://pocketplus.app/zh/features/teams/">
+<link rel="alternate" hreflang="x-default" href="https://pocketplus.app/features/teams/">
+<link rel="icon" href="/assets/favicon.png" type="image/png">
+<link rel="apple-touch-icon" href="/assets/icon.png">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Mac&#x27;te DJI Osmo Pocket&#x27;ı Microsoft Teams&#x27;te kullan · Pocket+">
+<meta property="og:description" content="Pocket+ aynı Mac&#x27;ten gimbalı yönlendirip zoom yaparken ve yüzünü takip ederken Osmo Pocket&#x27;ını Microsoft Teams toplantılarında kamera olarak kullan.">
+<meta property="og:url" content="https://pocketplus.app/tr/features/teams/">
+<meta property="og:image" content="https://pocketplus.app/assets/og.jpg?v=04b71509">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Pocket+: control your DJI Osmo Pocket from your Mac">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Mac&#x27;te DJI Osmo Pocket&#x27;ı Microsoft Teams&#x27;te kullan · Pocket+">
+<meta name="twitter:description" content="Pocket+ aynı Mac&#x27;ten gimbalı yönlendirip zoom yaparken ve yüzünü takip ederken Osmo Pocket&#x27;ını Microsoft Teams toplantılarında kamera olarak kullan.">
+<meta name="twitter:image" content="https://pocketplus.app/assets/og.jpg?v=04b71509">
+<meta name="twitter:image:alt" content="Pocket+: control your DJI Osmo Pocket from your Mac">
+<meta name="msvalidate.01" content="C37CE93C5CEE85D6A2781B1A0F80D7F6">
+<script>
+  // Cloudflare Web Analytics (çerezsiz). Kendi ziyaretin için her tarayıcıda bir kez ?notrack=1 aç (?track=1 geri alır).
+  (() => {
+    let off = false;
+    try {
+      const q = new URLSearchParams(location.search);
+      if (q.has('notrack')) localStorage.setItem('notrack', '1');
+      if (q.has('track')) localStorage.removeItem('notrack');
+      off = localStorage.getItem('notrack') === '1';
+    } catch (e) {}
+    if (off) return;
+    const s = document.createElement('script');
+    s.type = 'module';
+    s.src = 'https://static.cloudflareinsights.com/beacon.min.js';
+    s.dataset.cfBeacon = '{"token": "16f12da5593d494e828fd44a928bdd1a"}';
+    document.head.appendChild(s);
+    // Umami Cloud (AB bölgesi, çerezsiz): olaylar için data-umami-event (sections.js satın al/indir bağlantılarına ekler)
+    const u = document.createElement('script');
+    u.defer = true;
+    u.src = 'https://cloud.umami.is/script.js';
+    u.dataset.websiteId = '388f8fe3-fb9c-4250-8e76-82636bcd8735';
+    document.head.appendChild(u);
+  })();
+</script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('consent', 'default', {ad_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied', analytics_storage: 'denied', wait_for_update: 500});
+  (() => {
+    const T = {"en": ["We'd like to use Google Analytics to understand how the site is used. It sets cookies. The app itself never tracks you.", "Accept", "Decline", "Privacy"], "tr": ["Siteyi nasıl kullandığınızı anlamak için Google Analytics kullanmak istiyoruz. Çerez bırakır. Uygulamanın kendisi sizi hiç izlemez.", "Kabul et", "Reddet", "Gizlilik"], "de": ["Wir möchten Google Analytics nutzen, um zu verstehen, wie die Website genutzt wird. Dabei werden Cookies gesetzt. Die App selbst trackt Sie nie.", "Akzeptieren", "Ablehnen", "Datenschutz"], "fr": ["Nous aimerions utiliser Google Analytics pour comprendre l'usage du site. Il dépose des cookies. L'app elle-même ne vous suit jamais.", "Accepter", "Refuser", "Confidentialité"], "es": ["Nos gustaría usar Google Analytics para entender cómo se usa el sitio. Instala cookies. La app en sí nunca te rastrea.", "Aceptar", "Rechazar", "Privacidad"], "pt": ["Gostaríamos de usar o Google Analytics para entender como o site é usado. Ele define cookies. O app em si nunca rastreia você.", "Aceitar", "Recusar", "Privacidade"], "ja": ["サイトの利用状況を把握するためGoogleアナリティクスを使いたいと考えています。Cookieを使用します。アプリ自体があなたを追跡することはありません。", "同意する", "拒否する", "プライバシー"], "zh": ["我们希望使用 Google Analytics 来了解网站的使用情况。它会设置 Cookie。应用本身绝不会追踪你。", "接受", "拒绝", "隐私"]};
+    const lang = (document.documentElement.lang || 'en').toLowerCase().split('-')[0];
+    const t = T[lang] || T.en;
+    let off = false, saved = null;
+    try { off = localStorage.getItem('notrack') === '1'; saved = localStorage.getItem('consent'); } catch (e) {}
+    if (off) return;
+    const load = () => {
+      gtag('consent', 'update', {analytics_storage: 'granted'});
+      window.dataLayer.push({'gtm.start': Date.now(), event: 'gtm.js'});
+      const s = document.createElement('script');
+      s.async = true;
+      s.src = 'https://www.googletagmanager.com/gtm.js?id=GTM-KKDFBTWK';
+      document.head.appendChild(s);
+    };
+    if (saved === 'granted') { load(); return; }
+    if (saved === 'denied') return;
+    const show = () => {
+      const b = document.createElement('div');
+      b.setAttribute('role', 'dialog');
+      b.setAttribute('aria-label', 'Cookies');
+      b.style.cssText = 'position:fixed;left:16px;right:16px;bottom:16px;z-index:2147483000;max-width:560px;margin:0 auto;padding:16px 18px;border-radius:16px;background:rgba(20,16,32,.92);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);border:1px solid rgba(255,255,255,.14);color:#fff;font:14px/1.45 system-ui,sans-serif;box-shadow:0 12px 40px rgba(0,0,0,.4)';
+      const p = document.createElement('p');
+      p.style.cssText = 'margin:0 0 12px';
+      p.textContent = t[0] + ' ';
+      const a = document.createElement('a');
+      a.href = (T[lang] && lang !== 'en' ? '/' + lang : '') + '/privacy/';
+      a.textContent = t[3];
+      a.style.cssText = 'color:#fff;text-decoration:underline';
+      p.appendChild(a);
+      const row = document.createElement('div');
+      row.style.cssText = 'display:flex;gap:10px';
+      const mk = (label, grant) => {
+        const x = document.createElement('button');
+        x.type = 'button';
+        x.textContent = label;
+        x.style.cssText = 'flex:1;padding:10px 14px;border-radius:10px;border:1px solid rgba(255,255,255,.25);background:rgba(255,255,255,.1);color:#fff;font:600 14px system-ui,sans-serif;cursor:pointer';
+        x.onclick = () => {
+          try { localStorage.setItem('consent', grant ? 'granted' : 'denied'); } catch (e) {}
+          b.remove();
+          if (grant) load();
+        };
+        return x;
+      };
+      row.append(mk(t[2], false), mk(t[1], true));
+      b.append(p, row);
+      document.body.appendChild(b);
+    };
+    if (document.body) show(); else document.addEventListener('DOMContentLoaded', show);
+  })();
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Stack+Sans+Headline:wght@300;400;500&family=Stack+Sans+Text:wght@200;300;400;500&display=swap">
+<link rel="stylesheet" href="/hero.css?v=49ed6591">
+<link rel="stylesheet" href="/sections.css?v=fefd22e0">
+<link rel="stylesheet" href="/features.css?v=32341c8f">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Pocket+", "item": "https://pocketplus.app/tr/"}, {"@type": "ListItem", "position": 2, "name": "Pocket+ özellikleri", "item": "https://pocketplus.app/tr/features/"}, {"@type": "ListItem", "position": 3, "name": "Microsoft Teams", "item": "https://pocketplus.app/tr/features/teams/"}]}</script>
+</head>
+<body class="page-ft">
+<header class="nav">
+    <div class="nav-bg" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+    <a class="brand rv" href="/tr/">
+      <span class="fb-icon"><img src="/assets/logo-icon.svg" width="64" height="64" alt=""></span>
+      <span><span translate="no">Pocket+</span></span>
+    </a>
+    <nav class="links rv" aria-label="Ana menü">
+      <a href="/tr/features/" aria-current="page">Özellikler</a>
+      <a href="/tr/use-cases/">Kullanım Alanları</a>
+      <a href="/blog/">Blog</a>
+      <a href="/tr/faq/">SSS</a>
+      <a href="/tr/#pricing">Fiyatlar</a>
+    </nav>
+    <div class="nav-cta rv">
+      <a class="btn btn-glass btn-sm" href="https://github.com/FerdiCildiz/pocket-plus/releases/latest/download/PocketPlus.zip">İndir</a>
+      <a class="btn btn-gold btn-sm hide-m" href="/tr/#pricing">Pro'ya geç</a>
+      <button class="burger" id="burger" type="button" aria-label="Menü" aria-expanded="false" aria-controls="mmenu"><img class="ic" style="--s:20px" src="/assets/ui/line.3.horizontal.png" alt=""></button>
+    </div>
+  </header>
+  <div class="mmenu" id="mmenu" hidden>
+    <a href="/tr/features/">Özellikler</a><a href="/tr/use-cases/">Kullanım Alanları</a><a href="/blog/">Blog</a><a href="/tr/faq/">SSS</a><a href="/tr/#pricing">Fiyatlar</a>
+    <a class="btn btn-gold btn-lg" href="/tr/#pricing">Pro'ya geç</a>
+  </div>
+<main class="ft-page ft-purple"><div class="hero-bg" aria-hidden="true"></div><section class="fx wrap"><header class="fx-head"><p class="h">Kamerada ne varsa, Mac'inde.</p><p class="sub">Everything you need from your <span translate="no">DJI Osmo Pocket</span>. Right on your Mac.</p></header><div class="fx-grid"><nav class="fx-nav" aria-label="Features"><p class="fx-group">Gimbal kontrolü</p><a class="glass" href="/tr/features/gimbal-control/"><span class="i" aria-hidden="true" style="--m:url(/assets/fx/ui-move.svg)"></span>Gimbal kontrolü<span class="go" aria-hidden="true" style="--m:url(/assets/fx/chevron-right.svg)"></span></a><a class="glass" href="/tr/features/face-tracking/"><span class="i" aria-hidden="true" style="--m:url(/assets/fx/user-focus.svg)"></span>Yüz takibi<span class="go" aria-hidden="true" style="--m:url(/assets/fx/chevron-right.svg)"></span></a><a class="glass" href="/tr/features/scenes/"><span class="i" aria-hidden="true" style="--m:url(/assets/fx/ui-scenes.svg)"></span>Sahneler<span class="go" aria-hidden="true" style="--m:url(/assets/fx/chevron-right.svg)"></span></a><a class="glass" href="/tr/features/return-last-position/"><span class="i" aria-hidden="true" style="--m:url(/assets/fx/ui-backward.svg)"></span>Son konuma dön<span class="go" aria-hidden="true" style="--m:url(/assets/fx/chevron-right.svg)"></span></a><p class="fx-group">Görüntü ve kamera ayarları</p><a class="glass" href="/tr/features/auto-framing/"><span class="i" aria-hidden="true" style="--m:url(/assets/fx/frame-corners.svg)"></span>Otomatik kadraj<span class="go" aria-hidden="true" style="--m:url(/assets/fx/chevron-right.svg)"></span></a><a class="glass" href="/tr/features/lut/"><span class="i" aria-hidden="true" style="--m:url(/assets/fx/ui-lut.svg)"></span>LUT ve renk<span class="go" aria-hidden="true" style="--m:url(/assets/fx/chevron-right.svg)"></span></a><a class="glass" href="/tr/features/lens-correction/"><span class="i" aria-hidden="true" style="--m:url(/assets/fx/ui-pano.svg)"></span>Geniş açı düzeltmesi<span class="go" aria-hidden="true" style="--m:url(/assets/fx/chevron-right.svg)"></span></a><a class="glass" href="/tr/features/auto-mic-switch/"><span class="i" aria-hidden="true" style="--m:url(/assets/fx/microphone.svg)"></span>Otomatik mikrofon geçişi<span class="go" aria-hidden="true" style="--m:url(/assets/fx/chevron-right.svg)"></span></a><p class="fx-group">Canlı yayın ve görüşmeler</p><a class="glass" href="/tr/features/obs/"><span class="i" aria-hidden="true" style="--m:url(/assets/fx/ui-obs.svg)"></span>OBS<span class="go" aria-hidden="true" style="--m:url(/assets/fx/chevron-right.svg)"></span></a><a class="glass" href="/tr/features/google-meet/"><span class="i" aria-hidden="true" style="--m:url(/assets/fx/video-camera.svg)"></span>Google Meet<span class="go" aria-hidden="true" style="--m:url(/assets/fx/chevron-right.svg)"></span></a><a class="glass" href="/tr/features/zoom/"><span class="i" aria-hidden="true" style="--m:url(/assets/fx/ui-person-square.svg)"></span>Zoom<span class="go" aria-hidden="true" style="--m:url(/assets/fx/chevron-right.svg)"></span></a><a class="glass" href="/tr/features/teams/" aria-current="page"><span class="i" aria-hidden="true" style="--m:url(/assets/fx/users.svg)"></span>Microsoft Teams<span class="go" aria-hidden="true" style="--m:url(/assets/fx/chevron-right.svg)"></span></a><a class="glass" href="/tr/features/whatsapp/"><span class="i" aria-hidden="true" style="--m:url(/assets/fx/ui-phone-bubble.svg)"></span>WhatsApp<span class="go" aria-hidden="true" style="--m:url(/assets/fx/chevron-right.svg)"></span></a><p class="fx-group">Kadraj ve önizleme</p><a class="glass" href="/tr/features/switch-orientation/"><span class="i" aria-hidden="true" style="--m:url(/assets/fx/ui-rotate.svg)"></span>Yatay/dikey çekim<span class="go" aria-hidden="true" style="--m:url(/assets/fx/chevron-right.svg)"></span></a><a class="glass" href="/tr/features/framing-guides/"><span class="i" aria-hidden="true" style="--m:url(/assets/fx/ui-hash.svg)"></span>Kadraj kılavuzları<span class="go" aria-hidden="true" style="--m:url(/assets/fx/chevron-right.svg)"></span></a></nav><article class="fx-body"><h1>Microsoft Teams<span class="ftag">FREE</span></h1><p>Teams toplantılarına gerçekten yönlendirebildiğin bir kamerayla katıl. Microsoft Teams'te kamera olarak <span translate="no">Pocket</span>'ı seç, sonra sunum yaparken <span translate="no">Pocket+</span> ile gimbalı yönlendir, zoom yap ya da seni takip etme işini yüz takibine bırak.</p>
+
+<h2>Kurulum</h2>
+<ol>
+  <li><span translate="no">Pocket</span>'ı USB-C ile bağla ve kamerada <b>Webcam</b>'i seç.</li>
+  <li>Teams'te <b>Ayarlar › Cihazlar</b> bölümünü aç ve kamera olarak <span translate="no">Pocket</span>'ı seç (örneğin OsmoPocket3). Kameranın sesini istiyorsan onun mikrofonunu da seç.</li>
+  <li><span translate="no">Pocket+</span>'ı toplantının yanında aç. İkisi kamerayı aynı anda kullanır.</li>
+</ol>
+<h2>Teams'te neler görünür</h2>
+<p>Teams, kameranın kendi görüntüsünü ve sesini alır. Kamerayı fiziksel olarak hareket ettiren her şey ona ulaşır: joystick hareketleri, <a href="/tr/features/face-tracking/">yüz takibi</a>, <a href="/tr/features/auto-framing/">otomatik kadraj</a>, <a href="/tr/features/scenes/">sahneler</a> ve kameranın zoom'u. <span translate="no">Pocket+</span>'ın yazılımla yaptığı şeyler <span translate="no">Pocket+</span>'ta kalır: LUT'lar, geniş açı düzeltmesi, kılavuzlar ve kırpılmış dikey görüntü. Renkler de <span translate="no">Pocket+</span> önizlemesindekinden biraz daha soluk görünebilir.</p>
+<h2>Bilmende fayda var</h2>
+<ul>
+  <li><span translate="no">Pocket+</span> bir sanal kamera değil. Teams'te <span translate="no">Pocket+</span>'ı değil, doğrudan <span translate="no">Pocket</span>'ı seç.</li>
+  <li>Kamera aynı anda tek bir format gönderir. Teams 1080p isterse <span translate="no">Pocket+</span> da 1080p alır.</li>
+  <li><kbd>⌘T</kbd> ya da <kbd>⌥1</kbd> gibi kısayollar, <span translate="no">Pocket+</span> etkin uygulamayken çalışır. Penceresini Teams'in yanında görünür tut; varsayılan olarak en üstte kalır.</li>
+</ul>
+<p><span translate="no">Pocket</span>'ı Teams'te kullanmak için Pro gerekmez. <span translate="no">Pocket+</span> özellikleri ise her zamanki gibi ücretsiz ya da Pro.</p>
+<div class="fx-next"><a href="/tr/features/zoom/">← Zoom</a><a href="/tr/features/whatsapp/">WhatsApp →</a></div></article></div></section></main>
+<section class="sec sec-price" id="pricing">
+  <div class="sec-head center">
+    <h2>Ücretsiz başla. İstersen Pro'ya geç.</h2>
+    <p>Temel özellikleri ücretsiz kullan. 4K kayıt, sahneler ve gelişmiş kontroller için Pro'ya geçebilirsin. İster yıllık, ister tek seferlik öde.</p>
+  </div>
+  <div class="plans">
+    <article class="plan plan-free">
+      <header><h3><span translate="no">Pocket+</span> Ücretsiz</h3><b>$0</b></header>
+      <ul class="ticks">
+        <li>Canlı önizleme, fotoğraf ve 1080p'ye kadar kayıt</li>
+        <li>Gimbal kontrolü, merkezleme ve ön/arka çevirme</li>
+        <li>Zoom ve klavye kısayolları</li>
+        <li>Yüz takibi</li>
+        <li>Kadraj ızgarası ve ufuk çizgisi</li>
+        <li>DJI Mic desteği; ses, pil ve depolama göstergeleri</li>
+      </ul>
+      <a class="btn btn-glass btn-lg btn-block" href="https://github.com/FerdiCildiz/pocket-plus/releases/latest/download/PocketPlus.zip">Ücretsiz indir</a>
+    </article>
+    <article class="plan plan-pro">
+      <header><h3><span translate="no">Pocket+</span> Pro</h3><div class="price"><b>$39.99</b><small>Özel lansman fiyatı</small></div></header>
+      <ul class="ticks">
+        <li>Ücretsiz sürümdeki tüm özellikler</li>
+        <li>4K'ya kadar video kaydı</li>
+        <li>Hazır renk görünümleri ve .cube/PNG LUT desteği</li>
+        <li>Otomatik kadraj</li>
+        <li>9 sahneye kadar kayıt ve kısayolla geçiş</li>
+        <li>Sürükleyerek kamera kontrolü ve fareyle zoom</li>
+        <li>9:16 dikey kadraj kılavuzu</li>
+        <li>Geniş açı lens düzeltmesi</li>
+      </ul>
+      <div class="buy">
+        <a class="btn btn-gold btn-lg btn-block" href="https://buy.polar.sh/polar_cl_exSJRc2Q9kyqAzbR8Jr162wx4JMVpTfZq0gqe2kfyPu" target="_blank" rel="noopener">Ömür Boyu Pro <i>·</i> 39,99 $</a>
+        <a class="btn btn-glass btn-teal btn-lg btn-block" href="https://buy.polar.sh/polar_cl_yCHcBSKuanaZnRTX9UhI2eb80silnrscE8Upm2MAntK" target="_blank" rel="noopener">Yıllık Pro <i>·</i> 14,99 $</a>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- ================= Download CTA ================= -->
+<section class="sec sec-cta" id="download">
+  <div class="cta-card">
+    <div class="cta-copy">
+      <h2><span translate="no">Pocket+</span> ile çekime başla.</h2>
+      <p><span translate="no">DJI Osmo Pocket</span>'ını Mac'inden kontrol et. <span translate="no">Pocket+</span>'ı ücretsiz indir, birkaç dakika içinde kullanmaya başla.</p>
+      <div class="cta-btns">
+        <a class="btn btn-glass btn-lg" href="https://github.com/FerdiCildiz/pocket-plus/releases/latest/download/PocketPlus.zip">Mac için ücretsiz indir</a>
+        <a class="btn btn-gold btn-lg" href="/tr/#pricing">Pro'ya geç</a>
+      </div>
+      <div class="cta-links">
+        <a href="https://github.com/FerdiCildiz/pocket-plus" target="_blank" rel="noopener">GitHub'da yıldız ver ↗</a>
+        <a href="https://www.reddit.com/r/osmopocket/s/lvCdD2MSma" target="_blank" rel="noopener">Reddit'te destekle ↗</a>
+      </div>
+    </div>
+    <img class="cta-cam" src="/assets/img/pocket-cta.png" width="253" height="460" alt="">
+    <img class="pl p1" src="/assets/img/plus1.svg" alt=""><img class="pl p2" src="/assets/img/plus2.svg" alt=""><img class="pl p3" src="/assets/img/plus3.svg" alt=""><img class="pl p4" src="/assets/img/plus4.svg" alt=""><img class="pl p5" src="/assets/img/plus5.svg" alt="">
+  </div>
+</section>
+
+<!-- ================= Footer ================= -->
+<footer class="foot">
+  <div class="foot-in">
+    <div class="foot-top">
+      <a class="foot-brand" href="/tr/"><span class="fb-icon"><img src="/assets/logo-icon.svg" width="60" height="60" alt=""></span><span><span translate="no">Pocket+</span></span></a>
+      <nav class="foot-links" aria-label="Footer">
+        <a href="/tr/features/">Özellikler</a><a href="/tr/use-cases/">Kullanım Alanları</a><a href="/blog/">Blog</a><a href="/tr/faq/">SSS</a><a href="/tr/#pricing">Fiyatlar</a><a href="/privacy/">Gizlilik</a><a href="/terms/">Terms</a><a href="https://www.linkedin.com/in/ferdicildiz" target="_blank" rel="noopener">LinkedIn</a>
+      </nav>
+    </div>
+    <div class="foot-mid">
+      <details class="lang"><summary aria-label="Dil"><span>Türkçe</span><img src="/assets/icons/chevron.down.png" alt=""></summary><div class="menu"><a href="/features/teams/" lang="en" hreflang="en">English</a><a href="/tr/features/teams/" lang="tr" hreflang="tr" aria-current="page">Türkçe</a><a href="/de/features/teams/" lang="de" hreflang="de">Deutsch</a><a href="/fr/features/teams/" lang="fr" hreflang="fr">Français</a><a href="/es/features/teams/" lang="es" hreflang="es">Español</a><a href="/pt/features/teams/" lang="pt-BR" hreflang="pt-BR">Português</a><a href="/ja/features/teams/" lang="ja" hreflang="ja">日本語</a><a href="/zh/features/teams/" lang="zh-Hans" hreflang="zh-Hans">简体中文</a></div></details>
+      <a class="ig" href="https://instagram.com/pocketplus.app" target="_blank" rel="noopener">Instagram'da Takip Et <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="#fff" stroke-width="1.5"><rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r=".9" fill="#fff" stroke="none"/></svg></a>
+    </div>
+    <div class="foot-bot">
+      <span>©Copyright 2026 <span translate="no">Pocket+</span></span>
+      <p><span translate="no">Pocket+</span>, DJI ile bağlantısı olmayan bağımsız bir projedir. DJI tarafından geliştirilmemiş, onaylanmamış veya desteklenmemiştir. DJI, Osmo ve <span translate="no">Osmo Pocket</span>, SZ DJI Technology Co., Ltd.'nin ticari markalarıdır.</p>
+    </div>
+  </div>
+</footer>
+
+<script src="/hero.js"></script>
+<script src="/sections.js"></script>
+
+<a class="ph-fixed" href="https://www.producthunt.com/products/pocket-7?embed=true&amp;utm_source=badge-featured&amp;utm_medium=badge&amp;utm_campaign=badge-pocket-11" target="_blank" rel="noopener noreferrer"><img alt="Pocket+ - DJI Osmo Pocket made more capable for content creators. | Product Hunt" width="250" height="54" src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=1314620&amp;theme=light&amp;t=1794521260085"></a><style>.ph-fixed{position:fixed;right:20px;bottom:20px;z-index:50;line-height:0;filter:drop-shadow(0 4px 14px rgba(0,0,0,.35))}.ph-fixed img{display:block;width:250px;height:54px}@media(max-width:640px){.ph-fixed{right:10px;bottom:10px}.ph-fixed img{width:175px;height:auto}}</style></body>
+</html>

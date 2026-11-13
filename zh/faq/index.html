@@ -1,0 +1,231 @@
+<!doctype html>
+<html lang="zh-Hans">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#000000">
+<title>Pocket+ 常见问题：Mac 上的 DJI Osmo Pocket</title>
+<meta name="description" content="关于在 Mac 上使用 DJI Osmo Pocket 的解答：相机、安装、云台、录制、音频与 Pro。">
+<link rel="canonical" href="https://pocketplus.app/zh/faq/">
+<link rel="me" href="https://mastodon.social/@pocketplus">
+<link rel="alternate" hreflang="en" href="https://pocketplus.app/faq/">
+<link rel="alternate" hreflang="tr" href="https://pocketplus.app/tr/faq/">
+<link rel="alternate" hreflang="de" href="https://pocketplus.app/de/faq/">
+<link rel="alternate" hreflang="fr" href="https://pocketplus.app/fr/faq/">
+<link rel="alternate" hreflang="es" href="https://pocketplus.app/es/faq/">
+<link rel="alternate" hreflang="pt" href="https://pocketplus.app/pt/faq/">
+<link rel="alternate" hreflang="ja" href="https://pocketplus.app/ja/faq/">
+<link rel="alternate" hreflang="zh-Hans" href="https://pocketplus.app/zh/faq/">
+<link rel="alternate" hreflang="x-default" href="https://pocketplus.app/faq/">
+<link rel="icon" href="/assets/favicon.png" type="image/png">
+<link rel="apple-touch-icon" href="/assets/icon.png">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Pocket+ 常见问题：Mac 上的 DJI Osmo Pocket">
+<meta property="og:description" content="关于在 Mac 上使用 DJI Osmo Pocket 的解答：相机、安装、云台、录制、音频与 Pro。">
+<meta property="og:url" content="https://pocketplus.app/zh/faq/">
+<meta property="og:image" content="https://pocketplus.app/assets/og.jpg?v=04b71509">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Pocket+: control your DJI Osmo Pocket from your Mac">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Pocket+ 常见问题：Mac 上的 DJI Osmo Pocket">
+<meta name="twitter:description" content="关于在 Mac 上使用 DJI Osmo Pocket 的解答：相机、安装、云台、录制、音频与 Pro。">
+<meta name="twitter:image" content="https://pocketplus.app/assets/og.jpg?v=04b71509">
+<meta name="twitter:image:alt" content="Pocket+: control your DJI Osmo Pocket from your Mac">
+<meta name="msvalidate.01" content="C37CE93C5CEE85D6A2781B1A0F80D7F6">
+<script>
+  // Cloudflare Web Analytics (çerezsiz). Kendi ziyaretin için her tarayıcıda bir kez ?notrack=1 aç (?track=1 geri alır).
+  (() => {
+    let off = false;
+    try {
+      const q = new URLSearchParams(location.search);
+      if (q.has('notrack')) localStorage.setItem('notrack', '1');
+      if (q.has('track')) localStorage.removeItem('notrack');
+      off = localStorage.getItem('notrack') === '1';
+    } catch (e) {}
+    if (off) return;
+    const s = document.createElement('script');
+    s.type = 'module';
+    s.src = 'https://static.cloudflareinsights.com/beacon.min.js';
+    s.dataset.cfBeacon = '{"token": "16f12da5593d494e828fd44a928bdd1a"}';
+    document.head.appendChild(s);
+    // Umami Cloud (AB bölgesi, çerezsiz): olaylar için data-umami-event (sections.js satın al/indir bağlantılarına ekler)
+    const u = document.createElement('script');
+    u.defer = true;
+    u.src = 'https://cloud.umami.is/script.js';
+    u.dataset.websiteId = '388f8fe3-fb9c-4250-8e76-82636bcd8735';
+    document.head.appendChild(u);
+  })();
+</script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('consent', 'default', {ad_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied', analytics_storage: 'denied', wait_for_update: 500});
+  (() => {
+    const T = {"en": ["We'd like to use Google Analytics to understand how the site is used. It sets cookies. The app itself never tracks you.", "Accept", "Decline", "Privacy"], "tr": ["Siteyi nasıl kullandığınızı anlamak için Google Analytics kullanmak istiyoruz. Çerez bırakır. Uygulamanın kendisi sizi hiç izlemez.", "Kabul et", "Reddet", "Gizlilik"], "de": ["Wir möchten Google Analytics nutzen, um zu verstehen, wie die Website genutzt wird. Dabei werden Cookies gesetzt. Die App selbst trackt Sie nie.", "Akzeptieren", "Ablehnen", "Datenschutz"], "fr": ["Nous aimerions utiliser Google Analytics pour comprendre l'usage du site. Il dépose des cookies. L'app elle-même ne vous suit jamais.", "Accepter", "Refuser", "Confidentialité"], "es": ["Nos gustaría usar Google Analytics para entender cómo se usa el sitio. Instala cookies. La app en sí nunca te rastrea.", "Aceptar", "Rechazar", "Privacidad"], "pt": ["Gostaríamos de usar o Google Analytics para entender como o site é usado. Ele define cookies. O app em si nunca rastreia você.", "Aceitar", "Recusar", "Privacidade"], "ja": ["サイトの利用状況を把握するためGoogleアナリティクスを使いたいと考えています。Cookieを使用します。アプリ自体があなたを追跡することはありません。", "同意する", "拒否する", "プライバシー"], "zh": ["我们希望使用 Google Analytics 来了解网站的使用情况。它会设置 Cookie。应用本身绝不会追踪你。", "接受", "拒绝", "隐私"]};
+    const lang = (document.documentElement.lang || 'en').toLowerCase().split('-')[0];
+    const t = T[lang] || T.en;
+    let off = false, saved = null;
+    try { off = localStorage.getItem('notrack') === '1'; saved = localStorage.getItem('consent'); } catch (e) {}
+    if (off) return;
+    const load = () => {
+      gtag('consent', 'update', {analytics_storage: 'granted'});
+      window.dataLayer.push({'gtm.start': Date.now(), event: 'gtm.js'});
+      const s = document.createElement('script');
+      s.async = true;
+      s.src = 'https://www.googletagmanager.com/gtm.js?id=GTM-KKDFBTWK';
+      document.head.appendChild(s);
+    };
+    if (saved === 'granted') { load(); return; }
+    if (saved === 'denied') return;
+    const show = () => {
+      const b = document.createElement('div');
+      b.setAttribute('role', 'dialog');
+      b.setAttribute('aria-label', 'Cookies');
+      b.style.cssText = 'position:fixed;left:16px;right:16px;bottom:16px;z-index:2147483000;max-width:560px;margin:0 auto;padding:16px 18px;border-radius:16px;background:rgba(20,16,32,.92);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);border:1px solid rgba(255,255,255,.14);color:#fff;font:14px/1.45 system-ui,sans-serif;box-shadow:0 12px 40px rgba(0,0,0,.4)';
+      const p = document.createElement('p');
+      p.style.cssText = 'margin:0 0 12px';
+      p.textContent = t[0] + ' ';
+      const a = document.createElement('a');
+      a.href = (T[lang] && lang !== 'en' ? '/' + lang : '') + '/privacy/';
+      a.textContent = t[3];
+      a.style.cssText = 'color:#fff;text-decoration:underline';
+      p.appendChild(a);
+      const row = document.createElement('div');
+      row.style.cssText = 'display:flex;gap:10px';
+      const mk = (label, grant) => {
+        const x = document.createElement('button');
+        x.type = 'button';
+        x.textContent = label;
+        x.style.cssText = 'flex:1;padding:10px 14px;border-radius:10px;border:1px solid rgba(255,255,255,.25);background:rgba(255,255,255,.1);color:#fff;font:600 14px system-ui,sans-serif;cursor:pointer';
+        x.onclick = () => {
+          try { localStorage.setItem('consent', grant ? 'granted' : 'denied'); } catch (e) {}
+          b.remove();
+          if (grant) load();
+        };
+        return x;
+      };
+      row.append(mk(t[2], false), mk(t[1], true));
+      b.append(p, row);
+      document.body.appendChild(b);
+    };
+    if (document.body) show(); else document.addEventListener('DOMContentLoaded', show);
+  })();
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Stack+Sans+Headline:wght@300;400;500&family=Stack+Sans+Text:wght@200;300;400;500&display=swap">
+<link rel="stylesheet" href="/hero.css?v=49ed6591">
+<link rel="stylesheet" href="/sections.css?v=fefd22e0">
+<link rel="stylesheet" href="/features.css?v=32341c8f">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Pocket+", "item": "https://pocketplus.app/zh/"}, {"@type": "ListItem", "position": 2, "name": "常见问题", "item": "https://pocketplus.app/zh/faq/"}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "inLanguage": "zh-Hans", "url": "https://pocketplus.app/zh/faq/", "mainEntity": [{"@type": "Question", "name": "Pocket+ 支持哪些相机？", "acceptedAnswer": {"@type": "Answer", "text": "支持 DJI Osmo Pocket 2、3、4 和 4P，通过 USB-C 连接并开启网络摄像头模式即可。需要搭载 Apple Silicon 的 Mac，系统为 macOS 15 Sequoia 或更高版本。Intel Mac 尚未测试。目前主要使用 Pocket 3 进行开发和测试。"}}, {"@type": "Question", "name": "Pocket 3 能作为 Mac 的网络摄像头吗？", "acceptedAnswer": {"@type": "Answer", "text": "可以。通过 USB-C 连接，在相机上选择网络摄像头模式，然后打开 Pocket+。你可以查看实时画面、控制云台和变焦、开启人脸跟踪，并直接在 Mac 上录制视频。"}}, {"@type": "Question", "name": "这是 Mac 版的 DJI Mimo 吗？", "acceptedAnswer": {"@type": "Answer", "text": "不是。DJI Mimo 是大疆的手机应用，没有 Mac 版本。Pocket+ 是独立的 Mac 应用，可通过 USB-C 提供实时画面、云台和变焦控制，并直接录制到 Mac。固件更新仍需使用手机上的 DJI Mimo。"}}, {"@type": "Question", "name": "Pocket+ 是 DJI 的官方产品吗？", "acceptedAnswer": {"@type": "Answer", "text": "不是。Pocket+ 是独立项目，与 DJI 没有关联，也未获得 DJI 的认可或赞助。"}}, {"@type": "Question", "name": "为什么只有 24、25、30 FPS 的 4K 和 1080p？", "acceptedAnswer": {"@type": "Answer", "text": "这是相机在网络摄像头模式下通过 USB 提供的模式。此模式下没有 4K60 和 1080p60。"}}, {"@type": "Question", "name": "可以无线使用吗？", "acceptedAnswer": {"@type": "Answer", "text": "暂时不能。Pocket+ 目前需要通过 USB-C 线缆连接相机，尚不支持无线控制。"}}, {"@type": "Question", "name": "Pocket+ 通过 Apple 公证了吗？", "acceptedAnswer": {"@type": "Answer", "text": "是的。Pocket+ 使用 Apple Developer ID 签名，并已通过 Apple 公证，因此在 macOS 上打开时无需额外处理安全警告。应用仅会在检查更新和验证许可证时访问网络。"}}, {"@type": "Question", "name": "为什么需要相机、麦克风和蓝牙权限？", "acceptedAnswer": {"@type": "Answer", "text": "相机和麦克风权限用于获取画面和声音。蓝牙权限用于读取相机电量、USB 状态和录制按键。"}}, {"@type": "Question", "name": "如何更新 Pocket+？", "acceptedAnswer": {"@type": "Answer", "text": "Pocket+ 每天会检查一次更新。发现新版本后，点击“安装并重新打开”即可。你也可以在“设置 › 更新”中关闭自动检查。"}}, {"@type": "Question", "name": "没有画面怎么办？", "acceptedAnswer": {"@type": "Answer", "text": "先确认相机已切换到网络摄像头模式，然后点击 Pocket+ 右上角的重新连接按钮。如果仍然没有画面，请拔下 USB-C 线缆后重新连接。"}}, {"@type": "Question", "name": "为什么人脸跟踪会自动关闭？", "acceptedAnswer": {"@type": "Answer", "text": "可能是相机本身的 ActiveTrack 功能处于开启状态。请先在相机上关闭 ActiveTrack，再使用 Pocket+ 的人脸跟踪。"}}, {"@type": "Question", "name": "Pocket+ 的人脸跟踪就是相机的 ActiveTrack 吗？", "acceptedAnswer": {"@type": "Answer", "text": "不是。Pocket+ 在 Mac 上识别人脸，并实际控制云台转动。人脸跟踪默认关闭，可通过摇杆下方的按钮或 ⌘T 开启，免费使用。"}}, {"@type": "Question", "name": "什么是自动构图？", "acceptedAnswer": {"@type": "Answer", "text": "自动构图会一次性调整画面，让一个人或一组人进入合适的构图和变焦，完成后就停止。自动构图是 Pro 功能。"}}, {"@type": "Question", "name": "可以保存云台位置吗？", "acceptedAnswer": {"@type": "Answer", "text": "可以。场景最多可保存 9 个云台位置，点击或按 ⌥1 至 ⌥9 即可调用。Pro 还会在你再次打开 App 时恢复上次位置。场景和恢复上次位置都是 Pro 功能。"}}, {"@type": "Question", "name": "如何控制云台？", "acceptedAnswer": {"@type": "Answer", "text": "可以使用屏幕摇杆、方向键和快捷键。Pro 还支持拖动预览画面来转动云台，并用鼠标滚轮变焦。"}}, {"@type": "Question", "name": "录制的视频保存在哪里？", "acceptedAnswer": {"@type": "Answer", "text": "默认保存在“影片”文件夹。你可以在“设置 › 输出文件夹”中更改。"}}, {"@type": "Question", "name": "可以录制 4K 吗？", "acceptedAnswer": {"@type": "Answer", "text": "4K 录制是 Pro 功能。免费版最高可录制 1080p。你可以在设置中选择 H.264 或 HEVC 编码。"}}, {"@type": "Question", "name": "可以使用 DJI Mic 或其他麦克风吗？", "acceptedAnswer": {"@type": "Answer", "text": "可以。与相机配对的 DJI Mic 会显示为“DJI Mic”。接到 Mac 上的 DJI Mic 接收器会被自动选中，你也可以在麦克风菜单中手动选择其他 Mac 麦克风。"}}, {"@type": "Question", "name": "LUT 会写入录制的视频吗？", "acceptedAnswer": {"@type": "Answer", "text": "取决于 LUT 菜单中的“将 LUT 应用于录制”。开启后，LUT 会写入录制文件；关闭时，LUT 仅用于 Pocket+ 内的预览。LUT 是 Pro 功能。"}}, {"@type": "Question", "name": "Pocket+ 是免费的吗？", "acceptedAnswer": {"@type": "Answer", "text": "是的。最高 1080p 录制、拍照、云台与变焦控制、人脸跟踪均可免费使用。Pro 还提供 4K 录制、LUT、场景切换和自动构图。可以一次性支付 39.99 美元购买永久版，或按每年 14.99 美元订阅，无需注册账号。"}}, {"@type": "Question", "name": "如何激活 Pro？", "acceptedAnswer": {"@type": "Answer", "text": "购买后，你会通过邮件收到许可证密钥。在“设置 › Pro”中输入即可。每个许可证可在一台 Mac 上激活。若要换到另一台 Mac，请先在原来的 Mac 上从“设置 › Pro”中移除许可证。"}}, {"@type": "Question", "name": "可以和 OBS、Google Meet 一起使用吗？", "acceptedAnswer": {"@type": "Answer", "text": "可以。当 OBS、Google Meet 或 WhatsApp 使用相机画面时，你仍可通过 Pocket+ 控制云台方向和变焦。这些应用直接从相机获取画面，所以 Pocket+ 中的 LUT 和广角畸变校正不会传到它们那里。目前还没有虚拟摄像头。"}}]}</script>
+</head>
+<body class="page-ft">
+<header class="nav">
+    <div class="nav-bg" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+    <a class="brand rv" href="/zh/">
+      <span class="fb-icon"><img src="/assets/logo-icon.svg" width="64" height="64" alt=""></span>
+      <span><span translate="no">Pocket+</span></span>
+    </a>
+    <nav class="links rv" aria-label="主要">
+      <a href="/zh/features/" aria-current="page">功能</a>
+      <a href="/zh/use-cases/">使用场景</a>
+      <a href="/blog/">博客</a>
+      <a href="/zh/faq/">常见问题</a>
+      <a href="/zh/#pricing">价格</a>
+    </nav>
+    <div class="nav-cta rv">
+      <a class="btn btn-glass btn-sm" href="https://github.com/FerdiCildiz/pocket-plus/releases/latest/download/PocketPlus.zip">下载</a>
+      <a class="btn btn-gold btn-sm hide-m" href="/zh/#pricing">升级 Pro</a>
+      <button class="burger" id="burger" type="button" aria-label="菜单" aria-expanded="false" aria-controls="mmenu"><img class="ic" style="--s:20px" src="/assets/ui/line.3.horizontal.png" alt=""></button>
+    </div>
+  </header>
+  <div class="mmenu" id="mmenu" hidden>
+    <a href="/zh/features/">功能</a><a href="/zh/use-cases/">使用场景</a><a href="/blog/">博客</a><a href="/zh/faq/">常见问题</a><a href="/zh/#pricing">价格</a>
+    <a class="btn btn-gold btn-lg" href="/zh/#pricing">升级 Pro</a>
+  </div>
+<main class="ft-page ft-purple"><div class="hero-bg" aria-hidden="true"></div><section class="fx fx-index wrap"><header class="fx-head"><h1 class="h">常见问题</h1><p class="sub">大家关于 <span translate="no">Pocket+</span> 和 Mac 上 <span translate="no">DJI Osmo Pocket</span> 最常问的问题，都在这里。</p></header><div class="fx-set"><p class="fx-group">相机与兼容性</p><div class="faq"><details class="glass" id="q1"><summary><span><span translate="no">Pocket+</span> 支持哪些相机？</span><img class="chev" src="/assets/icons/chevron.down.png" alt=""></summary><p>支持 <span translate="no">DJI Osmo Pocket 2</span>、3、4 和 4P，通过 USB-C 连接并开启网络摄像头模式即可。需要搭载 Apple Silicon 的 Mac，系统为 macOS 15 Sequoia 或更高版本。Intel Mac 尚未测试。目前主要使用 <span translate="no">Pocket 3</span> 进行开发和测试。</p></details><details class="glass" id="q2"><summary><span><span translate="no">Pocket 3</span> 能作为 Mac 的网络摄像头吗？</span><img class="chev" src="/assets/icons/chevron.down.png" alt=""></summary><p>可以。通过 USB-C 连接，在相机上选择网络摄像头模式，然后打开 <span translate="no">Pocket+</span>。你可以查看实时画面、控制云台和变焦、开启人脸跟踪，并直接在 Mac 上录制视频。</p></details><details class="glass" id="q3"><summary><span>这是 Mac 版的 DJI Mimo 吗？</span><img class="chev" src="/assets/icons/chevron.down.png" alt=""></summary><p>不是。DJI Mimo 是大疆的手机应用，没有 Mac 版本。<span translate="no">Pocket+</span> 是独立的 Mac 应用，可通过 USB-C 提供实时画面、云台和变焦控制，并直接录制到 Mac。固件更新仍需使用手机上的 DJI Mimo。</p></details><details class="glass" id="q4"><summary><span><span translate="no">Pocket+</span> 是 DJI 的官方产品吗？</span><img class="chev" src="/assets/icons/chevron.down.png" alt=""></summary><p>不是。<span translate="no">Pocket+</span> 是独立项目，与 DJI 没有关联，也未获得 DJI 的认可或赞助。</p></details><details class="glass" id="q5"><summary><span>为什么只有 24、25、30 FPS 的 4K 和 1080p？</span><img class="chev" src="/assets/icons/chevron.down.png" alt=""></summary><p>这是相机在网络摄像头模式下通过 USB 提供的模式。此模式下没有 4K60 和 1080p60。</p></details><details class="glass" id="q6"><summary><span>可以无线使用吗？</span><img class="chev" src="/assets/icons/chevron.down.png" alt=""></summary><p>暂时不能。<span translate="no">Pocket+</span> 目前需要通过 USB-C 线缆连接相机，尚不支持无线控制。</p></details></div></div><div class="fx-set"><p class="fx-group">安装与权限</p><div class="faq"><details class="glass" id="q7"><summary><span><span translate="no">Pocket+</span> 通过 Apple 公证了吗？</span><img class="chev" src="/assets/icons/chevron.down.png" alt=""></summary><p>是的。<span translate="no">Pocket+</span> 使用 Apple Developer ID 签名，并已通过 Apple 公证，因此在 macOS 上打开时无需额外处理安全警告。应用仅会在检查更新和验证许可证时访问网络。</p></details><details class="glass" id="q8"><summary><span>为什么需要相机、麦克风和蓝牙权限？</span><img class="chev" src="/assets/icons/chevron.down.png" alt=""></summary><p>相机和麦克风权限用于获取画面和声音。蓝牙权限用于读取相机电量、USB 状态和录制按键。</p></details><details class="glass" id="q9"><summary><span>如何更新 <span translate="no">Pocket+</span>？</span><img class="chev" src="/assets/icons/chevron.down.png" alt=""></summary><p><span translate="no">Pocket+</span> 每天会检查一次更新。发现新版本后，点击“安装并重新打开”即可。你也可以在“设置 › 更新”中关闭自动检查。</p></details><details class="glass" id="q10"><summary><span>没有画面怎么办？</span><img class="chev" src="/assets/icons/chevron.down.png" alt=""></summary><p>先确认相机已切换到网络摄像头模式，然后点击 <span translate="no">Pocket+</span> 右上角的重新连接按钮。如果仍然没有画面，请拔下 USB-C 线缆后重新连接。</p></details></div></div><div class="fx-set"><p class="fx-group">云台与人脸跟踪</p><div class="faq"><details class="glass" id="q11"><summary><span>为什么人脸跟踪会自动关闭？</span><img class="chev" src="/assets/icons/chevron.down.png" alt=""></summary><p>可能是相机本身的 ActiveTrack 功能处于开启状态。请先在相机上关闭 ActiveTrack，再使用 <span translate="no">Pocket+</span> 的人脸跟踪。</p></details><details class="glass" id="q12"><summary><span><span translate="no">Pocket+</span> 的人脸跟踪就是相机的 ActiveTrack 吗？</span><img class="chev" src="/assets/icons/chevron.down.png" alt=""></summary><p>不是。<span translate="no">Pocket+</span> 在 Mac 上识别人脸，并实际控制云台转动。人脸跟踪默认关闭，可通过摇杆下方的按钮或 <kbd>⌘T</kbd> 开启，免费使用。</p></details><details class="glass" id="q13"><summary><span>什么是自动构图？</span><img class="chev" src="/assets/icons/chevron.down.png" alt=""></summary><p>自动构图会一次性调整画面，让一个人或一组人进入合适的构图和变焦，完成后就停止。自动构图是 Pro 功能。</p></details><details class="glass" id="q14"><summary><span>可以保存云台位置吗？</span><img class="chev" src="/assets/icons/chevron.down.png" alt=""></summary><p>可以。场景最多可保存 9 个云台位置，点击或按 <kbd>⌥1</kbd> 至 <kbd>⌥9</kbd> 即可调用。Pro 还会在你再次打开 App 时恢复上次位置。场景和恢复上次位置都是 Pro 功能。</p></details><details class="glass" id="q15"><summary><span>如何控制云台？</span><img class="chev" src="/assets/icons/chevron.down.png" alt=""></summary><p>可以使用屏幕摇杆、方向键和快捷键。Pro 还支持拖动预览画面来转动云台，并用鼠标滚轮变焦。</p></details></div></div><div class="fx-set"><p class="fx-group">录制与音频</p><div class="faq"><details class="glass" id="q16"><summary><span>录制的视频保存在哪里？</span><img class="chev" src="/assets/icons/chevron.down.png" alt=""></summary><p>默认保存在“影片”文件夹。你可以在“设置 › 输出文件夹”中更改。</p></details><details class="glass" id="q17"><summary><span>可以录制 4K 吗？</span><img class="chev" src="/assets/icons/chevron.down.png" alt=""></summary><p>4K 录制是 Pro 功能。免费版最高可录制 1080p。你可以在设置中选择 H.264 或 HEVC 编码。</p></details><details class="glass" id="q18"><summary><span>可以使用 DJI Mic 或其他麦克风吗？</span><img class="chev" src="/assets/icons/chevron.down.png" alt=""></summary><p>可以。与相机配对的 DJI Mic 会显示为“DJI Mic”。接到 Mac 上的 DJI Mic 接收器会被自动选中，你也可以在麦克风菜单中手动选择其他 Mac 麦克风。</p></details><details class="glass" id="q19"><summary><span>LUT 会写入录制的视频吗？</span><img class="chev" src="/assets/icons/chevron.down.png" alt=""></summary><p>取决于 LUT 菜单中的“将 LUT 应用于录制”。开启后，LUT 会写入录制文件；关闭时，LUT 仅用于 <span translate="no">Pocket+</span> 内的预览。LUT 是 Pro 功能。</p></details></div></div><div class="fx-set"><p class="fx-group">Pro 与许可证</p><div class="faq"><details class="glass" id="q20"><summary><span><span translate="no">Pocket+</span> 是免费的吗？</span><img class="chev" src="/assets/icons/chevron.down.png" alt=""></summary><p>是的。最高 1080p 录制、拍照、云台与变焦控制、人脸跟踪均可免费使用。Pro 还提供 4K 录制、LUT、场景切换和自动构图。可以一次性支付 39.99 美元购买永久版，或按每年 14.99 美元订阅，无需注册账号。</p></details><details class="glass" id="q21"><summary><span>如何激活 Pro？</span><img class="chev" src="/assets/icons/chevron.down.png" alt=""></summary><p>购买后，你会通过邮件收到许可证密钥。在“设置 › Pro”中输入即可。每个许可证可在一台 Mac 上激活。若要换到另一台 Mac，请先在原来的 Mac 上从“设置 › Pro”中移除许可证。</p></details></div></div><div class="fx-set"><p class="fx-group">其他应用</p><div class="faq"><details class="glass" id="q22"><summary><span>可以和 OBS、Google Meet 一起使用吗？</span><img class="chev" src="/assets/icons/chevron.down.png" alt=""></summary><p>可以。当 OBS、Google Meet 或 WhatsApp 使用相机画面时，你仍可通过 <span translate="no">Pocket+</span> 控制云台方向和变焦。这些应用直接从相机获取画面，所以 <span translate="no">Pocket+</span> 中的 LUT 和广角畸变校正不会传到它们那里。目前还没有虚拟摄像头。</p></details></div></div></section></main>
+<section class="sec sec-price" id="pricing">
+  <div class="sec-head center">
+    <h2>免费开始，需要时再升级 Pro。</h2>
+    <p>基础功能永久免费。想要 4K 录制、场景切换和更多高级控制？可选择一次性购买或按年订阅 Pro。</p>
+  </div>
+  <div class="plans">
+    <article class="plan plan-free">
+      <header><h3><span translate="no">Pocket+</span> 免费版</h3><b>$0</b></header>
+      <ul class="ticks">
+        <li>实时预览、拍照及最高 1080p 录制</li>
+        <li>云台控制、回中与前后翻转</li>
+        <li>变焦控制和快捷键</li>
+        <li>人脸跟踪</li>
+        <li>网格与水平线辅助</li>
+        <li>DJI Mic 支持及音量、电量、存储空间显示</li>
+      </ul>
+      <a class="btn btn-glass btn-lg btn-block" href="https://github.com/FerdiCildiz/pocket-plus/releases/latest/download/PocketPlus.zip">免费下载</a>
+    </article>
+    <article class="plan plan-pro">
+      <header><h3><span translate="no">Pocket+</span> Pro</h3><div class="price"><b>$39.99</b><small>限时发布价</small></div></header>
+      <ul class="ticks">
+        <li>包含免费版所有功能</li>
+        <li>最高 4K 视频录制</li>
+        <li>内置色彩风格及自定义 .cube／PNG LUT</li>
+        <li>自动构图</li>
+        <li>最多保存 9 个场景，支持快捷键切换</li>
+        <li>拖动画面控制云台，滚动鼠标滚轮变焦</li>
+        <li>9:16 竖屏构图辅助线</li>
+        <li>广角畸变校正</li>
+      </ul>
+      <div class="buy">
+        <a class="btn btn-gold btn-lg btn-block" href="https://buy.polar.sh/polar_cl_exSJRc2Q9kyqAzbR8Jr162wx4JMVpTfZq0gqe2kfyPu" target="_blank" rel="noopener">购买 Pro 永久版 <i>·</i> $39.99</a>
+        <a class="btn btn-glass btn-teal btn-lg btn-block" href="https://buy.polar.sh/polar_cl_yCHcBSKuanaZnRTX9UhI2eb80silnrscE8Upm2MAntK" target="_blank" rel="noopener">订阅 Pro 年付版 <i>·</i> $14.99</a>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- ================= Download CTA ================= -->
+<section class="sec sec-cta" id="download">
+  <div class="cta-card">
+    <div class="cta-copy">
+      <h2>下一次拍摄，从 <span translate="no">Pocket+</span> 开始。</h2>
+      <p>在 Mac 上控制你的 <span translate="no">DJI Osmo Pocket</span>。免费下载 <span translate="no">Pocket+</span>，几分钟即可开始创作。</p>
+      <div class="cta-btns">
+        <a class="btn btn-glass btn-lg" href="https://github.com/FerdiCildiz/pocket-plus/releases/latest/download/PocketPlus.zip">免费下载 Mac 版</a>
+        <a class="btn btn-gold btn-lg" href="/zh/#pricing">升级 Pro</a>
+      </div>
+      <div class="cta-links">
+        <a href="https://github.com/FerdiCildiz/pocket-plus" target="_blank" rel="noopener">在 GitHub 上点亮 Star ↗</a>
+        <a href="https://www.reddit.com/r/osmopocket/s/lvCdD2MSma" target="_blank" rel="noopener">在 Reddit 上支持我们 ↗</a>
+      </div>
+    </div>
+    <img class="cta-cam" src="/assets/img/pocket-cta.png" width="253" height="460" alt="">
+    <img class="pl p1" src="/assets/img/plus1.svg" alt=""><img class="pl p2" src="/assets/img/plus2.svg" alt=""><img class="pl p3" src="/assets/img/plus3.svg" alt=""><img class="pl p4" src="/assets/img/plus4.svg" alt=""><img class="pl p5" src="/assets/img/plus5.svg" alt="">
+  </div>
+</section>
+
+<!-- ================= Footer ================= -->
+<footer class="foot">
+  <div class="foot-in">
+    <div class="foot-top">
+      <a class="foot-brand" href="/zh/"><span class="fb-icon"><img src="/assets/logo-icon.svg" width="60" height="60" alt=""></span><span><span translate="no">Pocket+</span></span></a>
+      <nav class="foot-links" aria-label="Footer">
+        <a href="/zh/features/">功能</a><a href="/zh/use-cases/">使用场景</a><a href="/blog/">博客</a><a href="/zh/faq/">常见问题</a><a href="/zh/#pricing">价格</a><a href="/privacy/">隐私</a><a href="/terms/">Terms</a><a href="https://www.linkedin.com/in/ferdicildiz" target="_blank" rel="noopener">LinkedIn</a>
+      </nav>
+    </div>
+    <div class="foot-mid">
+      <details class="lang"><summary aria-label="语言"><span>简体中文</span><img src="/assets/icons/chevron.down.png" alt=""></summary><div class="menu"><a href="/faq/" lang="en" hreflang="en">English</a><a href="/tr/faq/" lang="tr" hreflang="tr">Türkçe</a><a href="/de/faq/" lang="de" hreflang="de">Deutsch</a><a href="/fr/faq/" lang="fr" hreflang="fr">Français</a><a href="/es/faq/" lang="es" hreflang="es">Español</a><a href="/pt/faq/" lang="pt-BR" hreflang="pt-BR">Português</a><a href="/ja/faq/" lang="ja" hreflang="ja">日本語</a><a href="/zh/faq/" lang="zh-Hans" hreflang="zh-Hans" aria-current="page">简体中文</a></div></details>
+      <a class="ig" href="https://instagram.com/pocketplus.app" target="_blank" rel="noopener">在 Instagram 上关注我们 <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="#fff" stroke-width="1.5"><rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r=".9" fill="#fff" stroke="none"/></svg></a>
+    </div>
+    <div class="foot-bot">
+      <span>©版权所有 2026 <span translate="no">Pocket+</span></span>
+      <p><span translate="no">Pocket+</span> 为独立项目，与 DJI 无任何关联，亦未获得 DJI 的认可或赞助。DJI、Osmo 和 <span translate="no">Osmo Pocket</span> 是 SZ DJI Technology Co., Ltd. 的商标。</p>
+    </div>
+  </div>
+</footer>
+
+<script src="/hero.js"></script>
+<script src="/sections.js"></script>
+
+<a class="ph-fixed" href="https://www.producthunt.com/products/pocket-7?embed=true&amp;utm_source=badge-featured&amp;utm_medium=badge&amp;utm_campaign=badge-pocket-11" target="_blank" rel="noopener noreferrer"><img alt="Pocket+ - DJI Osmo Pocket made more capable for content creators. | Product Hunt" width="250" height="54" src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=1314620&amp;theme=light&amp;t=1794521260085"></a><style>.ph-fixed{position:fixed;right:20px;bottom:20px;z-index:50;line-height:0;filter:drop-shadow(0 4px 14px rgba(0,0,0,.35))}.ph-fixed img{display:block;width:250px;height:54px}@media(max-width:640px){.ph-fixed{right:10px;bottom:10px}.ph-fixed img{width:175px;height:auto}}</style></body>
+</html>

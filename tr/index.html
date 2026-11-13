@@ -1,0 +1,396 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#000000">
+<title>Pocket+ | DJI Osmo Pocket için Mac Kontrol Uygulaması</title>
+<meta name="description" content="DJI Osmo Pocket kameranı Mac&#x27;inden kontrol et. Gimbal kontrolü, yüz takibi, zoom, sahneler ve 4K kayıt. Pocket+&#x27;ı ücretsiz indir.">
+<link rel="canonical" href="https://pocketplus.app/tr/">
+<link rel="me" href="https://mastodon.social/@pocketplus">
+<link rel="alternate" hreflang="en" href="https://pocketplus.app/">
+<link rel="alternate" hreflang="tr" href="https://pocketplus.app/tr/">
+<link rel="alternate" hreflang="de" href="https://pocketplus.app/de/">
+<link rel="alternate" hreflang="fr" href="https://pocketplus.app/fr/">
+<link rel="alternate" hreflang="es" href="https://pocketplus.app/es/">
+<link rel="alternate" hreflang="pt" href="https://pocketplus.app/pt/">
+<link rel="alternate" hreflang="ja" href="https://pocketplus.app/ja/">
+<link rel="alternate" hreflang="zh-Hans" href="https://pocketplus.app/zh/">
+<link rel="alternate" hreflang="x-default" href="https://pocketplus.app/">
+<link rel="icon" href="/assets/favicon.png" type="image/png">
+<link rel="apple-touch-icon" href="/assets/icon.png">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Pocket+ | DJI Osmo Pocket için Mac Kontrol Uygulaması">
+<meta property="og:description" content="DJI Osmo Pocket kameranı Mac&#x27;inden kontrol et. Gimbal kontrolü, yüz takibi, zoom, sahneler ve 4K kayıt. Pocket+&#x27;ı ücretsiz indir.">
+<meta property="og:url" content="https://pocketplus.app/tr/">
+<meta property="og:image" content="https://pocketplus.app/assets/og.jpg?v=04b71509">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Pocket+: control your DJI Osmo Pocket from your Mac">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Pocket+ | DJI Osmo Pocket için Mac Kontrol Uygulaması">
+<meta name="twitter:description" content="DJI Osmo Pocket kameranı Mac&#x27;inden kontrol et. Gimbal kontrolü, yüz takibi, zoom, sahneler ve 4K kayıt. Pocket+&#x27;ı ücretsiz indir.">
+<meta name="twitter:image" content="https://pocketplus.app/assets/og.jpg?v=04b71509">
+<meta name="twitter:image:alt" content="Pocket+: control your DJI Osmo Pocket from your Mac">
+<meta name="msvalidate.01" content="C37CE93C5CEE85D6A2781B1A0F80D7F6">
+<script>
+  // Cloudflare Web Analytics (çerezsiz). Kendi ziyaretin için her tarayıcıda bir kez ?notrack=1 aç (?track=1 geri alır).
+  (() => {
+    let off = false;
+    try {
+      const q = new URLSearchParams(location.search);
+      if (q.has('notrack')) localStorage.setItem('notrack', '1');
+      if (q.has('track')) localStorage.removeItem('notrack');
+      off = localStorage.getItem('notrack') === '1';
+    } catch (e) {}
+    if (off) return;
+    const s = document.createElement('script');
+    s.type = 'module';
+    s.src = 'https://static.cloudflareinsights.com/beacon.min.js';
+    s.dataset.cfBeacon = '{"token": "16f12da5593d494e828fd44a928bdd1a"}';
+    document.head.appendChild(s);
+    // Umami Cloud (AB bölgesi, çerezsiz): olaylar için data-umami-event (sections.js satın al/indir bağlantılarına ekler)
+    const u = document.createElement('script');
+    u.defer = true;
+    u.src = 'https://cloud.umami.is/script.js';
+    u.dataset.websiteId = '388f8fe3-fb9c-4250-8e76-82636bcd8735';
+    document.head.appendChild(u);
+  })();
+</script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('consent', 'default', {ad_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied', analytics_storage: 'denied', wait_for_update: 500});
+  (() => {
+    const T = {"en": ["We'd like to use Google Analytics to understand how the site is used. It sets cookies. The app itself never tracks you.", "Accept", "Decline", "Privacy"], "tr": ["Siteyi nasıl kullandığınızı anlamak için Google Analytics kullanmak istiyoruz. Çerez bırakır. Uygulamanın kendisi sizi hiç izlemez.", "Kabul et", "Reddet", "Gizlilik"], "de": ["Wir möchten Google Analytics nutzen, um zu verstehen, wie die Website genutzt wird. Dabei werden Cookies gesetzt. Die App selbst trackt Sie nie.", "Akzeptieren", "Ablehnen", "Datenschutz"], "fr": ["Nous aimerions utiliser Google Analytics pour comprendre l'usage du site. Il dépose des cookies. L'app elle-même ne vous suit jamais.", "Accepter", "Refuser", "Confidentialité"], "es": ["Nos gustaría usar Google Analytics para entender cómo se usa el sitio. Instala cookies. La app en sí nunca te rastrea.", "Aceptar", "Rechazar", "Privacidad"], "pt": ["Gostaríamos de usar o Google Analytics para entender como o site é usado. Ele define cookies. O app em si nunca rastreia você.", "Aceitar", "Recusar", "Privacidade"], "ja": ["サイトの利用状況を把握するためGoogleアナリティクスを使いたいと考えています。Cookieを使用します。アプリ自体があなたを追跡することはありません。", "同意する", "拒否する", "プライバシー"], "zh": ["我们希望使用 Google Analytics 来了解网站的使用情况。它会设置 Cookie。应用本身绝不会追踪你。", "接受", "拒绝", "隐私"]};
+    const lang = (document.documentElement.lang || 'en').toLowerCase().split('-')[0];
+    const t = T[lang] || T.en;
+    let off = false, saved = null;
+    try { off = localStorage.getItem('notrack') === '1'; saved = localStorage.getItem('consent'); } catch (e) {}
+    if (off) return;
+    const load = () => {
+      gtag('consent', 'update', {analytics_storage: 'granted'});
+      window.dataLayer.push({'gtm.start': Date.now(), event: 'gtm.js'});
+      const s = document.createElement('script');
+      s.async = true;
+      s.src = 'https://www.googletagmanager.com/gtm.js?id=GTM-KKDFBTWK';
+      document.head.appendChild(s);
+    };
+    if (saved === 'granted') { load(); return; }
+    if (saved === 'denied') return;
+    const show = () => {
+      const b = document.createElement('div');
+      b.setAttribute('role', 'dialog');
+      b.setAttribute('aria-label', 'Cookies');
+      b.style.cssText = 'position:fixed;left:16px;right:16px;bottom:16px;z-index:2147483000;max-width:560px;margin:0 auto;padding:16px 18px;border-radius:16px;background:rgba(20,16,32,.92);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);border:1px solid rgba(255,255,255,.14);color:#fff;font:14px/1.45 system-ui,sans-serif;box-shadow:0 12px 40px rgba(0,0,0,.4)';
+      const p = document.createElement('p');
+      p.style.cssText = 'margin:0 0 12px';
+      p.textContent = t[0] + ' ';
+      const a = document.createElement('a');
+      a.href = (T[lang] && lang !== 'en' ? '/' + lang : '') + '/privacy/';
+      a.textContent = t[3];
+      a.style.cssText = 'color:#fff;text-decoration:underline';
+      p.appendChild(a);
+      const row = document.createElement('div');
+      row.style.cssText = 'display:flex;gap:10px';
+      const mk = (label, grant) => {
+        const x = document.createElement('button');
+        x.type = 'button';
+        x.textContent = label;
+        x.style.cssText = 'flex:1;padding:10px 14px;border-radius:10px;border:1px solid rgba(255,255,255,.25);background:rgba(255,255,255,.1);color:#fff;font:600 14px system-ui,sans-serif;cursor:pointer';
+        x.onclick = () => {
+          try { localStorage.setItem('consent', grant ? 'granted' : 'denied'); } catch (e) {}
+          b.remove();
+          if (grant) load();
+        };
+        return x;
+      };
+      row.append(mk(t[2], false), mk(t[1], true));
+      b.append(p, row);
+      document.body.appendChild(b);
+    };
+    if (document.body) show(); else document.addEventListener('DOMContentLoaded', show);
+  })();
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Stack+Sans+Headline:wght@300;400;500&family=Stack+Sans+Text:wght@200;300;400;500&display=swap">
+<link rel="stylesheet" href="/hero.css?v=49ed6591">
+<link rel="stylesheet" href="/sections.css?v=fefd22e0">
+<link rel="stylesheet" href="/features.css?v=32341c8f">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "Pocket+", "alternateName": "Pocket Control", "isAccessibleForFree": true, "url": "https://pocketplus.app/tr/", "image": "https://pocketplus.app/assets/og.jpg?v=04b71509", "operatingSystem": "macOS 15 or later", "applicationCategory": "MultimediaApplication", "inLanguage": "tr", "description": "DJI Osmo Pocket kameranı Mac'inden kontrol et. Gimbal kontrolü, yüz takibi, zoom, sahneler ve 4K kayıt. Pocket+'ı ücretsiz indir.", "offers": [{"@type": "Offer", "name": "Free", "price": "0", "priceCurrency": "USD"}, {"@type": "Offer", "name": "Pro Lifetime (one-time)", "price": "39.99", "priceCurrency": "USD", "url": "https://pocketplus.app/#pricing"}, {"@type": "Offer", "name": "Pro Yearly", "price": "14.99", "priceCurrency": "USD", "url": "https://pocketplus.app/#pricing"}], "author": {"@type": "Person", "name": "Ferdi Cildiz"}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "inLanguage": "tr", "url": "https://pocketplus.app/tr/", "mainEntity": [{"@type": "Question", "name": "Pocket+ hangi kameralarla çalışıyor?", "acceptedAnswer": {"@type": "Answer", "text": "Pocket+, DJI Osmo Pocket 2, 3, 4 ve 4P'yi destekliyor. Kameranı USB-C üzerinden Webcam modunda bağlaman yeterli. Apple Silicon işlemcili bir Mac'te macOS 15 Sequoia veya üzeri gerekiyor. Intel Mac'lerde denenmedi. Geliştirme ve testler ağırlıklı olarak Pocket 3 üzerinde yapılıyor."}}, {"@type": "Question", "name": "Osmo Pocket 3'ü Mac'te webcam olarak kullanabilir miyim?", "acceptedAnswer": {"@type": "Answer", "text": "Evet. Kameranı USB-C ile bağlayıp Webcam modunu seç. Pocket+'ı açtığında canlı görüntüyü izleyebilir, gimbalı ve zoom'u kontrol edebilir, yüz takibini kullanabilir ve Mac'ine kayıt alabilirsin."}}, {"@type": "Question", "name": "Pocket+ gerçekten ücretsiz mi?", "acceptedAnswer": {"@type": "Answer", "text": "Evet. 1080p'ye kadar kayıt, fotoğraf çekme, gimbal kontrolü, zoom ve yüz takibi ücretsiz. Daha gelişmiş özellikler için Pro'ya tek seferlik 39,99 $ veya yıllık 14,99 $ karşılığında geçebilirsin. Hesap oluşturman da gerekmiyor."}}, {"@type": "Question", "name": "OBS veya Google Meet ile kullanabilir miyim?", "acceptedAnswer": {"@type": "Answer", "text": "Evet. OBS, Google Meet veya WhatsApp kamerandan görüntü alırken Pocket+ ile gimbalı ve zoom'u kontrol etmeye devam edebilirsin."}}, {"@type": "Question", "name": "Yüz takibi neden kendiliğinden kapanıyor?", "acceptedAnswer": {"@type": "Answer", "text": "Kameranın kendi ActiveTrack özelliği açıksa Pocket+'ın yüz takibi kapanabilir. Kameradan ActiveTrack'i kapatıp yeniden dene."}}, {"@type": "Question", "name": "Kameradan görüntü gelmiyorsa ne yapmalıyım?", "acceptedAnswer": {"@type": "Answer", "text": "Önce kameranın Webcam modunda olduğundan emin ol. Ardından Pocket+'ın sağ üst köşesindeki yeniden bağlan düğmesine tıkla. Sorun devam ederse USB-C kablosunu çıkarıp tekrar tak."}}, {"@type": "Question", "name": "Pocket+ Apple tarafından notarize edildi mi?", "acceptedAnswer": {"@type": "Answer", "text": "Evet. Pocket+, Apple Developer ID ile imzalanıyor ve Apple'ın notarizasyon kontrolünden geçiyor. Bu sayede macOS'te ek güvenlik izni gerektirmeden açılıyor. Uygulama yalnızca güncelleme ve lisans kontrolü için internete bağlanıyor."}}]}</script>
+</head>
+<body>
+
+<header class="nav">
+    <div class="nav-bg" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+    <a class="brand rv" href="/tr/">
+      <span class="fb-icon"><img src="/assets/logo-icon.svg" width="64" height="64" alt=""></span>
+      <span><span translate="no">Pocket+</span></span>
+    </a>
+    <nav class="links rv" aria-label="Ana menü">
+      <a href="/tr/features/">Özellikler</a>
+      <a href="/tr/use-cases/">Kullanım Alanları</a>
+      <a href="/blog/">Blog</a>
+      <a href="/tr/faq/">SSS</a>
+      <a href="#pricing">Fiyatlar</a>
+    </nav>
+    <div class="nav-cta rv">
+      <a class="btn btn-glass btn-sm" href="https://github.com/FerdiCildiz/pocket-plus/releases/latest/download/PocketPlus.zip">İndir</a>
+      <a class="btn btn-gold btn-sm hide-m" href="#pricing">Pro'ya geç</a>
+      <button class="burger" id="burger" type="button" aria-label="Menü" aria-expanded="false" aria-controls="mmenu"><img class="ic" style="--s:20px" src="/assets/ui/line.3.horizontal.png" alt=""></button>
+    </div>
+  </header>
+  <div class="mmenu" id="mmenu" hidden>
+    <a href="/tr/features/">Özellikler</a><a href="/tr/use-cases/">Kullanım Alanları</a><a href="/blog/">Blog</a><a href="/tr/faq/">SSS</a><a href="#pricing">Fiyatlar</a>
+    <a class="btn btn-gold btn-lg" href="#pricing">Pro'ya geç</a>
+  </div>
+<main class="hero" id="top">
+  <div class="hero-bg" aria-hidden="true"></div>
+
+  
+
+  <section class="copy">
+    <h1 aria-label="DJI Osmo Pocket içerik üreticileri için daha yetenekli"><span class="rv" style="--d:.15" aria-hidden="true"><span translate="no">DJI Osmo Pocket</span></span><span class="rv line3" style="--d:.28" aria-hidden="true"><span class="rot" id="rot"><span class="w on">içerik üreticileri</span><span class="w">YouTuber'lar</span><span class="w">podcaster'lar</span><span class="w">yayıncılar</span><span class="w">eğitmenler</span></span></span><span class="rv" style="--d:.41" aria-hidden="true">için daha yetenekli</span></h1>
+    <p class="sub rv" style="--d:.55">Kaydet, gimbalı ayarla, yüzleri takip et, yönü değiştir ve daha fazlası, hepsi tek yerde.</p>
+    <div class="cta rv" style="--d:.68">
+      <div class="cta-row">
+        <a class="btn btn-glass btn-lg" href="https://github.com/FerdiCildiz/pocket-plus/releases/latest/download/PocketPlus.zip">Mac için İndir</a>
+        <a class="btn btn-gold btn-lg" href="#pricing">Pro Sürümü Al</a>
+      </div>
+      <p class="meta">Sürüm 2.0 · macOS 15 veya üstü · Apple Silicon</p>
+    </div>
+  </section>
+
+  <!-- Ekran görüntüsü: 1200 pt'lik sabit sahne, JS ile genişliğe göre ölçeklenir -->
+  <div class="shot rv" id="shot" style="--d:.85">
+    <div class="shot-scale" id="shotScale">
+      <div class="tilt" id="tilt">
+        <!-- Hero: YouTube tanıtım videosu (sessiz, kendiliğinden başlar, döngüde; ses isteyen oynatıcıdan açar). 16:9, pencere 1200×675.
+             Kodla çizilmiş alternatif: hero-coded-interface.html. -->
+        <div class="win promo" id="heroPromo">
+          <iframe class="screen-yt" id="heroVideo" data-src="https://www.youtube-nocookie.com/embed/H9D5u8wYTI8?autoplay=1&amp;mute=1&amp;controls=0&amp;disablekb=1&amp;fs=0&amp;iv_load_policy=3&amp;rel=0&amp;modestbranding=1&amp;playsinline=1&amp;enablejsapi=1" title="Pocket+: monitor, control and record the DJI Osmo Pocket on Mac" allow="autoplay; encrypted-media; picture-in-picture" tabindex="-1" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+          <!-- Kendi kontrollerimiz: YouTube arayüzü gizli (iframe tıklanmaz). Üzerine gelince sağ üstte ses, sağ altta YouTube; çift tık tam ekran; video bitince tekrar oynat -->
+          <button class="yt-btn yt-mute" id="ytMute" type="button" aria-label="Unmute" aria-pressed="true">
+            <svg class="i-off" viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9.5v5h3.5L12 18.5v-13L7.5 9.5H4z"/><path d="M16 9.5l5 5M21 9.5l-5 5"/></svg>
+            <svg class="i-on" viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9.5v5h3.5L12 18.5v-13L7.5 9.5H4z"/><path d="M15.5 9a4.2 4.2 0 0 1 0 6M18 6.5a8 8 0 0 1 0 11"/></svg>
+          </button>
+          <a class="yt-btn yt-link" href="https://www.youtube.com/watch?v=H9D5u8wYTI8" target="_blank" rel="noopener" aria-label="Watch on YouTube">
+            <svg viewBox="0 0 28 20" width="28" height="20" aria-hidden="true"><rect width="28" height="20" rx="5" fill="#ff0033"/><path d="M11.5 5.8v8.4L19 10z" fill="#fff"/></svg><span>YouTube</span>
+          </a>
+          <button class="yt-btn yt-replay" id="ytReplay" type="button" aria-label="Replay">
+            <svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 12a7.5 7.5 0 1 0 2.4-5.5"/><path d="M4.5 4.5v4h4"/></svg>
+          </button>
+        </div>
+      </div>
+      <!-- DJI Osmo Pocket 3: PNG pencerenin sağ kenarına biner; gölge PNG'nin şeklini izler (drop-shadow) -->
+      <img class="cam" src="/assets/img/pocket-camera.png" width="265" height="682" alt="DJI Osmo Pocket 3">
+    </div>
+  </div>
+</main>
+<!-- ================= Use cases ================= -->
+<section class="sec sec-uc" id="use-cases">
+  <div class="sec-head center">
+    <h2>İÇERİK ÜRETİCİLERİ İÇİN<br>Sen üret, kamera sana ayak uydursun.</h2>
+    <p>YouTube videosu, podcast ya da canlı yayın… <span translate="no">Pocket+</span> ile kameranı Mac'inden kontrol et, sen içeriğine odaklan.</p>
+    <a class="btn btn-glass btn-lg" href="/tr/use-cases/">Kullanım alanlarını keşfet</a>
+  </div>
+  <div class="compat">
+    <p>Birlikte çalıştığı uygulamalar</p>
+    <div class="logos">
+      <a class="lg-link" href="/tr/features/zoom/"><img src="/assets/logos/zoom.svg" width="107" height="24" alt="Zoom"></a>
+      <a class="lg-link" href="/tr/features/whatsapp/"><img src="/assets/logos/whatsapp.svg" width="48" height="48" alt="WhatsApp"></a>
+      <span class="lg-yt" role="img" aria-label="YouTube"><img src="/assets/logos/yt-a.svg" alt=""><img src="/assets/logos/yt-b.svg" alt=""></span>
+      <a class="lg-link" href="/tr/features/obs/"><img src="/assets/logos/obs.svg" width="40" height="40" alt="OBS"></a>
+      <a class="lg-link" href="/tr/features/google-meet/"><span class="lg-meet" role="img" aria-label="Google Meet"><img class="m4" src="/assets/logos/meet-p4.svg" alt=""><img class="m2" src="/assets/logos/meet-p2.svg" alt=""><img class="mc" src="/assets/logos/meet-c13.svg" alt=""><img class="mt" src="/assets/logos/meet-text.svg" alt=""></span></a>
+      <a class="lg-link" href="/tr/features/teams/"><img src="/assets/logos/teams.svg" width="43" height="40" alt="Microsoft Teams"></a>
+      <img src="/assets/logos/streamlabs.svg" width="191" height="32" alt="Streamlabs">
+    </div>
+  </div>
+  <div class="uc-grid">
+    <a class="uc c-red" href="/tr/use-cases/#youtubers"><img class="ico" src="/assets/icons/play.png" alt=""><h3>YouTuber'lar</h3><p>Kadrajını ayarla, kameranı kontrol et, videonu Mac'inden kaydet.</p></a>
+    <a class="uc c-purple" href="/tr/use-cases/#podcasters"><img class="ico" src="/assets/icons/music.microphone.png" alt=""><h3>Podcast yayıncıları</h3><p>Sen sohbete odaklan. Hareket ettikçe kamera seni takip etsin.</p></a>
+    <a class="uc c-blue" href="/tr/use-cases/#streamers"><img class="ico" src="/assets/icons/video.png" alt=""><h3>Canlı yayıncılar</h3><p>OBS'te yayın yaparken kamera açını ve zoom'u anlık olarak kontrol et.</p></a>
+    <a class="uc c-mint" href="/tr/use-cases/#meetings"><img class="ico" src="/assets/icons/inset.filled.topthird.square.png" alt=""><h3>Online toplantılar</h3><p>Google Meet ve diğer görüntülü görüşmelerde kamera açını kolayca ayarla.</p></a>
+  </div>
+</section>
+
+<!-- ================= One camera. Every angle. ================= -->
+<section class="sec sec-scn" id="scenes">
+  <div class="scn">
+    <header class="scn-head">
+      <h2>Tek kamera. Farklı açılar.</h2>
+      <p>Sık kullandığın kamera açılarını kaydet. İstediğin kadraja tek bir klavye kısayoluyla dön. Kameraya dokunmana bile gerek yok.</p>
+    </header>
+    <div class="scn-stage">
+      <div class="scn-frame" id="scnFrame">
+                <img class="on" src="/assets/img/scene-1.jpg" alt="" style="--o:50% 50%;--z:1">
+        <img src="/assets/img/scene-2.jpg" alt="" style="--o:50% 50%;--z:1">
+        <img src="/assets/img/scene-3.jpg" alt="" style="--o:50% 50%;--z:1">
+      </div>
+      <div class="scn-rail" role="tablist" aria-label="Sahneler">
+        <button class="sb on" role="tab" aria-selected="true" data-i="0">1</button>
+        <button class="sb" role="tab" aria-selected="false" data-i="1">2</button>
+        <button class="sb" role="tab" aria-selected="false" data-i="2">3</button>
+        <div class="sb sb-plus" tabindex="0" role="img" aria-label="9 adede kadar sahne kaydet"><img class="ic" src="/assets/ui/plus.png" alt=""><span class="tip" aria-hidden="true">9 adede kadar sahne kaydet <span class="pro"><i></i>PRO</span></span></div>
+      </div>
+    </div>
+    <div id="scnData" hidden>
+      <div><h3>Anlatım çekimi</h3><p>Kameraya konuştuğun videolar için ideal açını kaydet, istediğinde aynı kadraja dön.</p></div>
+      <div><h3>Yüz takibi</h3><p>Ayağa kalksan da hareket etsen de gimbal yüzünü takip ederek seni kadrajda tutar.</p></div>
+      <div><h3>Masa ve ekran</h3><p>Masanı veya ekranını göstermek için açıyı değiştir, ardından önceki kadrajına dön.</p></div>
+    </div>
+    <div class="scn-text" id="scnText" aria-live="polite">
+      <h3 id="scnTitle">Anlatım çekimi</h3>
+      <p id="scnBody">Kameraya konuştuğun videolar için ideal açını kaydet, istediğinde aynı kadraja dön.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= Everything you need ================= -->
+<section class="sec sec-feat" id="features">
+  <div class="sec-head center">
+    <h2>Tüm kontroller.<br>Tek uygulamada.</h2>
+    <p>Gimbalı yönlendir, yüz takibini aç, sahneler arasında geçiş yap veya 4K video kaydet. İhtiyacın olan araçlar Mac'inde, tek bir yerde.</p>
+    <a class="btn btn-glass btn-lg" href="/tr/features/">Özellikleri keşfet</a>
+  </div>
+  <div class="fgrid" id="fgrid">
+    <div class="frow">
+      <div class="fi"><a class="fi-in" href="/tr/features/auto-framing/"><img src="/assets/icons/square.arrowtriangle.4.outward.png" alt=""><span>Otomatik kadraj</span></a></div>
+      <div class="fi"><a class="fi-in" href="/tr/features/face-tracking/"><img src="/assets/icons/faceid.png" alt=""><span>Yüz takibi</span></a></div>
+      <div class="fi"><a class="fi-in" href="/tr/features/gimbal-control/"><img src="/assets/icons/move.3d.png" alt=""><span>Gimbal kontrolü</span></a></div>
+      <div class="fi"><a class="fi-in" href="/tr/features/"><img src="/assets/icons/4k.tv.png" alt=""><span>4K video kaydı</span></a></div>
+      <div class="fi"><a class="fi-in" href="/tr/features/scenes/"><img src="/assets/icons/star.rectangle.png" alt=""><span>Sahneler</span></a></div>
+      <div class="fi"><a class="fi-in" href="/tr/features/switch-orientation/"><img src="/assets/icons/rectangle.portrait.rotate.png" alt=""><span>Yatay/dikey çekim</span></a></div>
+    </div>
+    <div class="frow">
+      <div class="fi"><a class="fi-in" href="/tr/features/auto-mic-switch/"><img src="/assets/icons/microphone.png" alt=""><span>Otomatik mikrofon geçişi</span></a></div>
+      <div class="fi"><a class="fi-in" href="/tr/features/lens-correction/"><img src="/assets/icons/pano.png" alt=""><span>Geniş açı düzeltmesi</span></a></div>
+      <div class="fi"><a class="fi-in" href="/tr/features/framing-guides/"><img src="/assets/icons/grid.png" alt=""><span>Kadraj kılavuzları</span></a></div>
+      <div class="fi"><a class="fi-in" href="/tr/features/"><img src="/assets/icons/slider.horizontal.3.png" alt=""><span>Görüntü ayarları</span></a></div>
+      <div class="fi"><a class="fi-in" href="/tr/features/lut/"><img src="/assets/icons/circle.lefthalf.striped.horizontal.png" alt=""><span>LUT desteği</span></a></div>
+      <div class="fi"><a class="fi-in" href="/tr/features/return-last-position/"><img src="/assets/icons/arrow.clockwise.png" alt=""><span>Son konuma dön</span></a></div>
+    </div>
+    <div class="frow">
+      <div class="fi"><a class="fi-in" href="/tr/features/"><img src="/assets/icons/chart.bar.png" alt=""><span>Histogram</span></a></div>
+      <div class="fi"><a class="fi-in" href="/tr/features/"><img src="/assets/icons/camera.png" alt=""><span>Fotoğraf çekimi</span></a></div>
+      <div class="fi"><a class="fi-in" href="/tr/features/"><img src="/assets/icons/timer.png" alt=""><span>Zamanlayıcı</span></a></div>
+      <div class="fi"><a class="fi-in" href="/tr/features/obs/"><img src="/assets/icons/play.png" alt=""><span>OBS ile uyumlu</span></a></div>
+      <div class="fi"><a class="fi-in" href="/tr/features/gimbal-control/"><img src="/assets/icons/plus.magnifyingglass.png" alt=""><span>Fareyle zoom</span></a></div>
+      <div class="fi"><a class="fi-in" href="/tr/features/gimbal-control/"><img src="/assets/icons/arrow.trianglehead.2.clockwise.rotate.90.png" alt=""><span>Kamerayı döndür</span></a></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= Pricing ================= -->
+<section class="sec sec-price" id="pricing">
+  <div class="sec-head center">
+    <h2>Ücretsiz başla. İstersen Pro'ya geç.</h2>
+    <p>Temel özellikleri ücretsiz kullan. 4K kayıt, sahneler ve gelişmiş kontroller için Pro'ya geçebilirsin. İster yıllık, ister tek seferlik öde.</p>
+  </div>
+  <div class="plans">
+    <article class="plan plan-free">
+      <header><h3><span translate="no">Pocket+</span> Ücretsiz</h3><b>$0</b></header>
+      <ul class="ticks">
+        <li>Canlı önizleme, fotoğraf ve 1080p'ye kadar kayıt</li>
+        <li>Gimbal kontrolü, merkezleme ve ön/arka çevirme</li>
+        <li>Zoom ve klavye kısayolları</li>
+        <li>Yüz takibi</li>
+        <li>Kadraj ızgarası ve ufuk çizgisi</li>
+        <li>DJI Mic desteği; ses, pil ve depolama göstergeleri</li>
+      </ul>
+      <a class="btn btn-glass btn-lg btn-block" href="https://github.com/FerdiCildiz/pocket-plus/releases/latest/download/PocketPlus.zip">Ücretsiz indir</a>
+    </article>
+    <article class="plan plan-pro">
+      <header><h3><span translate="no">Pocket+</span> Pro</h3><div class="price"><b>$39.99</b><small>Özel lansman fiyatı</small></div></header>
+      <ul class="ticks">
+        <li>Ücretsiz sürümdeki tüm özellikler</li>
+        <li>4K'ya kadar video kaydı</li>
+        <li>Hazır renk görünümleri ve .cube/PNG LUT desteği</li>
+        <li>Otomatik kadraj</li>
+        <li>9 sahneye kadar kayıt ve kısayolla geçiş</li>
+        <li>Sürükleyerek kamera kontrolü ve fareyle zoom</li>
+        <li>9:16 dikey kadraj kılavuzu</li>
+        <li>Geniş açı lens düzeltmesi</li>
+      </ul>
+      <div class="buy">
+        <a class="btn btn-gold btn-lg btn-block" href="https://buy.polar.sh/polar_cl_exSJRc2Q9kyqAzbR8Jr162wx4JMVpTfZq0gqe2kfyPu" target="_blank" rel="noopener">Ömür Boyu Pro <i>·</i> 39,99 $</a>
+        <a class="btn btn-glass btn-teal btn-lg btn-block" href="https://buy.polar.sh/polar_cl_yCHcBSKuanaZnRTX9UhI2eb80silnrscE8Upm2MAntK" target="_blank" rel="noopener">Yıllık Pro <i>·</i> 14,99 $</a>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- ================= FAQ ================= -->
+<section class="sec sec-faq" id="faq">
+  <div class="sec-head center">
+    <h2>Merak ettiklerin</h2>
+    <p>En sık sorulan soruların yanıtları burada.</p>
+    <a class="btn btn-glass btn-lg" href="/tr/faq/">Tüm sorulara göz at</a>
+  </div>
+  <div class="faq">
+    <details open><summary><span><span translate="no">Pocket+</span> hangi kameralarla çalışıyor?</span><img class="chev" src="/assets/icons/chevron.down.png" alt=""></summary><div><p><span translate="no">Pocket+</span>, <span translate="no">DJI Osmo Pocket 2</span>, 3, 4 ve 4P'yi destekliyor. Kameranı USB-C üzerinden Webcam modunda bağlaman yeterli. Apple Silicon işlemcili bir Mac'te macOS 15 Sequoia veya üzeri gerekiyor. Intel Mac'lerde denenmedi. Geliştirme ve testler ağırlıklı olarak <span translate="no">Pocket 3</span> üzerinde yapılıyor.</p></div></details>
+    <details><summary><span><span translate="no">Osmo Pocket 3</span>'ü Mac'te webcam olarak kullanabilir miyim?</span><img class="chev" src="/assets/icons/chevron.down.png" alt=""></summary><div><p>Evet. Kameranı USB-C ile bağlayıp Webcam modunu seç. <span translate="no">Pocket+</span>'ı açtığında canlı görüntüyü izleyebilir, gimbalı ve zoom'u kontrol edebilir, yüz takibini kullanabilir ve Mac'ine kayıt alabilirsin.</p></div></details>
+    <details><summary><span><span translate="no">Pocket+</span> gerçekten ücretsiz mi?</span><img class="chev" src="/assets/icons/chevron.down.png" alt=""></summary><div><p>Evet. 1080p'ye kadar kayıt, fotoğraf çekme, gimbal kontrolü, zoom ve yüz takibi ücretsiz. Daha gelişmiş özellikler için Pro'ya tek seferlik 39,99 $ veya yıllık 14,99 $ karşılığında geçebilirsin. Hesap oluşturman da gerekmiyor.</p></div></details>
+    <details><summary><span>OBS veya Google Meet ile kullanabilir miyim?</span><img class="chev" src="/assets/icons/chevron.down.png" alt=""></summary><div><p>Evet. OBS, Google Meet veya WhatsApp kamerandan görüntü alırken <span translate="no">Pocket+</span> ile gimbalı ve zoom'u kontrol etmeye devam edebilirsin.</p></div></details>
+    <details><summary><span>Yüz takibi neden kendiliğinden kapanıyor?</span><img class="chev" src="/assets/icons/chevron.down.png" alt=""></summary><div><p>Kameranın kendi ActiveTrack özelliği açıksa <span translate="no">Pocket+</span>'ın yüz takibi kapanabilir. Kameradan ActiveTrack'i kapatıp yeniden dene.</p></div></details>
+    <details><summary><span>Kameradan görüntü gelmiyorsa ne yapmalıyım?</span><img class="chev" src="/assets/icons/chevron.down.png" alt=""></summary><div><p>Önce kameranın Webcam modunda olduğundan emin ol. Ardından <span translate="no">Pocket+</span>'ın sağ üst köşesindeki yeniden bağlan düğmesine tıkla. Sorun devam ederse USB-C kablosunu çıkarıp tekrar tak.</p></div></details>
+    <details><summary><span><span translate="no">Pocket+</span> Apple tarafından notarize edildi mi?</span><img class="chev" src="/assets/icons/chevron.down.png" alt=""></summary><div><p>Evet. <span translate="no">Pocket+</span>, Apple Developer ID ile imzalanıyor ve Apple'ın notarizasyon kontrolünden geçiyor. Bu sayede macOS'te ek güvenlik izni gerektirmeden açılıyor. Uygulama yalnızca güncelleme ve lisans kontrolü için internete bağlanıyor.</p></div></details>
+  </div>
+</section>
+
+<!-- ================= What users say ================= -->
+<section class="sec sec-rev" id="reviews">
+  <div class="sec-head center"><h2>Kullananlar ne diyor?</h2></div>
+  <div class="rev-grid">
+    <figure class="rev"><div class="stars" role="img" aria-label="5 üzerinden 5">★★★★★</div><blockquote>Bir Facebook grubunda bağlantısını gördüm ve denemek için hemen indirdim. On dakika sonra satın aldım. Gerçekten bayıldım! Diğer <span translate="no">Osmo Pocket</span> kullanıcılarına da kesinlikle önereceğim.</blockquote><figcaption><span class="av" style="background:#7b5cd6" aria-hidden="true">A</span><span class="who"><b>Arne Skilbrei</b><small>Norway</small></span></figcaption></figure>
+    <figure class="rev"><div class="stars" role="img" aria-label="5 üzerinden 5">★★★★★</div><blockquote><span translate="no">Pocket 3</span> için basit bir video uygulaması sanarak indirdim ama çok daha fazlası çıktı. Beklediğimden çok daha fazla özelliği var. Hemen Pro sürümüne geçtim.</blockquote><figcaption><span class="av" style="background:#2a8fbd" aria-hidden="true">B</span><span class="who"><b>Ben Park</b><small>United States</small></span></figcaption></figure>
+    <figure class="rev"><div class="stars" role="img" aria-label="5 üzerinden 5">★★★★★</div><blockquote>Uygulama harika, her yeni sürümle daha da iyi oluyor. Kullanması gerçekten keyifli.</blockquote><figcaption><span class="av" style="background:#c9577f" aria-hidden="true">Z</span><span class="who"><b>Zeki Okur</b><small>Türkiye</small></span></figcaption></figure>
+  </div><p class="rev-note">Bu yorumlar Türkçeye çevrilmiştir.</p>
+</section>
+
+<!-- ================= Download CTA ================= -->
+<section class="sec sec-cta" id="download">
+  <div class="cta-card">
+    <div class="cta-copy">
+      <h2><span translate="no">Pocket+</span> ile çekime başla.</h2>
+      <p><span translate="no">DJI Osmo Pocket</span>'ını Mac'inden kontrol et. <span translate="no">Pocket+</span>'ı ücretsiz indir, birkaç dakika içinde kullanmaya başla.</p>
+      <div class="cta-btns">
+        <a class="btn btn-glass btn-lg" href="https://github.com/FerdiCildiz/pocket-plus/releases/latest/download/PocketPlus.zip">Mac için ücretsiz indir</a>
+        <a class="btn btn-gold btn-lg" href="#pricing">Pro'ya geç</a>
+      </div>
+      <div class="cta-links">
+        <a href="https://github.com/FerdiCildiz/pocket-plus" target="_blank" rel="noopener">GitHub'da yıldız ver ↗</a>
+        <a href="https://www.reddit.com/r/osmopocket/s/lvCdD2MSma" target="_blank" rel="noopener">Reddit'te destekle ↗</a>
+      </div>
+    </div>
+    <img class="cta-cam" src="/assets/img/pocket-cta.png" width="253" height="460" alt="">
+    <img class="pl p1" src="/assets/img/plus1.svg" alt=""><img class="pl p2" src="/assets/img/plus2.svg" alt=""><img class="pl p3" src="/assets/img/plus3.svg" alt=""><img class="pl p4" src="/assets/img/plus4.svg" alt=""><img class="pl p5" src="/assets/img/plus5.svg" alt="">
+  </div>
+</section>
+
+<!-- ================= Footer ================= -->
+<footer class="foot">
+  <div class="foot-in">
+    <div class="foot-top">
+      <a class="foot-brand" href="/tr/"><span class="fb-icon"><img src="/assets/logo-icon.svg" width="60" height="60" alt=""></span><span><span translate="no">Pocket+</span></span></a>
+      <nav class="foot-links" aria-label="Footer">
+        <a href="/tr/features/">Özellikler</a><a href="/tr/use-cases/">Kullanım Alanları</a><a href="/blog/">Blog</a><a href="/tr/faq/">SSS</a><a href="#pricing">Fiyatlar</a><a href="/privacy/">Gizlilik</a><a href="/terms/">Terms</a><a href="https://www.linkedin.com/in/ferdicildiz" target="_blank" rel="noopener">LinkedIn</a>
+      </nav>
+    </div>
+    <div class="foot-mid">
+      <details class="lang"><summary aria-label="Dil"><span>Türkçe</span><img src="/assets/icons/chevron.down.png" alt=""></summary><div class="menu"><a href="/" lang="en" hreflang="en">English</a><a href="/tr/" lang="tr" hreflang="tr" aria-current="page">Türkçe</a><a href="/de/" lang="de" hreflang="de">Deutsch</a><a href="/fr/" lang="fr" hreflang="fr">Français</a><a href="/es/" lang="es" hreflang="es">Español</a><a href="/pt/" lang="pt-BR" hreflang="pt-BR">Português</a><a href="/ja/" lang="ja" hreflang="ja">日本語</a><a href="/zh/" lang="zh-Hans" hreflang="zh-Hans">简体中文</a></div></details>
+      <a class="ig" href="https://instagram.com/pocketplus.app" target="_blank" rel="noopener">Instagram'da Takip Et <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="#fff" stroke-width="1.5"><rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r=".9" fill="#fff" stroke="none"/></svg></a>
+    </div>
+    <div class="foot-bot">
+      <span>©Copyright 2026 <span translate="no">Pocket+</span></span>
+      <p><span translate="no">Pocket+</span>, DJI ile bağlantısı olmayan bağımsız bir projedir. DJI tarafından geliştirilmemiş, onaylanmamış veya desteklenmemiştir. DJI, Osmo ve <span translate="no">Osmo Pocket</span>, SZ DJI Technology Co., Ltd.'nin ticari markalarıdır.</p>
+    </div>
+  </div>
+</footer>
+
+<script src="/hero.js"></script>
+<script src="/sections.js"></script>
+<a class="ph-fixed" href="https://www.producthunt.com/products/pocket-7?embed=true&amp;utm_source=badge-featured&amp;utm_medium=badge&amp;utm_campaign=badge-pocket-11" target="_blank" rel="noopener noreferrer"><img alt="Pocket+ - DJI Osmo Pocket made more capable for content creators. | Product Hunt" width="250" height="54" src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=1314620&amp;theme=light&amp;t=1794521260085"></a><style>.ph-fixed{position:fixed;right:20px;bottom:20px;z-index:50;line-height:0;filter:drop-shadow(0 4px 14px rgba(0,0,0,.35))}.ph-fixed img{display:block;width:250px;height:54px}@media(max-width:640px){.ph-fixed{right:10px;bottom:10px}.ph-fixed img{width:175px;height:auto}}</style></body>
+</html>

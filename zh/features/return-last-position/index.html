@@ -1,0 +1,239 @@
+<!doctype html>
+<html lang="zh-Hans">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#000000">
+<title>DJI Osmo Pocket 在 Mac 上重连后回到上次画面 · Pocket+</title>
+<meta name="description" content="无论 DJI Osmo Pocket 关机再开机还是拔掉重插，Pocket+ 都会让它转动并变焦，回到你上次离开时的位置。适用于 Mac。">
+<link rel="canonical" href="https://pocketplus.app/zh/features/return-last-position/">
+<link rel="me" href="https://mastodon.social/@pocketplus">
+<link rel="alternate" hreflang="en" href="https://pocketplus.app/features/return-last-position/">
+<link rel="alternate" hreflang="tr" href="https://pocketplus.app/tr/features/return-last-position/">
+<link rel="alternate" hreflang="de" href="https://pocketplus.app/de/features/return-last-position/">
+<link rel="alternate" hreflang="fr" href="https://pocketplus.app/fr/features/return-last-position/">
+<link rel="alternate" hreflang="es" href="https://pocketplus.app/es/features/return-last-position/">
+<link rel="alternate" hreflang="pt" href="https://pocketplus.app/pt/features/return-last-position/">
+<link rel="alternate" hreflang="ja" href="https://pocketplus.app/ja/features/return-last-position/">
+<link rel="alternate" hreflang="zh-Hans" href="https://pocketplus.app/zh/features/return-last-position/">
+<link rel="alternate" hreflang="x-default" href="https://pocketplus.app/features/return-last-position/">
+<link rel="icon" href="/assets/favicon.png" type="image/png">
+<link rel="apple-touch-icon" href="/assets/icon.png">
+<meta property="og:type" content="website">
+<meta property="og:title" content="DJI Osmo Pocket 在 Mac 上重连后回到上次画面 · Pocket+">
+<meta property="og:description" content="无论 DJI Osmo Pocket 关机再开机还是拔掉重插，Pocket+ 都会让它转动并变焦，回到你上次离开时的位置。适用于 Mac。">
+<meta property="og:url" content="https://pocketplus.app/zh/features/return-last-position/">
+<meta property="og:image" content="https://pocketplus.app/assets/og.jpg?v=04b71509">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Pocket+: control your DJI Osmo Pocket from your Mac">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="DJI Osmo Pocket 在 Mac 上重连后回到上次画面 · Pocket+">
+<meta name="twitter:description" content="无论 DJI Osmo Pocket 关机再开机还是拔掉重插，Pocket+ 都会让它转动并变焦，回到你上次离开时的位置。适用于 Mac。">
+<meta name="twitter:image" content="https://pocketplus.app/assets/og.jpg?v=04b71509">
+<meta name="twitter:image:alt" content="Pocket+: control your DJI Osmo Pocket from your Mac">
+<meta name="msvalidate.01" content="C37CE93C5CEE85D6A2781B1A0F80D7F6">
+<script>
+  // Cloudflare Web Analytics (çerezsiz). Kendi ziyaretin için her tarayıcıda bir kez ?notrack=1 aç (?track=1 geri alır).
+  (() => {
+    let off = false;
+    try {
+      const q = new URLSearchParams(location.search);
+      if (q.has('notrack')) localStorage.setItem('notrack', '1');
+      if (q.has('track')) localStorage.removeItem('notrack');
+      off = localStorage.getItem('notrack') === '1';
+    } catch (e) {}
+    if (off) return;
+    const s = document.createElement('script');
+    s.type = 'module';
+    s.src = 'https://static.cloudflareinsights.com/beacon.min.js';
+    s.dataset.cfBeacon = '{"token": "16f12da5593d494e828fd44a928bdd1a"}';
+    document.head.appendChild(s);
+    // Umami Cloud (AB bölgesi, çerezsiz): olaylar için data-umami-event (sections.js satın al/indir bağlantılarına ekler)
+    const u = document.createElement('script');
+    u.defer = true;
+    u.src = 'https://cloud.umami.is/script.js';
+    u.dataset.websiteId = '388f8fe3-fb9c-4250-8e76-82636bcd8735';
+    document.head.appendChild(u);
+  })();
+</script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('consent', 'default', {ad_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied', analytics_storage: 'denied', wait_for_update: 500});
+  (() => {
+    const T = {"en": ["We'd like to use Google Analytics to understand how the site is used. It sets cookies. The app itself never tracks you.", "Accept", "Decline", "Privacy"], "tr": ["Siteyi nasıl kullandığınızı anlamak için Google Analytics kullanmak istiyoruz. Çerez bırakır. Uygulamanın kendisi sizi hiç izlemez.", "Kabul et", "Reddet", "Gizlilik"], "de": ["Wir möchten Google Analytics nutzen, um zu verstehen, wie die Website genutzt wird. Dabei werden Cookies gesetzt. Die App selbst trackt Sie nie.", "Akzeptieren", "Ablehnen", "Datenschutz"], "fr": ["Nous aimerions utiliser Google Analytics pour comprendre l'usage du site. Il dépose des cookies. L'app elle-même ne vous suit jamais.", "Accepter", "Refuser", "Confidentialité"], "es": ["Nos gustaría usar Google Analytics para entender cómo se usa el sitio. Instala cookies. La app en sí nunca te rastrea.", "Aceptar", "Rechazar", "Privacidad"], "pt": ["Gostaríamos de usar o Google Analytics para entender como o site é usado. Ele define cookies. O app em si nunca rastreia você.", "Aceitar", "Recusar", "Privacidade"], "ja": ["サイトの利用状況を把握するためGoogleアナリティクスを使いたいと考えています。Cookieを使用します。アプリ自体があなたを追跡することはありません。", "同意する", "拒否する", "プライバシー"], "zh": ["我们希望使用 Google Analytics 来了解网站的使用情况。它会设置 Cookie。应用本身绝不会追踪你。", "接受", "拒绝", "隐私"]};
+    const lang = (document.documentElement.lang || 'en').toLowerCase().split('-')[0];
+    const t = T[lang] || T.en;
+    let off = false, saved = null;
+    try { off = localStorage.getItem('notrack') === '1'; saved = localStorage.getItem('consent'); } catch (e) {}
+    if (off) return;
+    const load = () => {
+      gtag('consent', 'update', {analytics_storage: 'granted'});
+      window.dataLayer.push({'gtm.start': Date.now(), event: 'gtm.js'});
+      const s = document.createElement('script');
+      s.async = true;
+      s.src = 'https://www.googletagmanager.com/gtm.js?id=GTM-KKDFBTWK';
+      document.head.appendChild(s);
+    };
+    if (saved === 'granted') { load(); return; }
+    if (saved === 'denied') return;
+    const show = () => {
+      const b = document.createElement('div');
+      b.setAttribute('role', 'dialog');
+      b.setAttribute('aria-label', 'Cookies');
+      b.style.cssText = 'position:fixed;left:16px;right:16px;bottom:16px;z-index:2147483000;max-width:560px;margin:0 auto;padding:16px 18px;border-radius:16px;background:rgba(20,16,32,.92);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);border:1px solid rgba(255,255,255,.14);color:#fff;font:14px/1.45 system-ui,sans-serif;box-shadow:0 12px 40px rgba(0,0,0,.4)';
+      const p = document.createElement('p');
+      p.style.cssText = 'margin:0 0 12px';
+      p.textContent = t[0] + ' ';
+      const a = document.createElement('a');
+      a.href = (T[lang] && lang !== 'en' ? '/' + lang : '') + '/privacy/';
+      a.textContent = t[3];
+      a.style.cssText = 'color:#fff;text-decoration:underline';
+      p.appendChild(a);
+      const row = document.createElement('div');
+      row.style.cssText = 'display:flex;gap:10px';
+      const mk = (label, grant) => {
+        const x = document.createElement('button');
+        x.type = 'button';
+        x.textContent = label;
+        x.style.cssText = 'flex:1;padding:10px 14px;border-radius:10px;border:1px solid rgba(255,255,255,.25);background:rgba(255,255,255,.1);color:#fff;font:600 14px system-ui,sans-serif;cursor:pointer';
+        x.onclick = () => {
+          try { localStorage.setItem('consent', grant ? 'granted' : 'denied'); } catch (e) {}
+          b.remove();
+          if (grant) load();
+        };
+        return x;
+      };
+      row.append(mk(t[2], false), mk(t[1], true));
+      b.append(p, row);
+      document.body.appendChild(b);
+    };
+    if (document.body) show(); else document.addEventListener('DOMContentLoaded', show);
+  })();
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Stack+Sans+Headline:wght@300;400;500&family=Stack+Sans+Text:wght@200;300;400;500&display=swap">
+<link rel="stylesheet" href="/hero.css?v=49ed6591">
+<link rel="stylesheet" href="/sections.css?v=fefd22e0">
+<link rel="stylesheet" href="/features.css?v=32341c8f">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Pocket+", "item": "https://pocketplus.app/zh/"}, {"@type": "ListItem", "position": 2, "name": "功能", "item": "https://pocketplus.app/zh/features/"}, {"@type": "ListItem", "position": 3, "name": "恢复上次位置", "item": "https://pocketplus.app/zh/features/return-last-position/"}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "VideoObject", "name": "恢复上次位置 · Pocket+", "description": "无论 DJI Osmo Pocket 关机再开机还是拔掉重插，Pocket+ 都会让它转动并变焦，回到你上次离开时的位置。适用于 Mac。", "thumbnailUrl": "https://pocketplus.app/assets/features/pages/return-last-position.jpg", "contentUrl": "https://pocketplus.app/assets/features/pages/return-last-position.mp4", "inLanguage": "zh-Hans", "uploadDate": "2026-10-21T00:00:00+03:00"}</script>
+</head>
+<body class="page-ft">
+<header class="nav">
+    <div class="nav-bg" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+    <a class="brand rv" href="/zh/">
+      <span class="fb-icon"><img src="/assets/logo-icon.svg" width="64" height="64" alt=""></span>
+      <span><span translate="no">Pocket+</span></span>
+    </a>
+    <nav class="links rv" aria-label="主要">
+      <a href="/zh/features/" aria-current="page">功能</a>
+      <a href="/zh/use-cases/">使用场景</a>
+      <a href="/blog/">博客</a>
+      <a href="/zh/faq/">常见问题</a>
+      <a href="/zh/#pricing">价格</a>
+    </nav>
+    <div class="nav-cta rv">
+      <a class="btn btn-glass btn-sm" href="https://github.com/FerdiCildiz/pocket-plus/releases/latest/download/PocketPlus.zip">下载</a>
+      <a class="btn btn-gold btn-sm hide-m" href="/zh/#pricing">升级 Pro</a>
+      <button class="burger" id="burger" type="button" aria-label="菜单" aria-expanded="false" aria-controls="mmenu"><img class="ic" style="--s:20px" src="/assets/ui/line.3.horizontal.png" alt=""></button>
+    </div>
+  </header>
+  <div class="mmenu" id="mmenu" hidden>
+    <a href="/zh/features/">功能</a><a href="/zh/use-cases/">使用场景</a><a href="/blog/">博客</a><a href="/zh/faq/">常见问题</a><a href="/zh/#pricing">价格</a>
+    <a class="btn btn-gold btn-lg" href="/zh/#pricing">升级 Pro</a>
+  </div>
+<main class="ft-page ft-purple"><div class="hero-bg" aria-hidden="true"></div><section class="fx wrap"><header class="fx-head"><p class="h">功能强大。操控轻松。</p><p class="sub">Everything you need from your <span translate="no">DJI Osmo Pocket</span>. Right on your Mac.</p></header><div class="fx-grid"><nav class="fx-nav" aria-label="Features"><p class="fx-group">云台与机位控制</p><a class="glass" href="/zh/features/gimbal-control/"><span class="i" aria-hidden="true" style="--m:url(/assets/fx/ui-move.svg)"></span>云台控制<span class="go" aria-hidden="true" style="--m:url(/assets/fx/chevron-right.svg)"></span></a><a class="glass" href="/zh/features/face-tracking/"><span class="i" aria-hidden="true" style="--m:url(/assets/fx/user-focus.svg)"></span>人脸跟踪<span class="go" aria-hidden="true" style="--m:url(/assets/fx/chevron-right.svg)"></span></a><a class="glass" href="/zh/features/scenes/"><span class="i" aria-hidden="true" style="--m:url(/assets/fx/ui-scenes.svg)"></span>场景切换<span class="go" aria-hidden="true" style="--m:url(/assets/fx/chevron-right.svg)"></span></a><a class="glass" href="/zh/features/return-last-position/" aria-current="page"><span class="i" aria-hidden="true" style="--m:url(/assets/fx/ui-backward.svg)"></span>恢复上次位置<span class="go" aria-hidden="true" style="--m:url(/assets/fx/chevron-right.svg)"></span></a><p class="fx-group">画面与录制</p><a class="glass" href="/zh/features/auto-framing/"><span class="i" aria-hidden="true" style="--m:url(/assets/fx/frame-corners.svg)"></span>自动构图<span class="go" aria-hidden="true" style="--m:url(/assets/fx/chevron-right.svg)"></span></a><a class="glass" href="/zh/features/lut/"><span class="i" aria-hidden="true" style="--m:url(/assets/fx/ui-lut.svg)"></span>LUT 与调色<span class="go" aria-hidden="true" style="--m:url(/assets/fx/chevron-right.svg)"></span></a><a class="glass" href="/zh/features/lens-correction/"><span class="i" aria-hidden="true" style="--m:url(/assets/fx/ui-pano.svg)"></span>广角畸变校正<span class="go" aria-hidden="true" style="--m:url(/assets/fx/chevron-right.svg)"></span></a><a class="glass" href="/zh/features/auto-mic-switch/"><span class="i" aria-hidden="true" style="--m:url(/assets/fx/microphone.svg)"></span>自动切换麦克风<span class="go" aria-hidden="true" style="--m:url(/assets/fx/chevron-right.svg)"></span></a><p class="fx-group">直播与视频通话</p><a class="glass" href="/zh/features/obs/"><span class="i" aria-hidden="true" style="--m:url(/assets/fx/ui-obs.svg)"></span>OBS<span class="go" aria-hidden="true" style="--m:url(/assets/fx/chevron-right.svg)"></span></a><a class="glass" href="/zh/features/google-meet/"><span class="i" aria-hidden="true" style="--m:url(/assets/fx/video-camera.svg)"></span>Google Meet<span class="go" aria-hidden="true" style="--m:url(/assets/fx/chevron-right.svg)"></span></a><a class="glass" href="/zh/features/zoom/"><span class="i" aria-hidden="true" style="--m:url(/assets/fx/ui-person-square.svg)"></span>Zoom<span class="go" aria-hidden="true" style="--m:url(/assets/fx/chevron-right.svg)"></span></a><a class="glass" href="/zh/features/teams/"><span class="i" aria-hidden="true" style="--m:url(/assets/fx/users.svg)"></span>Microsoft Teams<span class="go" aria-hidden="true" style="--m:url(/assets/fx/chevron-right.svg)"></span></a><a class="glass" href="/zh/features/whatsapp/"><span class="i" aria-hidden="true" style="--m:url(/assets/fx/ui-phone-bubble.svg)"></span>WhatsApp<span class="go" aria-hidden="true" style="--m:url(/assets/fx/chevron-right.svg)"></span></a><p class="fx-group">预览与构图辅助</p><a class="glass" href="/zh/features/switch-orientation/"><span class="i" aria-hidden="true" style="--m:url(/assets/fx/ui-rotate.svg)"></span>横竖屏切换<span class="go" aria-hidden="true" style="--m:url(/assets/fx/chevron-right.svg)"></span></a><a class="glass" href="/zh/features/framing-guides/"><span class="i" aria-hidden="true" style="--m:url(/assets/fx/ui-hash.svg)"></span>构图辅助线<span class="go" aria-hidden="true" style="--m:url(/assets/fx/chevron-right.svg)"></span></a></nav><article class="fx-body"><h1>恢复上次位置<span class="ftag pro">PRO</span></h1><p><span translate="no">Pocket</span> 每次开机都会自动居中。好不容易调好完美角度时，这就很烦人了。<span translate="no">Pocket+</span> 会记住相机朝向哪里、变焦到多少，并在相机重新连接后立即恢复。</p>
+<figure class="stage" style="background-image:url(/assets/features/pages/return-last-position.jpg)"><video src="/assets/features/pages/return-last-position.mp4" poster="/assets/features/pages/return-last-position.jpg" muted loop playsinline autoplay preload="metadata" aria-label="恢复上次位置 · Pocket+"></video></figure>
+<h2>全自动</h2>
+<p>无需开启任何设置。关机再开机、重新插拔线缆或重启 <span translate="no">Pocket+</span>，云台和变焦都会回到你上次的画面。预览顶部会显示一条简短提示，先告诉你正在返回，再告诉你已经回来了。</p>
+<p><span translate="no">Pocket+</span> 会先等待相机自身的开机动作完成，然后直接移到你的画面。如果在此期间你开始自己移动相机，它就交给你来操作。</p>
+<h2>想重新开始也可以</h2>
+<p>要清除已存储的位置，请点按标题栏中的<b>复位相机</b>。相机会以 1× 居中，从头开始。横屏和竖屏各自记住自己的上次位置。</p>
+<p>恢复上次位置属于 <span translate="no">Pocket+</span> Pro。即使在升级之前，你的位置也会存储在 Mac 上，因此升级后立即生效。分辨率、帧率和编码格式在免费版中同样会被记住。</p>
+<div class="fx-next"><a href="/zh/features/scenes/">← 场景切换</a><a href="/zh/features/auto-framing/">自动构图 →</a></div></article></div></section></main>
+<section class="sec sec-price" id="pricing">
+  <div class="sec-head center">
+    <h2>免费开始，需要时再升级 Pro。</h2>
+    <p>基础功能永久免费。想要 4K 录制、场景切换和更多高级控制？可选择一次性购买或按年订阅 Pro。</p>
+  </div>
+  <div class="plans">
+    <article class="plan plan-free">
+      <header><h3><span translate="no">Pocket+</span> 免费版</h3><b>$0</b></header>
+      <ul class="ticks">
+        <li>实时预览、拍照及最高 1080p 录制</li>
+        <li>云台控制、回中与前后翻转</li>
+        <li>变焦控制和快捷键</li>
+        <li>人脸跟踪</li>
+        <li>网格与水平线辅助</li>
+        <li>DJI Mic 支持及音量、电量、存储空间显示</li>
+      </ul>
+      <a class="btn btn-glass btn-lg btn-block" href="https://github.com/FerdiCildiz/pocket-plus/releases/latest/download/PocketPlus.zip">免费下载</a>
+    </article>
+    <article class="plan plan-pro">
+      <header><h3><span translate="no">Pocket+</span> Pro</h3><div class="price"><b>$39.99</b><small>限时发布价</small></div></header>
+      <ul class="ticks">
+        <li>包含免费版所有功能</li>
+        <li>最高 4K 视频录制</li>
+        <li>内置色彩风格及自定义 .cube／PNG LUT</li>
+        <li>自动构图</li>
+        <li>最多保存 9 个场景，支持快捷键切换</li>
+        <li>拖动画面控制云台，滚动鼠标滚轮变焦</li>
+        <li>9:16 竖屏构图辅助线</li>
+        <li>广角畸变校正</li>
+      </ul>
+      <div class="buy">
+        <a class="btn btn-gold btn-lg btn-block" href="https://buy.polar.sh/polar_cl_exSJRc2Q9kyqAzbR8Jr162wx4JMVpTfZq0gqe2kfyPu" target="_blank" rel="noopener">购买 Pro 永久版 <i>·</i> $39.99</a>
+        <a class="btn btn-glass btn-teal btn-lg btn-block" href="https://buy.polar.sh/polar_cl_yCHcBSKuanaZnRTX9UhI2eb80silnrscE8Upm2MAntK" target="_blank" rel="noopener">订阅 Pro 年付版 <i>·</i> $14.99</a>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- ================= Download CTA ================= -->
+<section class="sec sec-cta" id="download">
+  <div class="cta-card">
+    <div class="cta-copy">
+      <h2>下一次拍摄，从 <span translate="no">Pocket+</span> 开始。</h2>
+      <p>在 Mac 上控制你的 <span translate="no">DJI Osmo Pocket</span>。免费下载 <span translate="no">Pocket+</span>，几分钟即可开始创作。</p>
+      <div class="cta-btns">
+        <a class="btn btn-glass btn-lg" href="https://github.com/FerdiCildiz/pocket-plus/releases/latest/download/PocketPlus.zip">免费下载 Mac 版</a>
+        <a class="btn btn-gold btn-lg" href="/zh/#pricing">升级 Pro</a>
+      </div>
+      <div class="cta-links">
+        <a href="https://github.com/FerdiCildiz/pocket-plus" target="_blank" rel="noopener">在 GitHub 上点亮 Star ↗</a>
+        <a href="https://www.reddit.com/r/osmopocket/s/lvCdD2MSma" target="_blank" rel="noopener">在 Reddit 上支持我们 ↗</a>
+      </div>
+    </div>
+    <img class="cta-cam" src="/assets/img/pocket-cta.png" width="253" height="460" alt="">
+    <img class="pl p1" src="/assets/img/plus1.svg" alt=""><img class="pl p2" src="/assets/img/plus2.svg" alt=""><img class="pl p3" src="/assets/img/plus3.svg" alt=""><img class="pl p4" src="/assets/img/plus4.svg" alt=""><img class="pl p5" src="/assets/img/plus5.svg" alt="">
+  </div>
+</section>
+
+<!-- ================= Footer ================= -->
+<footer class="foot">
+  <div class="foot-in">
+    <div class="foot-top">
+      <a class="foot-brand" href="/zh/"><span class="fb-icon"><img src="/assets/logo-icon.svg" width="60" height="60" alt=""></span><span><span translate="no">Pocket+</span></span></a>
+      <nav class="foot-links" aria-label="Footer">
+        <a href="/zh/features/">功能</a><a href="/zh/use-cases/">使用场景</a><a href="/blog/">博客</a><a href="/zh/faq/">常见问题</a><a href="/zh/#pricing">价格</a><a href="/privacy/">隐私</a><a href="/terms/">Terms</a><a href="https://www.linkedin.com/in/ferdicildiz" target="_blank" rel="noopener">LinkedIn</a>
+      </nav>
+    </div>
+    <div class="foot-mid">
+      <details class="lang"><summary aria-label="语言"><span>简体中文</span><img src="/assets/icons/chevron.down.png" alt=""></summary><div class="menu"><a href="/features/return-last-position/" lang="en" hreflang="en">English</a><a href="/tr/features/return-last-position/" lang="tr" hreflang="tr">Türkçe</a><a href="/de/features/return-last-position/" lang="de" hreflang="de">Deutsch</a><a href="/fr/features/return-last-position/" lang="fr" hreflang="fr">Français</a><a href="/es/features/return-last-position/" lang="es" hreflang="es">Español</a><a href="/pt/features/return-last-position/" lang="pt-BR" hreflang="pt-BR">Português</a><a href="/ja/features/return-last-position/" lang="ja" hreflang="ja">日本語</a><a href="/zh/features/return-last-position/" lang="zh-Hans" hreflang="zh-Hans" aria-current="page">简体中文</a></div></details>
+      <a class="ig" href="https://instagram.com/pocketplus.app" target="_blank" rel="noopener">在 Instagram 上关注我们 <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="#fff" stroke-width="1.5"><rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r=".9" fill="#fff" stroke="none"/></svg></a>
+    </div>
+    <div class="foot-bot">
+      <span>©版权所有 2026 <span translate="no">Pocket+</span></span>
+      <p><span translate="no">Pocket+</span> 为独立项目，与 DJI 无任何关联，亦未获得 DJI 的认可或赞助。DJI、Osmo 和 <span translate="no">Osmo Pocket</span> 是 SZ DJI Technology Co., Ltd. 的商标。</p>
+    </div>
+  </div>
+</footer>
+
+<script src="/hero.js"></script>
+<script src="/sections.js"></script>
+
+<a class="ph-fixed" href="https://www.producthunt.com/products/pocket-7?embed=true&amp;utm_source=badge-featured&amp;utm_medium=badge&amp;utm_campaign=badge-pocket-11" target="_blank" rel="noopener noreferrer"><img alt="Pocket+ - DJI Osmo Pocket made more capable for content creators. | Product Hunt" width="250" height="54" src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=1314620&amp;theme=light&amp;t=1794521260085"></a><style>.ph-fixed{position:fixed;right:20px;bottom:20px;z-index:50;line-height:0;filter:drop-shadow(0 4px 14px rgba(0,0,0,.35))}.ph-fixed img{display:block;width:250px;height:54px}@media(max-width:640px){.ph-fixed{right:10px;bottom:10px}.ph-fixed img{width:175px;height:auto}}</style></body>
+</html>
