@@ -17,8 +17,7 @@
   🙌 <b>Like it? <a href="https://www.reddit.com/r/osmopocket/s/lvCdD2MSma">Upvote the post on r/osmopocket</a></b> — it helps more Osmo Pocket owners find the app.
 </p>
 
-<video src="https://www.youtube.com/watch?v=H9D5u8wYTI8">
----
+<iframe width="560" height="315" src="https://www.youtube.com/embed/H9D5u8wYTI8?si=P4EYr5MCDuSa5Ife" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>---
 
 ## Looking for DJI Mimo on a Mac?
 
