@@ -44,8 +44,7 @@ Pocket+ isn't affiliated with or endorsed by DJI.
 | Face tracking, including **Track everyone** for groups | ✅ | ✅ |
 | **Auto framing** (headroom-aware, one click) |  | ✅ |
 | **Vertical video (9:16)** — true vertical with the Pocket upright, or a sharp 1080×1920 crop from 4K |  | ✅ |
-| **Adjust** — Temperature, Tint, Saturation, Vibrance, plus an Auto button and Hold to compare | ✅ | ✅ |
-| **Adjust: Light** — Exposure, Contrast, Highlights, Shadows |  | ✅ |
+| **Adjust** — Exposure, Contrast, Highlights, Shadows, Temperature, Tint, Saturation, Vibrance, plus an Auto button and Hold to compare |  | ✅ |
 | Histogram (brightness or RGB) | ✅ | ✅ |
 | Grid and horizon guides | ✅ | ✅ |
 | **Vertical video guide (9:16)** |  | ✅ |
@@ -53,6 +52,10 @@ Pocket+ isn't affiliated with or endorsed by DJI.
 | **Wide-angle lens correction** — straightens the DJI wide-angle lens |  | ✅ |
 | **Return to last position** when the camera reconnects |  | ✅ |
 | **Zoom and aim on the preview** — scroll to zoom, drag or swipe to move the gimbal |  | ✅ |
+| **Compact view and menu bar** — a small live camera with record, photo, face tracking and auto frame; pin it floating or keep Pocket+ in the menu bar |  | ✅ |
+| **Virtual camera** — use the Pocket in Google Meet, Zoom, Teams, WhatsApp, OBS and Chrome, at 1080p or 4K |  | ✅ |
+| Pause, restart or delete a take while you record; photo countdown and camera sounds | ✅ | ✅ |
+| Fine zoom in 0.1× steps (hold ⌥ with + / −, or the mouse wheel) | ✅ | ✅ |
 | DJI Mic auto-switch, audio meter, countdown, battery and disk info | ✅ | ✅ |
 | 8 languages: English, Türkçe, Deutsch, Français, Español, Português, 日本語, 简体中文 | ✅ | ✅ |
 
@@ -60,7 +63,7 @@ Pocket+ isn't affiliated with or endorsed by DJI.
 
 ## Requirements
 
-- macOS 14 Sonoma or later (Apple Silicon or Intel)
+- macOS 15 Sequoia or later (macOS 14 is not tested). Apple Silicon; Pocket+ has not been tested on Intel Macs
 - DJI Osmo Pocket 2, 3, 4 or 4P, connected with USB-C and set to **Webcam** mode on the camera
 
 ## Install
@@ -89,6 +92,9 @@ Pocket+ isn't affiliated with or endorsed by DJI.
 | Face tracking | ⌘T |
 | Auto framing (Pro) | ⌘⇧T |
 | Zoom in / out / reset | ⌘+ / ⌘− / ⌘0 |
+| Fine zoom (0.1×) | ⌘⌥+ / ⌘⌥− |
+| Move the gimbal in steps (hold ⇧ for 1°) | ⌥ + arrow keys |
+| Wide-angle lens correction on / off (Pro) | ⌥L |
 | Go to a saved scene (Pro) | ⌥1 … ⌥9 |
 | Close a panel / cancel countdown | Esc |
 
