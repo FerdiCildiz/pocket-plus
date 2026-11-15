@@ -106,7 +106,7 @@ Pocket+ isn't affiliated with or endorsed by DJI.
 
 ## Support the project
 
-Pocket+ is free. If it's useful to you, the best way to help is to
+Pocket+ is free to use, with an optional Pro upgrade. If it's useful to you, the best way to help is to
 **[upvote and comment on the Reddit post](https://www.reddit.com/r/osmopocket/s/lvCdD2MSma)** so other Osmo Pocket owners can find it.
 A ⭐ on this repo helps too.
 
