@@ -10,7 +10,7 @@
 </p>
 
 <p align="center">
-  <a href="../../releases/latest"><b>⬇︎ Download the latest version</b></a> &nbsp;·&nbsp; <a href="https://pocketplus.app/"><b>Website</b></a> &nbsp;·&nbsp; <a href="https://pocketplus.app/#pricing"><b>Get Pro</b></a>
+  <a href="../../releases/latest"><b>⬇︎ Download the latest version</b></a> &nbsp;·&nbsp; <a href="https://pocketplus.app/"><b>Website</b></a> &nbsp;·&nbsp; <a href="https://pocketplus.app/#pricing"><b>Get Pro</b></a> &nbsp;·&nbsp; <a href="https://pocketplus.app/links"><b>Pocket+ All Links</b></a>
 </p>
 
 <p align="center">
