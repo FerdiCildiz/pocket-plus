@@ -37,27 +37,27 @@ Pocket+ isn't affiliated with or endorsed by DJI.
 |---|:---:|:---:|
 | Live preview, recording (H.264 / HEVC) and photos | ✅ | ✅ |
 | Recording up to 1080p | ✅ | ✅ |
-| Recording above 1080p, up to **4K** |  | ✅ |
 | Gimbal joystick, center, front/back | ✅ | ✅ |
-| **Scenes** — save camera angles and zoom, jump back with ⌥1–9 |  | ✅ |
 | Zoom buttons and keyboard shortcuts | ✅ | ✅ |
 | Face tracking, including **Track everyone** for groups | ✅ | ✅ |
-| **Auto framing** (headroom-aware, one click) |  | ✅ |
-| **Vertical video (9:16)** — true vertical with the Pocket upright, or a sharp 1080×1920 crop from 4K |  | ✅ |
-| **Adjust** — Exposure, Contrast, Highlights, Shadows, Temperature, Tint, Saturation, Vibrance, plus an Auto button and Hold to compare |  | ✅ |
 | Histogram (brightness or RGB) | ✅ | ✅ |
 | Grid and horizon guides | ✅ | ✅ |
-| **Vertical video guide (9:16)** |  | ✅ |
-| **Color looks (LUT)** — built-in looks, your own `.cube` and PNG LUTs |  | ✅ |
-| **Wide-angle lens correction** — straightens the DJI wide-angle lens |  | ✅ |
-| **Return to last position** when the camera reconnects |  | ✅ |
-| **Zoom and aim on the preview** — scroll to zoom, drag or swipe to move the gimbal |  | ✅ |
-| **Compact view and menu bar** — a small live camera with record, photo, face tracking and auto frame; pin it floating or keep Pocket+ in the menu bar |  | ✅ |
-| **Virtual camera** — use the Pocket in Google Meet, Zoom, Teams, WhatsApp, OBS and Chrome, at 1080p or 4K |  | ✅ |
 | Pause, restart or delete a take while you record; photo countdown and camera sounds | ✅ | ✅ |
 | Fine zoom in 0.1× steps (hold ⌥ with + / −, or the mouse wheel) | ✅ | ✅ |
 | DJI Mic auto-switch, audio meter, countdown, battery and disk info | ✅ | ✅ |
 | 8 languages: English, Türkçe, Deutsch, Français, Español, Português, 日本語, 简体中文 | ✅ | ✅ |
+| Recording above 1080p, up to **4K** | ❌ | ✅ |
+| **Scenes** — save camera angles and zoom, jump back with ⌥1–9 | ❌ | ✅ |
+| **Auto framing** (headroom-aware, one click) | ❌ | ✅ |
+| **Vertical video (9:16)** — true vertical with the Pocket upright, or a sharp 1080×1920 crop from 4K | ❌ | ✅ |
+| **Adjust** — Exposure, Contrast, Highlights, Shadows, Temperature, Tint, Saturation, Vibrance, plus an Auto button and Hold to compare | ❌ | ✅ |
+| **Vertical video guide (9:16)** | ❌ | ✅ |
+| **Color looks (LUT)** — built-in looks, your own `.cube` and PNG LUTs | ❌ | ✅ |
+| **Wide-angle lens correction** — straightens the DJI wide-angle lens | ❌ | ✅ |
+| **Return to last position** when the camera reconnects | ❌ | ✅ |
+| **Zoom and aim on the preview** — scroll to zoom, drag or swipe to move the gimbal | ❌ | ✅ |
+| **Compact view and menu bar** — a small live camera with record, photo, face tracking and auto frame; pin it floating or keep Pocket+ in the menu bar | ❌ | ✅ |
+| **Virtual camera** — use the Pocket in Google Meet, Zoom, Teams, WhatsApp, OBS and Chrome, at 1080p or 4K | ❌ | ✅ |
 
 **[Get Pro](https://pocketplus.app/#pricing)** — a one-time Lifetime license or a yearly plan. Enter your license code in **Settings › Pro** to unlock it. One license activates Pro on one Mac, and **Settings › Pro › Remove from this Mac** frees it for another.
 
