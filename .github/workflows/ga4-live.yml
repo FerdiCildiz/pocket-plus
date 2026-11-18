@@ -1,0 +1,42 @@
+name: GA4 live
+
+# Every 10 minutes (GitHub may run it later than that under load).
+# Writes the last 30 minutes of GA4 Realtime data to the "live-data" branch as ga4.json.
+on:
+  schedule:
+    - cron: "*/10 * * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: ga4-live
+  cancel-in-progress: true
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Fetch GA4 realtime data
+        env:
+          GA4_SERVICE_ACCOUNT: ${{ secrets.GA4_SERVICE_ACCOUNT }}
+        run: node .github/scripts/ga4-live.mjs
+
+      - name: Publish to the live-data branch
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          cd out
+          git init -q -b live-data
+          git config user.name "ga4-live"
+          git config user.email "ga4-live@users.noreply.github.com"
+          git add ga4.json
+          git commit -q -m "GA4 live $(date -u +%FT%TZ)"
+          git push -q -f "https://x-access-token:${GH_TOKEN}@github.com/${GITHUB_REPOSITORY}.git" live-data
