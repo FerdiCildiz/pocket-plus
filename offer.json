@@ -1,0 +1,61 @@
+{
+  "enabled": true,
+  "endsAt": "2026-12-01",
+  "code": "POCKETPLUS500DL",
+  "regularPrice": "$39.99",
+  "offerPrice": "$35.99",
+  "texts": {
+    "en": {
+      "headline": "Celebrating 500+ downloads. Here's 10% off Pro.",
+      "body": "Get the lifetime license for less. Enter this code at checkout.",
+      "fineprint": "Lifetime license only. Valid until November 30, 2026.",
+      "ctaLabel": "Get Pro for $35.99"
+    },
+    "tr": {
+      "headline": "500+ indirmeyi kutluyoruz. Pro'da %10 indirim!",
+      "body": "Ömür boyu lisansı daha uygun fiyata alın. Ödeme ekranında bu kodu girin.",
+      "fineprint": "Yalnızca ömür boyu lisans. 30 Kasım 2026'ya kadar geçerli.",
+      "ctaLabel": "Pro'yu $35.99'a al"
+    },
+    "de": {
+      "headline": "Danke für über 500 Downloads. Hier sind 10 % Rabatt auf Pro.",
+      "body": "Sichere dir die Lifetime-Lizenz günstiger. Gib an der Kasse diesen Code ein.",
+      "fineprint": "Nur Lifetime-Lizenz. Gültig bis 30. November 2026.",
+      "ctaLabel": "Pro für $35.99 holen"
+    },
+    "es": {
+      "headline": "¡Celebramos más de 500 descargas! 10 % de descuento en Pro.",
+      "body": "Consigue la licencia de por vida por menos. Introduce este código al pagar.",
+      "fineprint": "Solo licencia de por vida. Válido hasta el 30 de noviembre de 2026.",
+      "ctaLabel": "Obtener Pro por $35.99"
+    },
+    "fr": {
+      "headline": "Merci pour plus de 500 téléchargements ! 10 % de réduction sur Pro.",
+      "body": "Obtenez la licence à vie à moindre coût. Saisissez ce code au moment du paiement.",
+      "fineprint": "Licence à vie uniquement. Valable jusqu'au 30 novembre 2026.",
+      "ctaLabel": "Obtenir Pro pour $35.99"
+    },
+    "ja": {
+      "headline": "500ダウンロード達成おめでとうございます。Proが10%オフ。",
+      "body": "買い切りライセンスをお得に入手できます。購入時にこのコードを入力してください。",
+      "fineprint": "買い切りライセンスのみ。2026年11月30日まで有効。",
+      "ctaLabel": "Proを$35.99で入手"
+    },
+    "zh-Hans": {
+      "headline": "庆祝下载量突破 500+！Pro 享 9 折优惠。",
+      "body": "以更优惠的价格获得终身授权。结账时输入此代码。",
+      "fineprint": "仅限终身授权。有效期至 2026 年 11 月 30 日。",
+      "ctaLabel": "以 $35.99 获取 Pro"
+    },
+    "pt-BR": {
+      "headline": "Comemorando mais de 500 downloads. Aqui estão 10% de desconto no Pro.",
+      "body": "Garanta a licença vitalícia por menos. Digite este código no checkout.",
+      "fineprint": "Somente licença vitalícia. Válido até 30 de novembro de 2026.",
+      "ctaLabel": "Obter o Pro por $35.99"
+    }
+  },
+  "checkoutURL": "https://buy.polar.sh/polar_cl_exSJRc2Q9kyqAzbR8Jr162wx4JMVpTfZq0gqe2kfyPu",
+  "showMode": "once",
+  "intervalDays": 7,
+  "lastDaysEveryLaunch": 3
+}
