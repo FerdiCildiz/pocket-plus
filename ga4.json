@@ -1,0 +1,29 @@
+{
+  "updated": "2026-11-21T12:49:58.457Z",
+  "window": "last 30 minutes",
+  "activeUsers": 1,
+  "countries": [
+    {
+      "country": "United Kingdom",
+      "activeUsers": 1
+    }
+  ],
+  "events": [
+    {
+      "event": "click",
+      "count": 2
+    },
+    {
+      "event": "download_click",
+      "count": 2
+    },
+    {
+      "event": "file_download",
+      "count": 2
+    },
+    {
+      "event": "user_engagement",
+      "count": 2
+    }
+  ]
+}
