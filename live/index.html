@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow"><title>Live</title>
+<style>
+:root{color-scheme:dark;--bg:#0c0c18;--card:#171728;--line:#2a2a44;--fg:#f4f4fa;--dim:#9393b3;--acc:#f9d235;--vis:#7c6cff;--sale:#4ad15b}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--fg);font:15px/1.4 -apple-system,system-ui,sans-serif;padding:16px 16px 40px;max-width:900px;margin:auto}
+h1{font-size:19px;margin:6px 0 14px;display:flex;justify-content:space-between;align-items:baseline}
+.dim{color:var(--dim);font-size:12px;font-weight:400}
+.tabs{display:flex;gap:6px;margin-bottom:14px;overflow-x:auto}.tabs button,#login button{background:var(--card);color:var(--fg);border:1px solid var(--line);border-radius:999px;padding:7px 14px;font:inherit;font-size:14px;white-space:nowrap}
+#from,#to{background:var(--card);color:var(--fg);border:1px solid var(--line);border-radius:999px;padding:6px 12px;font:inherit;font-size:14px;color-scheme:dark}#from.on,#to.on{background:var(--acc);border-color:var(--acc);color:#111;font-weight:600;color-scheme:light}
+.tabs button.on{background:var(--acc);border-color:var(--acc);color:#111;font-weight:600}
+.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:10px;margin-bottom:12px}
+.kpi{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:12px 14px}.kpi b{display:block;font-size:28px;line-height:1.15}.kpi.s b{color:var(--sale)}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px;margin-bottom:12px}
+.card h2{font-size:12px;margin:0 0 10px;color:var(--dim);font-weight:600;text-transform:uppercase;letter-spacing:.05em;display:flex;justify-content:space-between}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}@media(max-width:640px){.grid{grid-template-columns:1fr}}
+#app.busy .kpis,#app.busy .card{opacity:.55;transition:opacity .15s}#app .kpis,#app .card{transition:opacity .15s}
+svg{width:100%;height:170px;display:block}
+.leg{display:flex;gap:14px;margin-top:8px;font-size:12px;color:var(--dim)}.leg i{display:inline-block;width:9px;height:9px;border-radius:50%;margin-right:5px}
+.br{position:relative;padding:5px 0;display:flex;justify-content:space-between;gap:8px}.br .fill{position:absolute;left:0;top:3px;bottom:3px;background:var(--vis);opacity:.22;border-radius:6px}
+.br span{position:relative;z-index:1}.br .r{color:var(--dim);font-variant-numeric:tabular-nums}
+.sale{display:flex;justify-content:space-between;padding:7px 0;border-top:1px solid var(--line)}.sale:first-of-type{border-top:0}.sale .m{color:var(--dim);font-size:13px}.sale .a{color:var(--sale);font-weight:600}.sale .a.z{color:var(--dim)}
+.note{font-size:12px;color:var(--dim);margin-top:8px}
+#login{margin-top:30vh;text-align:center}#login input{background:var(--card);color:var(--fg);border:1px solid var(--line);border-radius:10px;padding:10px 14px;font:inherit;width:220px;margin-right:6px}#err{color:#ff7a7a;margin-top:10px;min-height:20px}
+#tip{position:fixed;z-index:9;pointer-events:none;display:none;padding:3px 8px;border-radius:7px;font-size:11px;line-height:1.3;white-space:nowrap;background:rgba(12,12,24,.92);color:var(--acc);border:1px solid rgba(249,210,53,.55);box-shadow:0 0 10px rgba(249,210,53,.45),0 0 2px rgba(249,210,53,.8)}
+.big{font-size:24px;font-weight:700;color:var(--sale);font-variant-numeric:tabular-nums}.sale{cursor:pointer}.sale:hover{background:rgba(255,255,255,.05)}
+</style></head><body>
+<div id="login" hidden><input id="pw" type="password" placeholder="Password" autocomplete="current-password"><button id="go">Open</button><div id="err"></div></div>
+<div id="app" hidden>
+<h1>Pocket+ live <span class="dim" id="upd"></span></h1>
+<div class="tabs" id="tabs"></div>
+<div class="tabs"><input type="datetime-local" id="from" min="2026-10-18T00:00"><span class="dim">–</span><input type="datetime-local" id="to" min="2026-10-18T00:00"></div>
+<div class="kpis"><div class="kpi"><b id="v">-</b><span class="dim">visits</span></div><div class="kpi"><b id="w">-</b><span class="dim">page views</span></div><div class="kpi s"><b id="sc">-</b><span class="dim">sales</span></div><div class="kpi s"><b id="sr">-</b><span class="dim">gross revenue</span></div><div class="kpi s"><b id="sn">-</b><span class="dim" id="snl">net revenue</span></div><div class="kpi"><b id="fr">-</b><span class="dim">free orders</span></div><div class="kpi"><b id="cv">-</b><span class="dim">visit → sale</span></div><div class="kpi"><b id="dl">-</b><span class="dim" id="dls">downloads</span></div></div>
+<div class="card"><h2><span>Visits and sales</span><span id="rng"></span></h2><div id="tip"></div><svg id="chart" viewBox="0 0 600 170" preserveAspectRatio="none"></svg><div class="leg"><span><i style="background:var(--vis)"></i>visits</span><span><i style="background:var(--sale)"></i>sale</span></div></div>
+<div class="grid" id="srcs"><div class="card"><h2>Gumroad</h2><div class="big" id="sg"></div><div class="dim" id="sgs"></div></div><div class="card"><h2>Polar</h2><div class="big" id="sp"></div><div class="dim" id="sps"></div></div></div>
+<div class="card"><h2>Sales</h2><div id="sales"></div><div class="note" id="snote"></div></div>
+<div class="card"><h2>Free orders</h2><div id="free"></div></div>
+<div class="grid"><div class="card"><h2>Sources</h2><div id="ref"></div></div><div class="card"><h2>Countries</h2><div id="cty"></div></div><div class="card"><h2>Pages</h2><div id="pg"></div></div><div class="card"><h2>Devices</h2><div id="dev"></div></div></div>
+</div>
+<script>
+const API="https://pocketplus-live.ferdicildiz.workers.dev/";
+const RANGES=[["today","Today"],["1","1h"],["3","3h"],["24","24h"],["168","7d"],["720","30d"],["all","All"]];
+let range="24",pw="",from="",to="";
+try{pw=localStorage.getItem("livepw")||""}catch(e){}
+const $=id=>document.getElementById(id), TZ="Europe/Istanbul";
+$("tabs").innerHTML=RANGES.map(([k,l])=>`<button data-k="${k}">${l}</button>`).join("");
+const isToday=()=>from===today+"T00:00"&&to===today+"T23:59";
+const tabs=()=>{document.querySelectorAll("#tabs button").forEach(b=>b.classList.toggle("on",b.dataset.k==="today"?isToday():(!from&&b.dataset.k===range)));$("from").value=from;$("to").value=to;["from","to"].forEach(i=>$(i).classList.toggle("on",!!from&&!isToday()))}
+document.querySelectorAll("#tabs button").forEach(b=>b.onclick=()=>{if(b.dataset.k==="today"){today=nowDay();from=today+"T00:00";to=today+"T23:59"}else{from=to="";range=b.dataset.k}tabs();load()});
+const nowDay=()=>new Date().toLocaleDateString("sv-SE",{timeZone:TZ});let today=nowDay();from=today+"T00:00";to=today+"T23:59";
+["from","to"].forEach(i=>{$(i).max=today+"T23:59";$(i).onchange=()=>{let f=$("from").value||$("to").value,t=$("to").value||f;if(t<f)[f,t]=[t,f];from=f;to=t;tabs();$("from").value=f;$("to").value=t;load()}});
+const NM=new Intl.DisplayNames(["en"],{type:"region"});
+const cname=c=>{if(!/^[A-Za-z]{2}$/.test(c||""))return c||"";c=c.toUpperCase();let n=c;try{n=NM.of(c)||c}catch(e){}return String.fromCodePoint(...[...c].map(x=>127397+x.charCodeAt(0)))+" "+n};
+const fmt=(t,step)=>new Date(t).toLocaleString("tr-TR",step>=86400e3?{timeZone:TZ,day:"2-digit",month:"2-digit"}:{timeZone:TZ,day:"2-digit",month:"2-digit",hour:"2-digit",minute:"2-digit"});
+const hm=t=>new Date(t).toLocaleTimeString("tr-TR",{timeZone:TZ,hour:"2-digit",minute:"2-digit"});
+const rng=(t,step)=>step>=86400e3?fmt(t,step):fmt(t,step).slice(0,5)+" "+hm(t)+"–"+hm(t+step);
+const key=(ms,step)=>step===86400e3?new Date(ms).toISOString().slice(0,10):new Date(Math.floor(ms/step)*step).toISOString().slice(0,19)+"Z";
+function bars(el,a){el.innerHTML=a.length?"":'<div class="dim">none</div>';const mx=Math.max(1,...a.map(x=>x.visits));
+  a.forEach(x=>{const d=document.createElement("div");d.className="br";d.innerHTML='<div class="fill"></div><span class="l"></span><span class="r"></span>';d.firstChild.style.width=(x.visits/mx*100)+"%";d.querySelector(".l").textContent=x.name||"(direct)";d.querySelector(".r").textContent=x.visits;el.appendChild(d)})}
+function chart(d){
+  const step=d.step,s=Date.parse(d.start),e=Date.parse(d.at),vis={};d.series.forEach(r=>vis[key(Date.parse(r.t.length===10?r.t+"T00:00:00Z":r.t),step)]=r.visits);
+  const pts=[];let t=step===86400e3?Date.parse(new Date(s).toISOString().slice(0,10)+"T00:00:00Z"):Math.floor(s/step)*step;
+  for(;t<=e;t+=step)pts.push({t,v:vis[key(t,step)]||0,s:d.salesSeries[key(t,step)]||0});
+  const W=600,H=170,pad=18,mx=Math.max(1,...pts.map(p=>p.v)),bw=W/pts.length;let g="";
+  [0.5,1].forEach(f=>g+=`<line x1="0" x2="${W}" y1="${H-pad-(H-pad*2)*f}" y2="${H-pad-(H-pad*2)*f}" stroke="#2a2a44" stroke-dasharray="3 4"/>`);
+  g+=`<text x="2" y="${pad-4}" fill="#9393b3" font-size="11">${mx}</text>`;
+  pts.forEach((p,i)=>{const h=(H-pad*2)*p.v/mx,x=i*bw;g+=`<rect x="${x+bw*.12}" y="${H-pad-h}" width="${Math.max(1,bw*.76)}" height="${h}" rx="${Math.min(3,bw/3)}" fill="#7c6cff" data-tip="${rng(p.t,step)}  ·  ${p.v} visits${p.s?"  ·  "+p.s+" sale":""}"></rect>`;
+    if(p.s)g+=`<circle cx="${x+bw/2}" cy="${H-pad-h-8}" r="6" fill="#4ad15b" data-tip="${rng(p.t,step)}  ·  ${p.s} sale"></circle><text x="${x+bw/2}" y="${H-pad-h-5}" fill="#0c0c18" font-size="9" font-weight="700" text-anchor="middle">${p.s}</text>`});
+  g+=`<text x="2" y="${H-3}" fill="#9393b3" font-size="11">${fmt(pts[0].t,step)}</text><text x="${W-2}" y="${H-3}" fill="#9393b3" font-size="11" text-anchor="end">${fmt(pts[pts.length-1].t,step)}</text>`;
+  $("chart").innerHTML=g;
+}
+const tip=$("tip");
+function tipAt(e){const t=e.target.closest&&e.target.closest("[data-tip]");if(!t){tip.style.display="none";return}
+  tip.textContent=t.dataset.tip;tip.style.display="block";const w=tip.offsetWidth;
+  tip.style.left=Math.max(6,Math.min(innerWidth-w-6,e.clientX-w/2))+"px";tip.style.top=Math.max(6,e.clientY-tip.offsetHeight-12)+"px"}
+$("chart").addEventListener("pointermove",tipAt);$("chart").addEventListener("pointerdown",tipAt);$("chart").addEventListener("pointerleave",()=>tip.style.display="none");
+function goDay(t){const d=new Date(t).toLocaleDateString("sv-SE",{timeZone:TZ});from=d+"T00:00";to=d+"T23:59";tabs();scrollTo({top:0,behavior:"smooth"});load()}
+async function load(){
+  $("app").classList.add("busy");
+  try{
+    const r=await fetch(API+(from?"?from="+from+"&to="+to:"?range="+range),{headers:{Authorization:"Bearer "+pw}});
+    if(r.status===401){try{localStorage.removeItem("livepw")}catch(e){};pw="";show(false);$("err").textContent="Wrong password";return}
+    const d=await r.json();if(d.error)throw 0;show(true);tabs();downloads(d.downloads);
+    $("v").textContent=d.visits;$("w").textContent=d.views;$("sc").textContent=d.sales.count;const $$=n=>"$"+n.toFixed(n%1?2:0);$("sr").textContent=$$(d.sales.gross);$("sn").textContent=$$(d.sales.net);$("snl").title="After fees: "+$$(d.sales.fees);
+    $("cv").textContent=d.visits?(d.sales.count/d.visits*100).toFixed(1)+"%":"-";
+    $("upd").textContent=new Date(d.at).toLocaleTimeString("tr-TR",{timeZone:TZ,hour:"2-digit",minute:"2-digit",second:"2-digit"})+" · Türkiye";
+    $("rng").textContent=fmt(d.start,86400e3)+" – "+fmt(d.at,86400e3);
+    chart(d);bars($("ref"),d.referrers);bars($("cty"),d.countries.map(x=>({...x,name:cname(x.name)})));bars($("pg"),d.pages);bars($("dev"),d.devices);
+    const el=$("sales");el.innerHTML=d.sales.recent.length?"":'<div class="dim">No sales in this range</div>';
+    d.sales.recent.forEach(x=>{const row=document.createElement("div");row.className="sale";row.innerHTML='<div><div class="w"></div><div class="m"></div></div><div class="a"></div>';
+      row.querySelector(".w").textContent=cname(x.c)||"Country unknown";row.querySelector(".m").textContent=fmt(x.t,60e3)+" · "+(x.src==="polar"?"Polar":"Gumroad")+(x.refunded?" · refunded":"");
+      row.onclick=()=>goDay(x.t);const a=row.querySelector(".a");a.textContent="$"+x.usd;if(x.net!=null)row.querySelector(".m").textContent+=" · net $"+x.net.toFixed(2);if(x.usd===0)a.className="a z";el.appendChild(row)});
+    $("fr").textContent=d.sales.gifts;
+    for(const [k,id] of [["gumroad","sg"],["polar","sp"]]){const b=(d.sales.bySource||{})[k]||{count:0,gross:0,net:0};$(id).textContent=$$(b.net)+" net";$(id+"s").textContent=b.count+" sale"+(b.count===1?"":"s")+" · "+$$(b.gross)+" gross"}
+    const fe=$("free");fe.innerHTML=(d.sales.free||[]).length?"":'<div class="dim">No free orders in this range</div>';
+    (d.sales.free||[]).forEach(x=>{const row=document.createElement("div");row.className="sale";row.innerHTML='<div><div class="w"></div><div class="m"></div></div><div class="a z">$0</div>';row.querySelector(".w").textContent=cname(x.c)||"Country unknown";row.querySelector(".m").textContent=fmt(x.t,60e3)+" · "+(x.src==="polar"?"Polar":"Gumroad");row.onclick=()=>goDay(x.t);fe.appendChild(row)});
+    $("snote").textContent="Fees: "+$$(d.sales.fees)+" (Gumroad 10%+50¢+2.9%+30¢; Polar from the order, else estimated). "+(d.sales.polarConnected?"":"Polar sales are not connected yet; Gumroad shown up to the last snapshot.");
+  }catch(e){$("upd").textContent="error"}
+  $("app").classList.remove("busy");
+}
+// İndirmeler: GitHub sürüm dosyalarının sayaçları (herkese açık API, kimlik gerektirmez). Yalnızca toplam tutulur; "bugün" ilk açılıştan beri fark.
+// Sayılanlar: sitenin ve eski bağlantıların indirdiği dosyalar. Uygulama içi güncellemeler (…-bN.zip) ayrı sayılır.
+async function downloads(sel){
+  try{
+    let c=null;try{c=JSON.parse(localStorage.getItem("dlcache")||"null")}catch(e){}
+    if(!c||Date.now()-c.t>300e3){
+      const r=await fetch("https://api.github.com/repos/FerdiCildiz/pocket-plus/releases?per_page=100");if(!r.ok)throw 0;
+      let site=0,upd=0;(await r.json()).forEach(x=>(x.assets||[]).forEach(a=>{/-b\d+\.zip$/.test(a.name)?upd+=a.download_count:site+=a.download_count}));
+      c={t:Date.now(),site,upd};try{localStorage.setItem("dlcache",JSON.stringify(c))}catch(e){}
+    }
+    const filtered=range!=="all"||from;let n=filtered?(sel&&sel.count!=null?sel.count:0):c.site;
+    if(from&&from.slice(0,10)===today&&to.slice(0,10)===today){ // bugün: tarayıcıda günün ilk açılışındaki toplamdan farkı da hesaba kat (Worker kaydı geç başladı)
+      try{const b=JSON.parse(localStorage.getItem("dlbase")||"null");if(b&&b.day===today)n=Math.max(n,c.site-b.site);else localStorage.setItem("dlbase",JSON.stringify({day:today,site:c.site}))}catch(e){}
+    }
+    $("dl").textContent=n;
+    $("dls").textContent="downloads";$("dls").title=(range==="all"&&!from?"All time. ":"In the selected range. ")+c.upd+" more were in-app updates.";
+  }catch(e){$("dls").textContent="downloads (unavailable)"}
+}
+function show(ok){$("app").hidden=!ok;$("login").hidden=ok}
+$("go").onclick=()=>{pw=$("pw").value;try{localStorage.setItem("livepw",pw)}catch(e){}$("err").textContent="";load()};
+$("pw").onkeydown=e=>{if(e.key==="Enter")$("go").click()};
+if(pw)load();else show(false);
+setInterval(()=>{if(pw&&!document.hidden)load()},30000);
+</script></body></html>

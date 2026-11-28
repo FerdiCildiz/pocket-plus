@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pocket+ | Links</title>
+<meta name="description" content="Download Pocket+ and follow along on YouTube, Instagram and X.">
+<meta name="robots" content="noindex">
+<link rel="canonical" href="https://pocketplus.app/links/">
+<link rel="icon" href="/assets/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Stack+Sans+Headline:wght@300;400;500&family=Stack+Sans+Text:wght@200;300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #04000b;
+    --purple: #1f074d;
+    --purple-deep: #11042c;
+    --yellow: #f9d235;
+    --cyan: #00d9ff;
+    --red: #f34648;
+    --grey: #d7d7d7;
+    --text: #ffffff;
+    --muted: rgba(215, 215, 215, .68);
+    --line: rgba(255, 255, 255, .12);
+  }
+  @media (prefers-color-scheme: light) {
+    :root:not([data-theme="light"]) { /* the page stays dark on purpose: it matches the video */ }
+  }
+  :root[data-theme="dark"] { color-scheme: dark; }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; min-height: 100%; background: var(--bg); color: var(--text); }
+  body {
+    font-family: "Stack Sans Text", system-ui, -apple-system, "Segoe UI", sans-serif;
+    font-weight: 400;
+    background:
+      radial-gradient(900px 620px at 50% -10%, rgba(31, 7, 77, .95), transparent 70%),
+      radial-gradient(520px 380px at 85% 100%, rgba(0, 217, 255, .10), transparent 70%),
+      radial-gradient(480px 360px at 10% 60%, rgba(249, 210, 53, .08), transparent 70%),
+      var(--bg);
+    -webkit-font-smoothing: antialiased;
+  }
+  .wrap {
+    min-height: 100vh;
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    padding: 56px 16px 40px;
+  }
+  .card { width: 100%; max-width: 440px; text-align: center; }
+  .logo {
+    display: block; width: 200px; height: 200px; margin: 8px auto 20px;
+    border-radius: 50%; /* full circle */
+    box-shadow: 0 18px 50px rgba(249, 210, 53, .18);
+  }
+  h1 {
+    font-family: "Stack Sans Headline", system-ui, sans-serif;
+    font-weight: 500; font-size: 34px; letter-spacing: -.02em; margin: 0 0 8px;
+  }
+  h1 span { color: #ffffff; }
+  .tag { margin: 0 auto 30px; color: var(--muted); font-size: 16px; line-height: 1.45; max-width: 340px; }
+  .links { display: flex; flex-direction: column; gap: 12px; }
+  .btn {
+    position: relative; display: flex; align-items: center; gap: 14px;
+    width: 100%; padding: 16px 18px; border-radius: 16px;
+    background: rgba(255, 255, 255, .05);
+    border: 1px solid var(--line);
+    color: var(--text); text-decoration: none;
+    font-size: 17px; font-weight: 400;
+    transition: background .5s ease, border-color .5s ease, transform .5s ease;
+    backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
+  }
+  .btn:hover, .btn:focus-visible { background: rgba(255, 255, 255, .10); border-color: rgba(255, 255, 255, .24); transform: translateY(-2px); outline: none; }
+  .btn .ico {
+    width: 38px; height: 38px; flex: 0 0 38px; border-radius: 11px;
+    display: grid; place-items: center; background: rgba(255, 255, 255, .08);
+  }
+  .btn .ico svg { width: 19px; height: 19px; fill: currentColor; }
+  .btn .label { flex: 1; text-align: left; }
+  .btn .label small { display: block; color: var(--muted); font-size: 13px; margin-top: 2px; }
+  .btn .arrow { color: var(--muted); font-size: 18px; transition: transform .5s ease; }
+  .btn:hover .arrow { transform: translateX(3px); }
+  .btn.primary {
+    background: var(--yellow); color: #04000b; border-color: transparent;
+    font-family: "Stack Sans Headline", system-ui, sans-serif; font-weight: 500;
+    box-shadow: 0 14px 40px rgba(249, 210, 53, .22);
+  }
+  .btn.primary .ico { background: rgba(4, 0, 11, .10); }
+  .btn.primary .label small { color: rgba(4, 0, 11, .62); }
+  .btn.primary .arrow { color: rgba(4, 0, 11, .6); }
+  .btn.primary:hover { background: #ffe25c; border-color: transparent; }
+  .btn.yt .ico { color: var(--red); }
+  .btn.ig .ico { color: #ff5c9a; }
+  .btn.x .ico { color: var(--text); }
+  .sep { height: 1px; background: var(--line); margin: 14px 0 4px; }
+  .foot { margin-top: 34px; color: var(--muted); font-size: 13px; }
+  .foot a { color: var(--cyan); text-decoration: none; }
+  .foot a:hover { text-decoration: underline; }
+  @media (prefers-reduced-motion: reduce) { .btn, .btn .arrow { transition: none; } }
+</style>
+<script>
+  (() => {
+    let off = false;
+    try { off = localStorage.getItem('notrack') === '1'; } catch (e) {}
+    if (!off) {
+      const s = document.createElement('script');
+      s.type = 'module';
+      s.src = 'https://static.cloudflareinsights.com/beacon.min.js';
+      s.dataset.cfBeacon = '{"token": "16f12da5593d494e828fd44a928bdd1a"}';
+      document.head.appendChild(s);
+    }
+  })();
+</script>
+</head>
+<body>
+<main class="wrap">
+  <div class="card">
+    <img class="logo" src="/links/logo-links.png" alt="Pocket+ logo" width="224" height="224">
+    <h1>Pocket<span>+</span></h1>
+    <p class="tag">Control your DJI Osmo Pocket from your Mac and record straight to your disk.</p>
+
+    <nav class="links" aria-label="Pocket+ links">
+      <!-- Each button goes through a tiny tracked redirect page (/links/dl/, /links/yt/, ...) so visits show up in analytics. -->
+      <a class="btn primary" href="/links/dl/">
+        <span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M11 3h2v10.2l3.6-3.6 1.4 1.4L12 16.6 6 10.6l1.4-1.4 3.6 3.6V3zM4 18h16v3H4v-3z"/></svg></span>
+        <span class="label">Download for Mac<small>Free, macOS 15 or later</small></span>
+        <span class="arrow" aria-hidden="true">&rarr;</span>
+      </a>
+      <a class="btn yt" href="https://www.youtube.com/@pocketplusapp?sub_confirmation=1">
+        <span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M23 7.2a3 3 0 0 0-2.1-2.1C19 4.6 12 4.6 12 4.6s-7 0-8.9.5A3 3 0 0 0 1 7.2 31 31 0 0 0 .5 12a31 31 0 0 0 .5 4.8 3 3 0 0 0 2.1 2.1c1.9.5 8.9.5 8.9.5s7 0 8.9-.5a3 3 0 0 0 2.1-2.1A31 31 0 0 0 23.5 12a31 31 0 0 0-.5-4.8zM9.8 15.3V8.7l5.8 3.3-5.8 3.3z"/></svg></span>
+        <span class="label">YouTube<small>Demos and tutorials</small></span>
+        <span class="arrow" aria-hidden="true">&rarr;</span>
+      </a>
+      <a class="btn ig" href="/instagram/">
+        <span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2.2c3.2 0 3.6 0 4.8.1 3.3.1 4.8 1.7 4.9 4.9.1 1.3.1 1.6.1 4.8s0 3.6-.1 4.8c-.1 3.2-1.7 4.8-4.9 4.9-1.3.1-1.6.1-4.8.1s-3.6 0-4.8-.1c-3.3-.1-4.8-1.7-4.9-4.9C2.2 15.6 2.2 15.2 2.2 12s0-3.6.1-4.8C2.4 3.9 3.9 2.4 7.2 2.3 8.4 2.2 8.8 2.2 12 2.2zM12 0C8.7 0 8.3 0 7.1.1 2.7.3.3 2.7.1 7.1 0 8.3 0 8.7 0 12s0 3.7.1 4.9c.2 4.4 2.6 6.8 7 7 1.2.1 1.6.1 4.9.1s3.7 0 4.9-.1c4.4-.2 6.8-2.6 7-7 .1-1.2.1-1.6.1-4.9s0-3.7-.1-4.9c-.2-4.4-2.6-6.8-7-7C15.7 0 15.3 0 12 0zm0 5.8a6.2 6.2 0 1 0 0 12.4 6.2 6.2 0 0 0 0-12.4zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.4-11.8a1.4 1.4 0 1 0 0 2.9 1.4 1.4 0 0 0 0-2.9z"/></svg></span>
+        <span class="label">Instagram<small>@pocketplus.app</small></span>
+        <span class="arrow" aria-hidden="true">&rarr;</span>
+      </a>
+      <a class="btn x" href="/links/x/">
+        <span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M18.2 2.3h3.4l-7.4 8.5L23 21.7h-6.8l-5.3-7-6.1 7H1.4l7.9-9L1 2.3h7l4.8 6.4 5.4-6.4zm-1.2 17.5h1.9L7.1 4.2H5.1l11.9 15.6z"/></svg></span>
+        <span class="label">X (Twitter)<small>News and updates</small></span>
+        <span class="arrow" aria-hidden="true">&rarr;</span>
+      </a>
+      <a class="btn ph" href="/producthunt/">
+        <span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" fill="#da552f"/><path fill="#fff" d="M8.6 6.8h3.8a3.4 3.4 0 0 1 0 6.8h-1.7v2.6H8.6V6.8zm2.1 2v2.8h1.6a1.4 1.4 0 0 0 0-2.8h-1.6z"/></svg></span>
+        <span class="label">Product Hunt<small>Support us with an upvote</small></span>
+        <span class="arrow" aria-hidden="true">&rarr;</span>
+      </a>
+    </nav>
+
+    <div class="sep"></div>
+    <p class="foot"><a href="/">pocketplus.app</a> &middot; <a href="/privacy/">Privacy</a></p>  </div>
+</main>
+</body>
+</html>

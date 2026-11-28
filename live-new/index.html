@@ -1,0 +1,338 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow"><title>Live (new)</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/topojson-client@3.1.0/dist/topojson-client.min.js"></script>
+<style>
+:root{color-scheme:dark;--bg:#0f0f0f;--card:#212121;--line:#303030;--fg:#f1f1f1;--dim:#aaaaaa;--acc:#ff0000;--vis:#3ea6ff;--sale:#29f07f}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--fg);font:15px/1.4 -apple-system,system-ui,sans-serif;padding:16px 16px 40px;max-width:900px;margin:auto}
+h1{font-size:19px;margin:6px 0 14px;display:flex;justify-content:space-between;align-items:baseline}
+.dim{color:var(--dim);font-size:12px;font-weight:400}
+.tabs{display:flex;gap:6px;margin-bottom:14px;overflow-x:auto}.tabs button,#login button{background:var(--card);color:var(--fg);border:1px solid var(--line);border-radius:999px;padding:7px 14px;font:inherit;font-size:14px;white-space:nowrap}
+#from,#to{background:var(--card);color:var(--fg);border:1px solid var(--line);border-radius:999px;padding:6px 12px;font:inherit;font-size:14px;color-scheme:dark}#from.on,#to.on{background:var(--acc);border-color:var(--acc);color:#fff;font-weight:600;color-scheme:light}
+.tabs button.on{background:var(--acc);border-color:var(--acc);color:#fff;font-weight:600}
+.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:10px;margin-bottom:12px}
+.kpi{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:12px 14px}.kpi b{display:block;font-size:28px;line-height:1.15}.kpi.s b{color:var(--sale)}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px;margin-bottom:12px}
+.card h2{font-size:12px;margin:0 0 10px;color:var(--dim);font-weight:600;text-transform:uppercase;letter-spacing:.05em;display:flex;justify-content:space-between}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}@media(max-width:640px){.grid{grid-template-columns:1fr}}
+#app.busy .kpis,#app.busy .card{opacity:.55;transition:opacity .15s}#app .kpis,#app .card{transition:opacity .15s}
+svg{width:100%;height:170px;display:block}
+.leg{display:flex;gap:14px;margin-top:8px;font-size:12px;color:var(--dim)}.leg i{display:inline-block;width:9px;height:9px;border-radius:50%;margin-right:5px}
+.br{position:relative;padding:5px 0;display:flex;justify-content:space-between;gap:8px}.br .fill{position:absolute;left:0;top:3px;bottom:3px;background:var(--vis);opacity:.22;border-radius:6px}
+.br span{position:relative;z-index:1}.br .r{color:var(--dim);font-variant-numeric:tabular-nums}
+.sale{display:flex;justify-content:space-between;padding:7px 0;border-top:1px solid var(--line)}.sale:first-of-type{border-top:0}.sale .m{color:var(--dim);font-size:13px}.sale .a{color:var(--sale);font-weight:600}.sale .a.z{color:var(--dim)}
+.note{font-size:12px;color:var(--dim);margin-top:8px}
+#login{margin-top:30vh;text-align:center}#login input{background:var(--card);color:var(--fg);border:1px solid var(--line);border-radius:10px;padding:10px 14px;font:inherit;width:220px;margin-right:6px}#err{color:#ff7a7a;margin-top:10px;min-height:20px}
+#tip{position:fixed;z-index:9;pointer-events:none;display:none;padding:3px 8px;border-radius:7px;font-size:11px;line-height:1.3;white-space:nowrap;background:rgba(12,12,24,.92);color:var(--acc);border:1px solid rgba(249,210,53,.55);box-shadow:0 0 10px rgba(249,210,53,.45),0 0 2px rgba(249,210,53,.8)}
+.big{font-size:24px;font-weight:700;color:var(--sale);font-variant-numeric:tabular-nums}.sale{cursor:pointer}.sale:hover{background:rgba(255,255,255,.05)}
+#mapbox{background:#181818;border:1px solid var(--line);border-radius:12px;overflow:hidden}
+#map{width:100%;height:auto;display:block}#map path{stroke:#161616;stroke-width:.5}#map path[data-tip],#map circle[data-tip]{cursor:pointer}
+@keyframes ping{0%{transform:scale(.6);opacity:.9}100%{transform:scale(3.2);opacity:0}}
+.pulse-ring{fill:none;stroke:var(--acc);stroke-width:1.5;transform-box:fill-box;transform-origin:center;animation:ping 2s ease-out infinite}
+.ctab{margin-top:14px}.ctab .row{display:grid;grid-template-columns:1fr 72px 72px 96px;gap:8px;padding:8px 0;border-top:1px solid var(--line);font-variant-numeric:tabular-nums;font-size:14px}
+.ctab .row.h{border-top:0;color:var(--dim);font-size:11px;text-transform:uppercase;letter-spacing:.05em;padding-top:0}
+.ctab .row span:not(:first-child){text-align:right}.ctab .sn{color:var(--sale);font-weight:600}.ctab .act{color:var(--acc);font-weight:600}
+.ctnote{margin-top:10px;font-size:12px;color:var(--dim);line-height:1.5}
+/* Dark "live console" look: dotted backdrop, mono labels, glowing live dot */
+:root{--bg:#0a0b0d;--card:#121418;--line:#22262d;--fg:#e8eaee;--dim:#8a919c}
+body{background:radial-gradient(#1d2129 1px,transparent 1px) 0 0/18px 18px,var(--bg);min-height:100vh}
+.card,.kpi{background:rgba(18,20,24,.94);border-color:var(--line);border-radius:12px}
+.card h2{font-family:ui-monospace,Menlo,monospace;font-size:11px;letter-spacing:.08em;color:var(--dim)}
+.kpi b{font-size:26px;font-variant-numeric:tabular-nums}
+#upd{font-family:ui-monospace,Menlo,monospace}
+.brand{display:inline-flex;align-items:center;gap:10px}.brand img{display:block;border-radius:7px}
+h1{font-size:17px;letter-spacing:-.01em}
+.live{display:inline-flex;align-items:center;gap:6px;font-size:11px;font-weight:600;color:#7ee2a0;border:1px solid #1f3a2a;border-radius:999px;padding:2px 9px;margin-left:6px;vertical-align:middle}
+.live i{width:7px;height:7px;border-radius:50%;background:#29f07f;animation:beat 1.8s infinite}
+@keyframes beat{0%{box-shadow:0 0 0 0 rgba(74,209,91,.6)}70%{box-shadow:0 0 0 7px rgba(74,209,91,0)}100%{box-shadow:0 0 0 0 rgba(74,209,91,0)}}
+#mapbox{background:#0c0d10;border-color:var(--line);position:relative}
+#map{cursor:grab;touch-action:none}#map:active{cursor:grabbing}
+.mapbtn{position:absolute;top:10px;right:10px;z-index:2;background:rgba(18,20,24,.9);color:#fff;border:1px solid var(--line);border-radius:999px;padding:5px 12px;font:inherit;font-size:12px;cursor:pointer}
+#map{background:transparent}
+.tabs button{background:transparent}
+.tabs button.on{background:#f1f1f1;border-color:#f1f1f1;color:#0a0b0d}
+/* KPI tiles: bigger numbers, labels in the same mono caps style as the card titles (Devices, Sources...) */
+.kpi b{font-size:36px;line-height:1.05}
+.kpi span.dim{display:block;margin-top:6px;font-family:ui-monospace,Menlo,monospace;font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:var(--dim)}
+/* Other boxes: numbers use the same mono face as the KPI tiles; big numbers match their size */
+.big{font-size:36px;line-height:1.05;font-family:ui-monospace,Menlo,monospace}
+.br .r,.sale .a,.ctab .row span,.ctab .row.h span{font-family:ui-monospace,Menlo,monospace;font-variant-numeric:tabular-nums}
+.ctab .row.h span{font-size:11px;letter-spacing:.08em}
+/* Cards already have a 12px bottom margin; drop the grid's extra row gap so every vertical gap is 12px */
+.grid{row-gap:0}
+/* KPI tiles: 8 tiles in 2 rows of 4 on desktop */
+@media(min-width:900px){.kpis{grid-template-columns:repeat(4,minmax(0,1fr))}}
+/* Wide screens: use the full width (the page was capped at 900px) */
+@media(min-width:1200px){body{max-width:1840px}}
+/* Desktop: country table on the left, map on the right. Phone: stacked as before. */
+@media(min-width:900px){
+  .mapcard{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.6fr);column-gap:16px;align-items:start}
+  .mapcard h2{grid-column:1/-1}
+  .mapcard #mapbox{grid-column:2;grid-row:2}
+  .mapcard .leg{grid-column:2;grid-row:3;margin-top:10px}
+  .mapcard .ctab{grid-column:1;grid-row:2/span 2;margin-top:0}
+  .mapcard .ctnote{grid-column:1;grid-row:4}
+}
+/* Wide screens: left = all the cards as before, right = big map with the country table under it (sticky while scrolling) */
+@media(min-width:1200px){
+  .split{display:grid;grid-template-columns:minmax(0,35fr) minmax(0,65fr);column-gap:16px;align-items:start}
+  .col-r{position:sticky;top:16px}
+  .mapcard{display:block}
+  .mapcard .ctab,.mapcard .ctnote,.mapcard .leg{margin-top:10px}
+}
+/* Bigger map tooltips; active now is yellow (red was hard to read on the dark map) */
+#tip{font-size:15px;line-height:1.4;padding:8px 12px;border-radius:10px;color:#fff;border-color:rgba(255,255,255,.35)}
+.pulse-ring{stroke:#ffd23f}
+.ctab .act{color:#ffd23f}
+/* GA4 cards: plain rows separated by lines, no bar background; card titles wrap instead of overlapping */
+#g4c .br,#g4e .br,#g4p .br,#g4d .br{border-bottom:1px solid var(--line);padding:9px 0}
+#g4c .br .fill,#g4e .br .fill,#g4p .br .fill,#g4d .br .fill{display:none}
+.card h2{flex-wrap:wrap;gap:4px 12px}
+/* KPI numbers: sized so long values (revenue) fit inside the tile */
+.kpi b{font-family:ui-monospace,Menlo,monospace;white-space:nowrap;overflow:hidden}
+/* Tooltips: no glow */
+#tip{box-shadow:none}
+/* Date pickers and quick ranges share one row */
+.bar{display:flex;align-items:center;gap:8px;margin-bottom:14px;overflow-x:auto}
+.bar .tabs{margin-bottom:0}.bar .dates{flex:none}
+/* Visit bars: soft blue, full blue on hover */
+#chart rect{transition:fill-opacity .2s}#chart rect:hover{fill-opacity:1}
+/* Compact country table under the map */
+.ctab .row{padding:4px 0;font-size:13px}.ctab .row.h{padding:0 0 4px}
+/* Map tooltips: smaller */
+#tip{font-size:12px;padding:5px 9px;border-radius:8px;line-height:1.35}
+/* Pinned tooltip: a small pointer under the box, pointing at the country */
+/* outer triangle = the border colour, inner triangle = the fill, so the pointer has the same outline as the box */
+#tip.pinned::after{content:"";position:absolute;left:50%;bottom:-8px;transform:translateX(-50%);border-left:8px solid transparent;border-right:8px solid transparent;border-top:8px solid rgba(255,255,255,.35)}
+#tip.pinned::before{content:"";position:absolute;left:50%;bottom:-6px;transform:translateX(-50%);border-left:7px solid transparent;border-right:7px solid transparent;border-top:7px solid rgba(12,12,24,.92)}
+/* Source switch */
+.seg{display:inline-flex;border:1px solid var(--line);border-radius:999px;padding:2px;margin-right:10px;vertical-align:middle}
+.seg button{background:transparent;color:var(--dim);border:0;border-radius:999px;padding:4px 11px;font:inherit;font-size:12px;cursor:pointer}
+.seg button.on{background:#f1f1f1;color:#0a0b0d;font-weight:600}
+body.ga4 .cf{display:none}
+body.cf .g4{display:none}
+body.ga4 .ctab .row{grid-template-columns:minmax(0,1fr) 110px}
+body.ga4 .ctab .row span:nth-child(2),body.ga4 .ctab .row span:nth-child(3){display:none}
+body.cf .ctab .row{grid-template-columns:minmax(0,1fr) 72px 72px}
+body.cf .ctab .row span:nth-child(4){display:none}
+/* GA4 history: same tile look as the KPI row */
+.kpis4{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:10px;margin-bottom:12px}
+@media(min-width:900px){.kpis4{grid-template-columns:repeat(3,minmax(0,1fr))}}
+</style></head><body>
+<div id="login" hidden><input id="pw" type="password" placeholder="Password" autocomplete="current-password"><button id="go">Open</button><div id="err"></div></div>
+<div id="app" hidden>
+<h1><span class="brand"><img src="/assets/logo-icon.svg" alt="" width="28" height="28"><span>Pocket+ Stats <span class="live"><i></i>Live</span></span></span><span class="dim" id="upd"></span></h1>
+<p class="dim" style="margin:-6px 0 14px;line-height:1.5">Pick a day or range above: visits, sales and countries follow it. The live card shows real people on the site right now and refreshes every 15 seconds.</p>
+<div class="tabs srctabs" id="srctabs"><button data-s="ga4">GA4</button><button data-s="cf">Cloudflare</button><button data-s="all">All</button></div>
+<div class="bar"><div class="tabs dates"><input type="datetime-local" id="from" min="2026-10-18T00:00"><span class="dim">–</span><input type="datetime-local" id="to" min="2026-10-18T00:00"></div><div class="tabs" id="tabs"></div></div>
+<div class="split"><div class="col-l">
+<div class="kpis cf"><div class="kpi"><b id="v">-</b><span class="dim">visits</span></div><div class="kpi"><b id="w">-</b><span class="dim">page views</span></div><div class="kpi s"><b id="sc">-</b><span class="dim">sales</span></div><div class="kpi s"><b id="sr">-</b><span class="dim">gross revenue</span></div><div class="kpi s"><b id="sn">-</b><span class="dim" id="snl">net revenue</span></div><div class="kpi"><b id="fr">-</b><span class="dim">free orders</span></div><div class="kpi"><b id="cv">-</b><span class="dim">visit → sale</span></div><div class="kpi"><b id="dl">-</b><span class="dim" id="dls">downloads</span></div></div>
+<div class="grid g4"><div class="card"><h2><span>GA4 · selected range</span><span class="dim" id="h4u"></span></h2><div class="kpis4"><div class="kpi"><b id="h4u1">-</b><span class="dim">active users</span></div><div class="kpi"><b id="h4s">-</b><span class="dim">sessions</span></div><div class="kpi"><b id="h4v">-</b><span class="dim">page views</span></div></div></div><div class="card"><h2><span>GA4 · clicks</span></h2><div class="kpis4"><div class="kpi"><b id="h4d">-</b><span class="dim">download clicks</span></div><div class="kpi"><b id="h4b">-</b><span class="dim">buy clicks</span></div><div class="kpi"><b id="h4c">-</b><span class="dim">campaign clicks</span></div></div></div></div>
+<div class="grid g4"><div class="card" style="grid-column:1/-1"><h2><span>Live now · real people</span><span class="dim" id="g4u"></span></h2><div style="display:flex;gap:28px;align-items:flex-end;flex-wrap:wrap"><div><div class="big" id="g4a">-</div><div class="dim">on the site now (30 min)</div></div><div><div class="big" id="g4a5" style="color:#2bff7a">-</div><div class="dim">in the last 5 min</div></div><svg id="g4spark" viewBox="0 0 300 50" preserveAspectRatio="none" style="flex:1;min-width:160px;height:50px"></svg></div><div class="dim" style="margin-top:6px">GA4 already filters known bots. Bar = people per minute, newest on the right.</div></div></div>
+<div class="grid g4"><div class="card"><h2><span>Pages open now</span></h2><div id="g4p"></div></div><div class="card"><h2><span>Where from</span></h2><div id="g4c"></div></div><div class="card"><h2><span>Devices</span></h2><div id="g4d"></div></div><div class="card"><h2><span>Events, last 30 min</span></h2><div id="g4e"></div></div></div>
+<div class="grid g4"><div class="card"><h2>Sources (GA4)</h2><div id="h4src"></div></div><div class="card"><h2>Campaigns (GA4)</h2><div id="h4cmp"></div></div></div>
+<div class="card cf"><h2><span>Visits and sales</span><span id="rng"></span></h2><div id="tip"></div><svg id="chart" viewBox="0 0 600 170" preserveAspectRatio="none"></svg><div class="leg"><span><i style="background:var(--vis)"></i>visits</span><span><i style="background:var(--sale)"></i>sale</span></div></div>
+<div class="grid cf" id="srcs"><div class="card"><h2>Polar</h2><div class="big" id="sp"></div><div class="dim" id="sps"></div></div><div class="card"><h2>Free orders</h2><div id="free"></div></div></div>
+<div class="card cf"><h2>Sales</h2><div id="sales"></div><div class="note" id="snote"></div></div>
+
+<div class="grid cf"><div class="card"><h2>Sources</h2><div id="ref"></div></div><div class="card"><h2>Pages</h2><div id="pg"></div></div><div class="card" style="grid-column:1/-1"><h2>Devices</h2><div id="dev"></div></div></div>
+</div><div class="col-r">
+<div class="card mapcard"><h2><span>Countries</span><span class="dim" id="mapn"></span></h2><div id="mapbox"><button id="mapreset" class="mapbtn">Reset</button><svg id="map" viewBox="0 0 960 470" role="img" aria-label="World map of visits and sales"></svg></div><div class="leg"><span><i style="background:#3ea6ff"></i>visits</span><span><i style="background:var(--sale)"></i>sale</span><span><i style="background:#ffd23f"></i>active now</span></div><div class="ctab" id="ctab"></div><div class="ctnote" id="ctnote"></div></div>
+</div></div>
+</div>
+<script>
+const API="https://pocketplus-live.ferdicildiz.workers.dev/";
+const RANGES=[["today","Today"],["yesterday","Yesterday"],["1","1h"],["3","3h"],["24","24h"],["168","7d"],["720","30d"],["all","All"]];
+let range="1",pw="",from="",to="";
+try{pw=localStorage.getItem("livepw")||""}catch(e){}
+const $=id=>document.getElementById(id), TZ="Europe/Istanbul";
+$("tabs").innerHTML=RANGES.map(([k,l])=>`<button data-k="${k}">${l}</button>`).join("");
+const isToday=()=>from===today+"T00:00"&&to===today+"T23:59";
+const yesterdayDay=()=>new Date(Date.now()-864e5).toLocaleDateString("sv-SE",{timeZone:TZ});
+const isYesterday=()=>from===yesterdayDay()+"T00:00"&&to===yesterdayDay()+"T23:59";
+const tabs=()=>{document.querySelectorAll("#tabs button").forEach(b=>b.classList.toggle("on",b.dataset.k==="today"?isToday():b.dataset.k==="yesterday"?isYesterday():(!from&&b.dataset.k===range)));$("from").value=from;$("to").value=to;["from","to"].forEach(i=>$(i).classList.toggle("on",!!from&&!isToday()))}
+document.querySelectorAll("#tabs button").forEach(b=>b.onclick=()=>{if(b.dataset.k==="today"){today=nowDay();from=today+"T00:00";to=today+"T23:59"}else if(b.dataset.k==="yesterday"){const y=yesterdayDay();from=y+"T00:00";to=y+"T23:59"}else{from=to="";range=b.dataset.k}tabs();load()});
+const nowDay=()=>new Date().toLocaleDateString("sv-SE",{timeZone:TZ});let today=nowDay();from=today+"T00:00";to=today+"T23:59";
+["from","to"].forEach(i=>{$(i).max=today+"T23:59";$(i).onchange=()=>{let f=$("from").value||$("to").value,t=$("to").value||f;if(t<f)[f,t]=[t,f];from=f;to=t;tabs();$("from").value=f;$("to").value=t;load()}});
+const NM=new Intl.DisplayNames(["en"],{type:"region"});
+const cname=c=>{if(!/^[A-Za-z]{2}$/.test(c||""))return c||"";c=c.toUpperCase();let n=c;try{n=NM.of(c)||c}catch(e){}return String.fromCodePoint(...[...c].map(x=>127397+x.charCodeAt(0)))+" "+n};
+const dayLabel=t=>new Date(t).toLocaleDateString("tr-TR",{timeZone:TZ,day:"2-digit",month:"short",year:"2-digit"}).replace(/\./g,"").toUpperCase();
+const fmt=(t,step)=>dayLabel(t)+(step>=86400e3?"":" "+new Date(t).toLocaleTimeString("tr-TR",{timeZone:TZ,hour:"2-digit",minute:"2-digit"}));
+const hm=t=>new Date(t).toLocaleTimeString("tr-TR",{timeZone:TZ,hour:"2-digit",minute:"2-digit"});
+const rng=(t,step)=>step>=86400e3?dayLabel(t):dayLabel(t)+" "+hm(t)+"–"+hm(t+step);
+const key=(ms,step)=>step===86400e3?new Date(ms).toISOString().slice(0,10):new Date(Math.floor(ms/step)*step).toISOString().slice(0,19)+"Z";
+function bars(el,a){el.innerHTML=a.length?"":'<div class="dim">none</div>';const mx=Math.max(1,...a.map(x=>x.visits));
+  a.forEach(x=>{const d=document.createElement("div");d.className="br";d.innerHTML='<div class="fill"></div><span class="l"></span><span class="r"></span>';d.firstChild.style.width=(x.visits/mx*100)+"%";d.querySelector(".l").textContent=x.name||"(direct)";d.querySelector(".r").textContent=x.visits;el.appendChild(d)})}
+function chart(d){
+  const step=d.step,s=Date.parse(d.start),e=Date.parse(d.at),vis={};d.series.forEach(r=>vis[key(Date.parse(r.t.length===10?r.t+"T00:00:00Z":r.t),step)]=r.visits);
+  const pts=[];let t=step===86400e3?Date.parse(new Date(s).toISOString().slice(0,10)+"T00:00:00Z"):Math.floor(s/step)*step;
+  for(;t<=e;t+=step)pts.push({t,v:vis[key(t,step)]||0,s:d.salesSeries[key(t,step)]||0});
+  const W=600,H=170,pad=18,mx=Math.max(1,...pts.map(p=>p.v)),bw=W/pts.length;let g="";
+  [0.5,1].forEach(f=>g+=`<line x1="0" x2="${W}" y1="${H-pad-(H-pad*2)*f}" y2="${H-pad-(H-pad*2)*f}" stroke="#303030" stroke-dasharray="3 4"/>`);
+  g+=`<text x="2" y="${pad-4}" fill="#9393b3" font-size="11">${mx}</text>`;
+  pts.forEach((p,i)=>{const h=(H-pad*2)*p.v/mx,x=i*bw;g+=`<rect x="${x+bw*.12}" y="${H-pad-h}" width="${Math.max(1,bw*.76)}" height="${h}" rx="${Math.min(3,bw/3)}" fill="#3ea6ff" fill-opacity=".4" data-tip="${rng(p.t,step)}  ·  ${p.v} visits${p.s?"  ·  "+p.s+" sale":""}"></rect>`;
+    if(p.s)g+=`<circle cx="${x+bw/2}" cy="${H-pad-h-8}" r="6" fill="#29f07f" data-tip="${rng(p.t,step)}  ·  ${p.s} sale"></circle><text x="${x+bw/2}" y="${H-pad-h-5}" fill="#0f0f0f" font-size="9" font-weight="700" text-anchor="middle">${p.s}</text>`});
+  g+=`<text x="2" y="${H-3}" fill="#9393b3" font-size="11">${fmt(pts[0].t,step)}</text><text x="${W-2}" y="${H-3}" fill="#9393b3" font-size="11" text-anchor="end">${fmt(pts[pts.length-1].t,step)}</text>`;
+  $("chart").innerHTML=g;
+}
+const tip=$("tip");
+function tipAt(e){const t=e.target.closest&&e.target.closest("[data-tip]");if(!t){tip.style.display="none";return}
+  tip.textContent=t.dataset.tip;tip.style.display="block";const w=tip.offsetWidth;
+  tip.style.left=Math.max(6,Math.min(innerWidth-w-6,e.clientX-w/2))+"px";tip.style.top=Math.max(6,e.clientY-tip.offsetHeight-12)+"px"}
+$("chart").addEventListener("pointermove",tipAt);$("chart").addEventListener("pointerdown",tipAt);$("chart").addEventListener("pointerleave",()=>tip.style.display="none");
+function goDay(t){const d=new Date(t).toLocaleDateString("sv-SE",{timeZone:TZ});from=d+"T00:00";to=d+"T23:59";tabs();scrollTo({top:0,behavior:"smooth"});load()}
+async function load(){
+  $("app").classList.add("busy");ga4();
+  try{
+    const r=await fetch(API+(from?"?from="+from+"&to="+to:"?range="+range),{headers:{Authorization:"Bearer "+pw}});
+    if(r.status===401){try{localStorage.removeItem("livepw")}catch(e){};pw="";show(false);$("err").textContent="Wrong password";return}
+    const d=await r.json();if(d.error)throw 0;show(true);tabs();downloads(d.downloads);
+    $("v").textContent=d.visits;$("w").textContent=d.views;$("sc").textContent=d.sales.count;const $$=n=>"$"+n.toFixed(n%1?2:0);$("sr").textContent=$$(d.sales.gross);$("sn").textContent=$$(d.sales.net);$("snl").title="After fees: "+$$(d.sales.fees);
+    $("cv").textContent=d.visits?(d.sales.count/d.visits*100).toFixed(1)+"%":"-";
+    $("upd").textContent=new Date(d.at).toLocaleTimeString("tr-TR",{timeZone:TZ,hour:"2-digit",minute:"2-digit",second:"2-digit"})+" · Türkiye";
+    $("rng").textContent=fmt(d.start,86400e3)+" – "+fmt(d.at,86400e3);
+    chart(d);bars($("ref"),d.referrers);lastD=d;drawMap();bars($("pg"),d.pages);bars($("dev"),d.devices);
+    const el=$("sales");el.innerHTML=d.sales.recent.length?"":'<div class="dim">No sales in this range</div>';
+    d.sales.recent.filter(x=>x.src!=="gumroad").forEach(x=>{const row=document.createElement("div");row.className="sale";row.innerHTML='<div><div class="w"></div><div class="m"></div></div><div class="a"></div>';
+      row.querySelector(".w").textContent=cname(x.c)||"Country unknown";row.querySelector(".m").textContent=fmt(x.t,60e3)+" · "+(x.src==="polar"?"Polar":"Gumroad")+(x.refunded?" · refunded":"");
+      row.onclick=()=>goDay(x.t);const a=row.querySelector(".a");a.textContent="$"+x.usd;if(x.net!=null)row.querySelector(".m").textContent+=" · net $"+x.net.toFixed(2);if(x.usd===0)a.className="a z";el.appendChild(row)});
+    $("fr").textContent=d.sales.gifts;
+    for(const [k,id] of [["polar","sp"]]){const b=(d.sales.bySource||{})[k]||{count:0,gross:0,net:0};$(id).textContent=$$(b.net)+" net";$(id+"s").textContent=b.count+" sale"+(b.count===1?"":"s")+" · "+$$(b.gross)+" gross"}
+    const fe=$("free");fe.innerHTML=(d.sales.free||[]).length?"":'<div class="dim">No free orders in this range</div>';
+    (d.sales.free||[]).filter(x=>x.src!=="gumroad").forEach(x=>{const row=document.createElement("div");row.className="sale";row.innerHTML='<div><div class="w"></div><div class="m"></div></div><div class="a z">$0</div>';row.querySelector(".w").textContent=cname(x.c)||"Country unknown";row.querySelector(".m").textContent=fmt(x.t,60e3)+" · "+(x.src==="polar"?"Polar":"Gumroad");row.onclick=()=>goDay(x.t);fe.appendChild(row)});
+    $("snote").textContent="Fees: "+$$(d.sales.fees)+" (Gumroad 10%+50¢+2.9%+30¢; Polar from the order, else estimated). "+(d.sales.polarConnected?"":"Polar sales are not connected yet.");
+  }catch(e){$("upd").textContent="error";$("err").textContent="Could not load data. Open this page on pocketplus.app (the data server only accepts that site)."}
+  ga4hist();
+  fitKpis();
+  $("app").classList.remove("busy");
+}
+// İndirmeler: GitHub sürüm dosyalarının sayaçları (herkese açık API, kimlik gerektirmez). Yalnızca toplam tutulur; "bugün" ilk açılıştan beri fark.
+// Sayılanlar: sitenin ve eski bağlantıların indirdiği dosyalar. Uygulama içi güncellemeler (…-bN.zip) ayrı sayılır.
+async function downloads(sel){
+  try{
+    let c=null;try{c=JSON.parse(localStorage.getItem("dlcache")||"null")}catch(e){}
+    if(!c||Date.now()-c.t>300e3){
+      const r=await fetch("https://api.github.com/repos/FerdiCildiz/pocket-plus/releases?per_page=100");if(!r.ok)throw 0;
+      let site=0,upd=0;(await r.json()).forEach(x=>(x.assets||[]).forEach(a=>{/-b\d+\.zip$/.test(a.name)?upd+=a.download_count:site+=a.download_count}));
+      c={t:Date.now(),site,upd};try{localStorage.setItem("dlcache",JSON.stringify(c))}catch(e){}
+    }
+    const filtered=range!=="all"||from;let n=filtered?(sel&&sel.count!=null?sel.count:0):c.site;
+    if(from&&from.slice(0,10)===today&&to.slice(0,10)===today){ // bugün: tarayıcıda günün ilk açılışındaki toplamdan farkı da hesaba kat (Worker kaydı geç başladı)
+      try{const b=JSON.parse(localStorage.getItem("dlbase")||"null");if(b&&b.day===today)n=Math.max(n,c.site-b.site);else localStorage.setItem("dlbase",JSON.stringify({day:today,site:c.site}))}catch(e){}
+    }
+    $("dl").textContent=n;
+    $("dls").textContent="downloads";$("dls").title=(range==="all"&&!from?"All time. ":"In the selected range. ")+c.upd+" more were in-app updates.";
+  }catch(e){$("dls").textContent="downloads (unavailable)"}
+}
+// GA4 Realtime numbers, written every 10 minutes by a GitHub Action (public, no password needed)
+const GA4="https://pocketplus-live.ferdicildiz.workers.dev/ga4";
+function gbars(el,items,total,empty){el.innerHTML=items.length?"":'<div class="dim">'+empty+'</div>';const mx=Math.max(1,...items.map(x=>x.n));
+  items.forEach(x=>{const d=document.createElement("div");d.className="br";d.innerHTML='<div class="fill"></div><span class="l"></span><span class="r"></span>';d.firstChild.style.width=(x.n/mx*100)+"%";d.querySelector(".l").textContent=x.name;d.querySelector(".r").textContent=x.n;el.appendChild(d)})}
+async function ga4(){
+  try{
+    const r=await fetch(GA4,{headers:{Authorization:"Bearer "+pw},cache:"no-store"});if(!r.ok)throw 0;
+    const d=await r.json();
+    $("g4a").textContent=d.activeUsers;$("g4a5").textContent=d.activeUsers5==null?"-":d.activeUsers5;
+    const pm=(d.perMinute||[]).slice().reverse(),mx=Math.max(1,...pm),sp=$("g4spark");sp.innerHTML=pm.map((n,i)=>'<rect x="'+(i*10+1)+'" width="8" y="'+(50-n/mx*48-(n?0:1))+'" height="'+(n/mx*48+(n?0:1))+'" rx="2" fill="'+(n?"#2bff7a":"rgba(255,255,255,.15)")+'"/>').join("");
+    gbars($("g4p"),(d.pages||[]).map(x=>({name:x.path,n:x.activeUsers})),0,"Nobody on the site right now");
+    gbars($("g4c"),(d.cities||d.countries.map(x=>({city:"",country:x.country,activeUsers:x.activeUsers}))).map(x=>({name:(x.city&&x.city!=="(not set)"?x.city+", ":"")+cname(x.country),n:x.activeUsers})),d.activeUsers,"No visitors in the last 30 min");
+    gbars($("g4d"),(d.devices||[]).map(x=>({name:x.device,n:x.activeUsers})),0,"-");
+    gbars($("g4e"),d.events.map(x=>({name:x.event,n:x.count})),0,"No events in the last 30 min");
+    $("g4u").textContent="updated "+hm(d.updated)+(Date.now()-Date.parse(d.updated)>2*60e3?" · OLD":"");lastG4=d;drawMap();
+  }catch(e){$("g4u").textContent="unavailable"}
+}
+// Country map + table. Visits and sales follow the selected range; "active now" is GA4's last 30 minutes.
+let lastD=null,lastG4=null,geo=null,landDots=null,mapT=null;
+if(window.d3)mapT=d3.zoomIdentity;
+// Dot grid of land points (computed once): the dotted-map look
+function dotsFor(proj){
+  if(landDots)return landDots;
+  const land={type:"FeatureCollection",features:geo},pts=[];
+  for(let lon=-170;lon<=180;lon+=2.5)for(let lat=-56;lat<=78;lat+=2.5){if(d3.geoContains(land,[lon,lat])){const p=proj([lon,lat]);if(p)pts.push(p)}}
+  return landDots=pts;
+}
+const NAL={"united states of america":"united states","usa":"united states","türkiye":"turkey","korea, republic of":"south korea","republic of korea":"south korea","russian federation":"russia","viet nam":"vietnam","czechia":"czech republic","uk":"united kingdom","great britain":"united kingdom","the netherlands":"netherlands","macedonia":"north macedonia","burma":"myanmar","myanmar (burma)":"myanmar","bosnia and herz.":"bosnia and herzegovina","dem. rep. congo":"democratic republic of the congo","côte d’ivoire":"côte d'ivoire","eswatini":"eswatini","eswatini (swaziland)":"eswatini"};
+// Country keys: a 2-letter code (e.g. "TR") is turned into its English name first, so "TR" and "Türkiye" are the same row
+const kn=s=>{s=(s||"").trim();if(/^[A-Za-z]{2}$/.test(s)){try{s=NM.of(s.toUpperCase())||s}catch(e){}}s=s.toLowerCase();return NAL[s]||s};
+const plainName=c=>{try{return NM.of(String(c).toUpperCase())||c}catch(e){return c}};
+const codeByName={};for(let a=65;a<=90;a++)for(let b=65;b<=90;b++){const c=String.fromCharCode(a,b);let n;try{n=NM.of(c)}catch(e){}if(n&&n!==c)codeByName[kn(n)]=c}
+const flagOf=k=>{const c=codeByName[k];return c?String.fromCodePoint(...[...c].map(x=>127397+x.charCodeAt(0))):"\u{1F3F3}"};
+const fullName=(k,disp)=>{const c=codeByName[k];return c?NM.of(c):(disp[k]||k)};
+const mapRow=(cells,cls,h)=>{const r=document.createElement("div");r.className="row"+(h?" h":"");cells.forEach((c,i)=>{const s=document.createElement("span");s.textContent=c;if(cls&&cls[i])s.className=cls[i];r.appendChild(s)});return r};
+function drawMap(){
+  if(!lastD)return;
+  const liveNow=(!from||isToday())&&SRC!=="cf";
+  const vis={},sal={},act={},disp={};let unk=0;
+  (SRC==="ga4"?[]:(lastD.countries||[])).forEach(x=>{const k=kn(x.name);if(!k)return;vis[k]=(vis[k]||0)+x.visits;disp[k]=x.name});
+  (SRC==="ga4"?[]:(lastD.sales.recent||[])).forEach(x=>{if(!(x.usd>0)||x.src==="gumroad")return;if(!x.c){unk++;return}const nm=plainName(x.c),k=kn(nm);sal[k]=(sal[k]||0)+1;disp[k]=disp[k]||nm});
+  (liveNow?((lastG4&&lastG4.countries)||[]):[]).forEach(x=>{const k=kn(x.country);if(!k)return;act[k]=(act[k]||0)+x.activeUsers;disp[k]=disp[k]||x.country});
+  const max=Math.max(1,...Object.values(vis));
+  const info=k=>((vis[k]||0)+" visits")+(sal[k]?" · "+sal[k]+" sale"+(sal[k]>1?"s":""):"")+(act[k]?" · "+act[k]+" active now":"");
+  if(window.d3&&geo){
+    const svg=d3.select("#map");svg.selectAll("*").remove();
+    const world=geo.filter(f=>f.properties.name!=="Antarctica");
+    const proj=d3.geoNaturalEarth1().fitExtent([[8,8],[952,462]],{type:"FeatureCollection",features:world}); const path=d3.geoPath(proj);
+    const byKey={};geo.forEach(f=>{byKey[kn(f.properties.name)]=f});
+    const root=svg.append("g").attr("transform",mapT);
+    // Real country shapes with borders. Blue ground = active visitors now; green dot = sale; yellow pulse = active now
+    root.append("g").selectAll("path").data(world).join("path").attr("d",path)
+      .style("fill",f=>{const k=kn(f.properties.name);return act[k]?"rgba(62,166,255,.5)":vis[k]?"rgba(62,166,255,.15)":"#15181d"})
+      .style("stroke","#4a525d").attr("stroke-width",.6)
+      .attr("data-tip",f=>f.properties.name+": "+info(kn(f.properties.name)));
+    const g=root.append("g");
+    const at=k=>{const f=byKey[k];if(!f)return null;const p=path.centroid(f);return isFinite(p[0])&&isFinite(p[1])?p:null};
+    Object.keys(sal).forEach(k=>{const p=at(k);if(p)g.append("circle").attr("cx",p[0]).attr("cy",p[1]).attr("r",3.5).style("fill","var(--sale)").attr("stroke","#0c0d10").attr("stroke-width",1.5).attr("data-tip",disp[k]+": "+info(k))});
+    Object.keys(act).forEach(k=>{const p=at(k);if(p){g.append("circle").attr("class","pulse-ring").attr("cx",p[0]).attr("cy",p[1]).attr("r",4.5);g.append("circle").attr("cx",p[0]).attr("cy",p[1]).attr("r",2.8).style("fill","#ffd23f").attr("data-tip",disp[k]+": "+info(k))}});
+    const zoom=d3.zoom().scaleExtent([1,6]).on("zoom",e=>{mapT=e.transform;root.attr("transform",mapT)});
+    svg.call(zoom);
+    $("mapreset").onclick=()=>svg.transition().duration(400).call(zoom.transform,d3.zoomIdentity);
+  }
+  const keys=[...new Set([...Object.keys(vis),...Object.keys(sal),...Object.keys(act)])].sort((a,b)=>(vis[b]||0)-(vis[a]||0)||(sal[b]||0)-(sal[a]||0)||(act[b]||0)-(act[a]||0));
+  const t=$("ctab");t.innerHTML="";t.appendChild(mapRow(["Country","Visits","Sales","Active now"],null,true));
+  keys.forEach(k=>t.appendChild(mapRow([flagOf(k)+"  "+fullName(k,disp),vis[k]||0,sal[k]||0,act[k]||0],[null,null,sal[k]?"sn":null,act[k]?"act":null])));
+  if(!keys.length)t.insertAdjacentHTML("beforeend",'<div class="dim" style="padding-top:8px">No visits in this range</div>');
+  $("mapn").textContent=keys.length+" countries";
+  $("ctnote").textContent=SRC==="ga4"?"Active users in the last 30 minutes, from GA4 Realtime.":"Up to 12 countries from visits and the 12 most recent sales in this range."+(unk?" "+unk+" recent sale"+(unk>1?"s have":" has")+" no billing country.":"");
+}
+fetch("https://cdn.jsdelivr.net/npm/world-atlas@2.0.2/countries-110m.json").then(r=>r.json()).then(w=>{geo=topojson.feature(w,w.objects.countries).features;drawMap()}).catch(()=>{});
+let pinned=false;
+$("map").addEventListener("pointermove",e=>{if(!pinned)tipAt(e)});
+$("map").addEventListener("pointerdown",e=>{const t=e.target.closest&&e.target.closest("[data-tip]");if(!t){pinned=false;tip.style.display="none";tip.classList.remove("pinned");return}pinned=true;tipAt(e);tip.classList.add("pinned")});
+$("map").addEventListener("pointerleave",()=>{if(!pinned)tip.style.display="none"});
+document.addEventListener("pointerdown",e=>{if(!$("map").contains(e.target)){pinned=false;tip.style.display="none";tip.classList.remove("pinned")}});
+// KPI numbers shrink (in px steps) until they fit their tile, so long values never get cut off
+function fitKpis(){document.querySelectorAll(".kpi b").forEach(b=>{let s=28;b.style.fontSize=s+"px";while(b.scrollWidth>b.clientWidth&&s>10){s-=1;b.style.fontSize=s+"px"}})}
+window.addEventListener("resize",fitKpis);
+// Source switch: GA4 (default) shows only GA4, Cloudflare shows only the Cloudflare numbers, All shows both
+let SRC="ga4";
+function setSource(s){SRC=s;document.body.className=s;document.querySelectorAll("#srctabs button").forEach(b=>b.classList.toggle("on",b.dataset.s===s));drawMap()}
+document.querySelectorAll("#srctabs button").forEach(b=>b.onclick=()=>setSource(b.dataset.s));
+setSource("ga4");
+// GA4 history for the selected range (quick ranges and date pickers apply here too)
+function ga4Range(){
+  if(from) return [from.slice(0,10),(to||from).slice(0,10)];
+  const day=n=>new Date(Date.now()-n*864e5).toLocaleDateString("sv-SE",{timeZone:TZ});
+  if(range==="all") return ["2026-10-18",day(0)];
+  const back={"168":6,"720":29}[range]||0;
+  return [day(back),day(0)];
+}
+async function ga4hist(){
+  const [s,e]=ga4Range();
+  try{
+    const r=await fetch(API+"ga4report?from="+s+"&to="+e,{headers:{Authorization:"Bearer "+pw},cache:"no-store"});if(!r.ok)throw 0;
+    const d=await r.json();
+    $("h4u").textContent=s===e?s:s+" – "+e;
+    $("h4u1").textContent=d.users;$("h4s").textContent=d.sessions;$("h4v").textContent=d.views;
+    $("h4d").textContent=d.events.download_click||0;$("h4b").textContent=d.events.buy_click||0;$("h4c").textContent=d.events.campaign_click||0;
+    bars($("h4src"),d.sources.map(x=>({name:x.name,visits:x.sessions})));
+    bars($("h4cmp"),d.campaigns.map(x=>({name:x.name,visits:x.sessions})));
+  }catch(err){$("h4u").textContent="unavailable"}
+  fitKpis();
+}
+function show(ok){$("app").hidden=!ok;$("login").hidden=ok}
+$("go").onclick=()=>{pw=$("pw").value;try{localStorage.setItem("livepw",pw)}catch(e){}$("err").textContent="";load()};
+$("pw").onkeydown=e=>{if(e.key==="Enter")$("go").click()};
+if(pw)load();else show(false);
+setInterval(()=>{if(pw&&!document.hidden)load()},30000);setInterval(()=>{if(pw&&!document.hidden)ga4()},15000);
+</script></body></html>
