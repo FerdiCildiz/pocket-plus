@@ -1,0 +1,37 @@
+{
+  "updated": "2026-11-28T12:49:45.365Z",
+  "window": "last 30 minutes",
+  "activeUsers": 1,
+  "countries": [
+    {
+      "country": "Brazil",
+      "activeUsers": 1
+    }
+  ],
+  "events": [
+    {
+      "event": "download_click",
+      "count": 1
+    },
+    {
+      "event": "first_visit",
+      "count": 1
+    },
+    {
+      "event": "form_start",
+      "count": 1
+    },
+    {
+      "event": "page_view",
+      "count": 1
+    },
+    {
+      "event": "session_start",
+      "count": 1
+    },
+    {
+      "event": "user_engagement",
+      "count": 1
+    }
+  ]
+}
